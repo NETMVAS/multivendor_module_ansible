@@ -1,5 +1,5 @@
 - name: "change hostname"
-  hostname: router
+  hosts: router
   gather_facts: no
   connection: paramiko
 
