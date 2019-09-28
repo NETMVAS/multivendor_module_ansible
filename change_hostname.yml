@@ -1,0 +1,10 @@
+- name: "change hostname"
+  hostname: router
+  gather_facts: no
+  connection: paramiko
+
+  tasks:
+
+   - name: "change hostname"
+
+     raw: /system identity set name=Mikrotik_core_lab
