@@ -1,0 +1,6 @@
+- name: "change hostname"
+  hosts: router
+  gather_facts: no
+  connection: paramiko
+  roles:
+    - change_hostname
