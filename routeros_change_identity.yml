@@ -1,7 +1,6 @@
 - name: "routeros_change_identity"
   hosts: router
   connection: paramiko
-  gather_facts: no
   tasks:
 
    - name: "change_identity"
