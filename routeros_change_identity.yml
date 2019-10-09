@@ -1,0 +1,10 @@
+- name: "routeros_change_identity"
+  hosts: router
+  connection: paramiko
+
+  tasks:
+
+   - name: "change_identity"
+
+     routeros_command:
+       commands: /set identity name=Mikrotik
