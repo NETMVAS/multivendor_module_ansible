@@ -1,6 +1,5 @@
 - name: "show_version"
   hosts: router
   gather_facts: yes
-  connection: paramiko
   roles:
     - show_version
