@@ -6,4 +6,4 @@
    - name: "change_identity"
 
      routeros_command:
-       commands: /set identity name=Mikrotik
+       commands: /set identity name=Mikrotik_test
