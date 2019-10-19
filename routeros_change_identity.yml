@@ -1,6 +1,5 @@
 - name: "routeros_change_identity"
-  hosts: router
-  connection: local
+  hosts: router_local
   tasks:
 
    - name: "change_identity"
