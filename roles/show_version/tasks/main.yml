@@ -1,4 +1,4 @@
 ---
 
-  - name:show_version
-      raw:/system export
+  - name: show_version
+    raw: /system export
