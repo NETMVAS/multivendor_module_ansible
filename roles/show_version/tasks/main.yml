@@ -1,5 +1,4 @@
 ---
 
   - name: show_version
-    routeros_command:
-      commands: /system export
+      raw: /system export
