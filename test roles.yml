@@ -1,7 +1,6 @@
 - name: "show_version"
   hosts: router
   gather_facts: yes
-
+  hostname: test_role
   roles:
     - change_hostname
-      hostname: test_role
