@@ -2,5 +2,5 @@
   hosts: router
   gather_facts: yes
   roles:
-      - change_hostname
-          local_hostname: test_role
+      - role: change_hostname
+        local_hostname: test_role
