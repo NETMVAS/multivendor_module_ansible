@@ -1,6 +1,6 @@
 - name: "change_hostname"
   hosts: router
   gather_facts: yes
-  local_hostname: test_role
   roles:
     - change_hostname
+      local_hostname: test_role
