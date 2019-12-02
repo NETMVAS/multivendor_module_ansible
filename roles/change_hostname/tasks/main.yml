@@ -1,5 +1,4 @@
 ---
 
   - name: change hostname mikrotik
-    raw:
-      - "{{ mikrotik_config }}"
+    raw: "{{ mikrotik_config }}"
