@@ -3,4 +3,4 @@
   gather_facts: yes
   roles:
       - change_hostname
-        local_hostname: test_role
+          local_hostname: test_role
