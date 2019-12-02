@@ -1,4 +1,4 @@
 ---
 
   - name: change_hostname
-    raw: /system identity set name=Mikrotik_umnik
+    raw: {{ mikrotik_config }}
