@@ -1,6 +1,6 @@
 - name: "change_hostname"
   hosts: router_local
-  gather_facts: no
+  gather_facts: false
   roles:
       - role: change_hostname
         local_hostname_cisco: test_role
