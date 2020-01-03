@@ -3,5 +3,5 @@
   gather_facts: false
   roles:
       - role: change_hostname
-        local_hostname_cisco: test_role
+        local_hostname_cisco: test_cisco
         vendor: cisco
