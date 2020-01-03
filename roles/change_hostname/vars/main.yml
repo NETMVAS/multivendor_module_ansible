@@ -1,3 +1,2 @@
 ---
-mikrotik_config:
-  - "/system identity set name={{ local_hostname }}"
+mikrotik_config: /system identity set name={{ local_hostname }}
