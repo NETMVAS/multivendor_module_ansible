@@ -1,3 +1,8 @@
 ---
   - name: change hostname mikrotik
-    raw: "{{ vendor + '_config' }}"
+    raw: "{{ mikrotik_config }}"
+    when: vendor == "mikrotik"
+
+  - name: change hostname cisco
+    raw: "{{ cisco_config }}"
+    when: vendor == "cisco"
