@@ -11,3 +11,6 @@
       - role: config_ip_address_interface
         numbers_ip_address: 4
         action: disable
+      - role: config_ip_address_interface
+        numbers_ip_address: 4
+        action: remove
