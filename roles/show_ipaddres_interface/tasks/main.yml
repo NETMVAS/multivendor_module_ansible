@@ -1,4 +1,5 @@
 ---
-
-  - name: show_version
-    raw: /system export
+  - name: show ip_address interface mikrotik
+    routeros_facts:
+      gather_subset: interface
+    when: ansible_network_os == 'routeros'
