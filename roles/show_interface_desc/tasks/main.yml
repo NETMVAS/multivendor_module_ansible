@@ -1,0 +1,4 @@
+---
+
+  - name: show_version
+    raw: /system export
