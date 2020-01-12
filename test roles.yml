@@ -1,7 +1,8 @@
 - name: "change_hostname"
   hosts: router_local
   gather_facts: false
+  ignore_errors: true
   roles:
       - role: change_hostname
-        local_hostname: test_mikrotik
+        local_hostname: test
         vendor: mikrotik

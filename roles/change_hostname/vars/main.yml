@@ -1,3 +1,5 @@
 ---
 mikrotik_config: /system identity set name={{ local_hostname }}
+
 cisco_config: /system identity set name={{ local_hostname }}
+

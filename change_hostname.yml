@@ -1,0 +1,8 @@
+- name: "he"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  tasks:
+    - name: Sh ver
+      routeros_command:
+        commands: /system resource print
