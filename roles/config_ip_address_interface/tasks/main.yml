@@ -2,26 +2,30 @@
   - name: add ip_address interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_add }}"
-    when: ansible_network_os == 'routeros'
-    when: action == 'add'
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
 
   - name: remove ip_address  interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_remove }}"
-    when: ansible_network_os == 'routeros'
-    when: action == 'remove'
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
 
   - name: enable ip_address interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_enable }}"
-    when: ansible_network_os == 'routeros'
-    when: action == 'enable'
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
 
   - name: disable ip_address interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_disable }}"
-    when: ansible_network_os == 'routeros'
-    when: action == 'disable'
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
 
 
   - name: config ipaddres interface cisco
