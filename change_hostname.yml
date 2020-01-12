@@ -3,6 +3,8 @@
   gather_facts: false
   ignore_errors: true
   tasks:
-    - name: Sh ver
-      routeros_command:
-        commands: /system resource print
+
+
+    - name: Sh ve
+      routeros_command: 
+         commands: /ip address print
