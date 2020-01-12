@@ -1,8 +1,0 @@
-- name: "routeros_change_identity"
-  hosts: router_local
-  tasks:
-
-   - name: "change_identity"
-
-     routeros_command:
-       commands: /set identity name=Mikrotik_test
