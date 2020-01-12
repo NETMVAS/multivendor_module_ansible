@@ -3,6 +3,11 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      - role: change_hostname
-        local_hostname: test
-        vendor: mikrotik
+      - role: config_ip_address_interface
+        ip_address: 10.10.16.1
+        netmask: 255.255.255.0
+        interface: ether3
+        action: add
+      - role: config_ip_address_interface
+        numbers_ip_address: 4
+        action: disable
