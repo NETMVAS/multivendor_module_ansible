@@ -1,4 +1,33 @@
 ---
+  - name: add interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
 
-  - name: show_version
-    raw: /system export
+  - name: remove interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+
+  - name: enable interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+
+  - name: disable interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+
+
+  - name: config ipaddres interface cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'

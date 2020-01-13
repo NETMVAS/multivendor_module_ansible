@@ -1,7 +1,7 @@
 ---
-mikrotik_config_add: /ip address add address={{ ip_address }} netmask={{ netmask }} interface={{ interface }}
-mikrotik_config_remove: /ip address remove {{ numbers_ip_address }}
-mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
-mikrotik_config_disable: /ip address disable {{ numbers_ip_address }}
+mikrotik_config_add: /interface vlan add interface={{ interface }} vlan-id={{ vlan_id }} name={{ name_interface_vlan }}
+mikrotik_config_remove: /interface vlan remove {{ numbers_inteface_vlan }}
+mikrotik_config_enable: /interface vlan enable {{ numbers_inteface_vlan }}
+mikrotik_config_disable: /interface vlan disable {{ numbers_inteface_vlan }}
 
 cisco_config: /system identity set name={{ local_hostname }}
