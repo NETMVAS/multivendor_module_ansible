@@ -7,6 +7,7 @@
         interface: ether3
         vlan_id: 666
         action: add
+        name_interface_vlan: satana
       - role: config_subinterface
         numbers_ip_address: 0
         action: disable
