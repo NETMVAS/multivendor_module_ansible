@@ -1,0 +1,7 @@
+---
+mikrotik_config_add: /ip address add address={{ ip_address }} netmask={{ netmask }} interface={{ interface }}
+mikrotik_config_remove: /ip address remove {{ numbers_ip_address }}
+mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
+mikrotik_config_disable: /ip address disable {{ numbers_ip_address }}
+
+cisco_config: /system identity set name={{ local_hostname }}
