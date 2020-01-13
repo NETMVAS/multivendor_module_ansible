@@ -6,7 +6,7 @@
       - ansible_network_os == 'routeros'
       - action == 'add'
 
-  - name: remove ip_address  interface mikrotik
+  - name: remove ip_address interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_remove }}"
     when:
