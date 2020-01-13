@@ -1,0 +1,33 @@
+---
+  - name: enable interface ethernet mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+
+  - name: disable interface ethernet mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+
+  - name: config auto-negotiation interface ethernet mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_auto_negotiation }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'auto_negotiation'
+
+  - name: config speed interface ethernet mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_speed }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'speed'
+
+
+  - name: config ipaddres interface cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
