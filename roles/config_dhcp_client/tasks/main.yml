@@ -1,4 +1,40 @@
 ---
+  - name: add dhcp_client mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
 
-  - name: show_version
-    raw: /system export
+  - name: remove dhcp_client mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+
+  - name: enable dhcp_client mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+
+  - name: disable dhcp_client mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+
+  - name: set dhcp_client mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+
+
+  - name: config ipaddres interface cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
