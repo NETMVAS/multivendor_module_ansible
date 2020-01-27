@@ -1,9 +1,10 @@
 ---
   - name: change hostname mikrotik
-    routeros_command: 
+    routeros_command:
       commands: "{{ mikrotik_config }}"
-    when: ansible_network_os == 'routeros'
-
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
   - name: change hostname cisco
     raw: "{{ cisco_config }}"
     when: ansible_network_os == 'ios'
