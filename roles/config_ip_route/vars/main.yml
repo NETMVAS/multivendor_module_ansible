@@ -1,0 +1,7 @@
+---
+mikrotik_config_add: /ip route add dst-address={{ address }} gateway={{ gateway }} distance={{ distance }} check-gateway={{ check_gateway }}
+mikrotik_config_remove: /ip route remove numbers={{ numbers_route }}
+mikrotik_config_enable: /ip route enable numbers={{ numbers_route }}
+mikrotik_config_disable: /ip route disable numbers={{ numbers_route }}
+mikrotik_config_set: /ip route set numbers={{ numbers_route }} dst-address={{ address }} gateway={{ gateway }} distance={{ distance }} check-gateway={{ check_gateway }}
+cisco_config: /system identity set name={{ local_hostname }}

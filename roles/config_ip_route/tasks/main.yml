@@ -1,33 +1,33 @@
 ---
-  - name: add user mikrotik
+  - name: add ip static route mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_add }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'add'
 
-  - name: remove user mikrotik
+  - name: remove ip static route mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_remove }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'remove'
 
-  - name: enable user mikrotik
+  - name: enable ip static route mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_enable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'enable'
 
-  - name: disable user mikrotik
+  - name: disable ip static route mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_disable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'disable'
 
-  - name: set user mikrotik
+  - name: set ip static route mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_disable }}"
     when:

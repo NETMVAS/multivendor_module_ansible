@@ -3,22 +3,25 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      - role: config_user
-        username: TEST
-        password: RQ4FD
-        group: full
+      - role: config_ip_route
+        address: 1.1.1.1/32
+        gateway: 192.168.88.1
+        check_gateway: ping
+        distance: 10
         action: add
       - role: config_user
-        username: TEST
+        numbers_route: 7
         action: disable
       - role: config_user
-        username: TEST
+        numbers_route: 7
         action: enable
       - role: config_user
-        username: TEST
-        password: D4E1RT
-        group: read
+        numbers_route: 7
+        address: 1.1.1.2/32
+        gateway: 192.168.88.1
+        check_gateway: ping
+        distance: 100
         action: set
       - role: config_user
-        username: TEST
+        numbers_route: 7
         action: remove
