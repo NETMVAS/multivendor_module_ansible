@@ -1,0 +1,24 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_ip_address_interface
+        interface: ether4
+        address: 10.10.10.10
+        netmask: 255.255.255.0
+        action: add
+      - role: config_ip_address_interface
+        numbers_ip_address: 4
+        action: disable
+      - role: config_ip_address_interface
+        numbers_ip_address: 4
+        action: enable
+      - role: config_ip_address_interface
+        interface: ether4
+        address: 1.1.1.1
+        netmask: 255.255.255.255
+        action: set
+      - role: config_ip_address_interface
+        numbers_ip_address: 4
+        action: remove
