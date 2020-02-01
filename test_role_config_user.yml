@@ -4,21 +4,21 @@
   ignore_errors: true
   roles:
       - role: config_user
-        name: TEST
+        username: TEST
         password: RQ4FD
         group: full
         action: add
       - role: config_user
-        name: TEST
+        username: TEST
         action: disable
       - role: config_user
-        name: TEST
+        username: TEST
         action: enable
       - role: config_user
-        name: TEST
+        username: TEST
         password: D4E1RT
         group: read
         action: set
       - role: config_user
-        numbers_ip_address: 4
+        username: TEST
         action: remove
