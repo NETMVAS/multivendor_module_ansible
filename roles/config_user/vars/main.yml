@@ -1,7 +1,7 @@
 ---
 mikrotik_config_add: /user add name={{ username }} password={{ password }} group={{ group }}
-mikrotik_config_remove: /user remove name={{ username }}
-mikrotik_config_enable: /user enable name={{ username }}
-mikrotik_config_disable: /user disable name={{ username }}
-mikrotik_config_set: /user set name={{ username }} password={{ password }} group={{ group }}
+mikrotik_config_remove: /user remove {{ username }}
+mikrotik_config_enable: /user enable {{ username }}
+mikrotik_config_disable: /user disable {{ username }}
+mikrotik_config_set: /user set {{ username }} password={{ password }} group={{ group }}
 cisco_config: /system identity set name={{ local_hostname }}
