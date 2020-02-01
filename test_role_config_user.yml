@@ -1,0 +1,24 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_user
+        name: TEST
+        password: RQ4FD
+        group: full
+        action: add
+      - role: config_user
+        name: TEST
+        action: disable
+      - role: config_user
+        name: TEST
+        action: enable
+      - role: config_user
+        name: TEST
+        password: D4E1RT
+        group: read
+        action: set
+      - role: config_user
+        numbers_ip_address: 4
+        action: remove
