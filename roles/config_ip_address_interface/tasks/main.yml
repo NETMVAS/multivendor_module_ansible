@@ -29,7 +29,7 @@
 
   - name: set ip_address interface mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_disable }}"
+      commands: "{{ mikrotik_config_set }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
