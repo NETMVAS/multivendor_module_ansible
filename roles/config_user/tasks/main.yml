@@ -1,5 +1,5 @@
 ---
-  - name: add user mikrotik
+  - name: add users mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_add }}"
     when:
