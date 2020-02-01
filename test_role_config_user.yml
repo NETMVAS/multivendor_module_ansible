@@ -9,19 +9,19 @@
         check_gateway: ping
         distance: 10
         action: add
-      - role: config_user
+      - role: config_ip_route
         numbers_route: 1
         action: disable
-      - role: config_user
+      - role: config_ip_route
         numbers_route: 1
         action: enable
-      - role: config_user
+      - role: config_ip_route
         numbers_route: 1
         address: 1.1.1.2/32
         gateway: 192.168.88.1
         check_gateway: ping
         distance: 100
         action: set
-      - role: config_user
+      - role: config_ip_route
         numbers_route: 1
         action: remove
