@@ -4,7 +4,7 @@
   ignore_errors: true
   roles:
       - role: config_ip_address_interface
-        interface: ether4
+        interface: ether3
         address: 10.10.10.10
         netmask: 255.255.255.0
         action: add
@@ -15,7 +15,7 @@
         numbers_ip_address: 4
         action: enable
       - role: config_ip_address_interface
-        interface: ether4
+        interface: ether3
         address: 1.1.1.1
         netmask: 255.255.255.255
         action: set
