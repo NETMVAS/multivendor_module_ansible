@@ -1,6 +1,6 @@
 ---
 mikrotik_config_enable: /interface ethernet enable {{ interface }}
 mikrotik_config_disable: /interface ethernet disable {{ interface }}
-mikrotik_config_auto_negotiation: /interface ethernet set {{ interface }} auto_negotiation={{ state }}
+mikrotik_config_auto_negotiation: /interface ethernet set {{ interface }} auto_negotiation={{ auto_negotiation }}
 mikrotik_config_speed: /interface ethernet set {{ interface }} speed={{ speed }}
 cisco_config: /system identity set name={{ local_hostname }}
