@@ -3,5 +3,5 @@ mikrotik_config_add: /interface bridge add name={{ name_bridge }} igmp-snooping=
 mikrotik_config_remove: /interface bridge remove {{ name_bridge }}
 mikrotik_config_enable: /interface bridge enable {{ name_bridge }}
 mikrotik_config_disable: /interface bridge disable {{ name_bridge }}
-mikrotik_config_set: /interface bridge set {{ name_bridge }} igmp-snooping={{ igmp_snooping }} vlan-filtering={{ vlan_filtering }} mtu={{ mtu }}
+mikrotik_config_set: /interface bridge set {{ name_bridge }} igmp-snooping={{ igmp_snooping }} vlan-filtering={{ vlan_filtering }} mtu={{ mtu }} name={{ name_bridge }}
 cisco_config: /system identity set name={{ local_hostname }}
