@@ -7,7 +7,6 @@
         name_bridge: TEST
         vlan_filtering: "yes"
         igmp_snooping: "yes"
-        mtu: 9000
         action: add
 
       - role: config_interface_bridge
@@ -23,7 +22,6 @@
         vlan_filtering: "yes"
         igmp_snooping: "yes"
         rename_bridge: TEST_1
-        mtu: 9000
         action: set
 
       - role: config_interface_bridge
