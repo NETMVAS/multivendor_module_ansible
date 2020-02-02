@@ -9,19 +9,22 @@
         igmp_snooping: yes
         mtu: 9000
         action: add
+
       - role: config_interface_bridge
         name_bridge: TEST
         action: disable
+
       - role: config_interface_bridge
         name_bridge: TEST
         action: enable
+
       - role: config_interface_bridge
-        numbers_route: 1
         name_bridge: TEST_1
         vlan_filtering: yes
         igmp_snooping: yes
         mtu: 9000
         action: set
+
       - role: config_interface_bridge
         name_bridge: TEST_1
         action: remove
