@@ -5,8 +5,8 @@
   roles:
       - role: config_interface_bridge
         name_bridge: TEST
-        vlan_filtering: yes
-        igmp_snooping: yes
+        vlan_filtering: "yes"
+        igmp_snooping: "yes"
         mtu: 9000
         action: add
 
@@ -20,8 +20,8 @@
 
       - role: config_interface_bridge
         name_bridge: TEST_1
-        vlan_filtering: yes
-        igmp_snooping: yes
+        vlan_filtering: "yes"
+        igmp_snooping: "yes"
         mtu: 9000
         action: set
 
