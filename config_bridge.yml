@@ -19,9 +19,10 @@
         action: enable
 
       - role: config_interface_bridge
-        name_bridge: TEST_1
+        name_bridge: TEST
         vlan_filtering: "yes"
         igmp_snooping: "yes"
+        name_bridge: TEST_1
         mtu: 9000
         action: set
 
