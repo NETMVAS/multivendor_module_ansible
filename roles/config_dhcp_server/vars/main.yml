@@ -1,0 +1,7 @@
+---
+mikrotik_config_add: /ip dhcp-server add name={{ dhcp_server }} interface={{ interface }} address-pool={{ address_pool }}
+mikrotik_config_remove: /ip dhcp-server remove {{ dhcp_server }}
+mikrotik_config_enable: /ip dhcp-server enable {{ dhcp_server }}
+mikrotik_config_disable: /ip dhcp-server disable {{ dhcp_server }}
+mikrotik_config_set: /ip dhcp-server set {{ dhcp_server }} interface={{ interface }} address-pool={{ address_pool }} name={{ rename_dhcp_server }}
+cisco_config: /system identity set name={{ local_hostname }}
