@@ -1,4 +1,10 @@
 ---
-
-  - name: show_version
-    raw: /system export
+  - name: set dns mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+  - name: change hostname cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
