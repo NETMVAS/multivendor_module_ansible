@@ -1,0 +1,85 @@
+---
+  - name: add firewall filter mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_filter_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'filter'
+      - action == 'add'
+
+  - name: remove firewall filter mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_filter_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'filter'
+      - action == 'remove'
+
+  - name: enable firewall filter mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_filter_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'filter'
+      - action == 'enable'
+
+  - name: disable firewall filter mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_filter_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'filter'
+      - action == 'disable'
+
+  - name: set firewall filter mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_filter_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'filter'
+      - action == 'set'
+
+  - name: add firewall nat mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_nat_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'nat'
+      - action == 'add'
+
+  - name: remove firewall nat mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_nat_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'nat'
+      - action == 'remove'
+
+  - name: enable firewall nat mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_nat_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'nat'
+      - action == 'enable'
+
+  - name: disable firewall nat mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_nat_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'nat'
+      - action == 'disable'
+
+  - name: set firewall nat mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_nat_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'nat'
+      - action == 'set'
+
+
+  - name: config ipaddres interface cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
