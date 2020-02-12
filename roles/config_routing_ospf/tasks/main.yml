@@ -39,44 +39,44 @@
       - submenu == 'instace'
       - action == 'set'
 
-  - name: add firewall nat mikrotik
+  - name: add ospf network mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_nat_add }}"
+      commands: "{{ mikrotik_config_ospf_network_add }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'nat'
+      - submenu == 'network'
       - action == 'add'
 
-  - name: remove firewall nat mikrotik
+  - name: remove ospf network mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_nat_remove }}"
+      commands: "{{ mikrotik_config_ospf_network_remove }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'nat'
+      - submenu == 'network'
       - action == 'remove'
 
-  - name: enable firewall nat mikrotik
+  - name: enable ospf network mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_nat_enable }}"
+      commands: "{{ mikrotik_config_ospf_network_enable }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'nat'
+      - submenu == 'network'
       - action == 'enable'
 
-  - name: disable firewall nat mikrotik
+  - name: disable ospf network mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_nat_disable }}"
+      commands: "{{ mikrotik_config_ospf_network_disable }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'nat'
+      - submenu == 'network'
       - action == 'disable'
 
-  - name: set firewall nat mikrotik
+  - name: set ospf network mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_nat_set }}"
+      commands: "{{ mikrotik_config_ospf_network_set }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'nat'
+      - submenu == 'network'
       - action == 'set'
 
 

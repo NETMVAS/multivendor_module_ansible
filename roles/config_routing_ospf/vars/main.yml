@@ -1,12 +1,12 @@
 ---
-mikrotik_config_ospf_instance_add: /routing ospf instance add dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} src-port={{ src-port}} action={{ action }}
-mikrotik_config_ospf_instance_remove: /routing ospf instance remove numbers={{ ip_firewall_filter }}
-mikrotik_config_ospf_instance_enable: /routing ospf instance enable numbers={{ ip_firewall_filter }}
-mikrotik_config_ospf_instance_disable: /routing ospf instance disable numbers={{ ip_firewall_filter }}
-mikrotik_config_ospf_instance_set: /routing ospf instance set numbers={{ ip_firewall_filter }} dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} action={{ action }}
-mikrotik_config_nat_add: /ip firewall nat add dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} src-port={{ src-port}} action={{ action }}
-mikrotik_config_nat_remove: /ip firewall nat remove numbers={{ ip_firewall_nat }}
-mikrotik_config_nat_enable: /ip firewall nat enable numbers={{ ip_firewall_nat }}
-mikrotik_config_nat_disable: /ip firewall nat disable numbers={{ ip_firewall_nat }}
-mikrotik_config_nat_set: /ip firewall nat set numbers={{ ip_firewall_nat }} dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} src-port={{ src-port}} action={{ action }}
+mikrotik_config_ospf_instance_add: /routing ospf instance add router-id={{ router_id }} name={{ ospf_instance }} redistribute-connected={{ redist_connect }}  redistribute-static={{ redist_static }} redistribute-other-ospf={{ redist_ospf }}
+mikrotik_config_ospf_instance_remove: /routing ospf instance remove {{ ospf_instance }}
+mikrotik_config_ospf_instance_enable: /routing ospf instance enable {{ ospf_instance }}
+mikrotik_config_ospf_instance_disable: /routing ospf instance disable {{ ospf_instance }}
+mikrotik_config_ospf_instance_set: /routing ospf instance set {{ ospf_instance }} router-id={{ router_id }} name={{ rename_ospf_instance }} redistribute-connected={{ redist_connect }}  redistribute-static={{ redist_static }} redistribute-other-ospf={{ redist_ospf }}
+mikrotik_config_ospf_network_add: /routing ospf network add area={{ area }} network={{ network }}
+mikrotik_config_ospf_network_remove: /routing ospf network remove numbers={{ numbers_ospf_network }}
+mikrotik_config_ospf_network_enable: /routing ospf network enable numbers={{ numbers_ospf_network }}
+mikrotik_config_ospf_network_disable: /routing ospf network disable numbers={{ numbers_ospf_network }}
+mikrotik_config_ospf_network_set: /routing ospf network set numbers={{ numbers_ospf_network }} area={{ area }} network={{ network }}
 cisco_config: /system identity set name={{ local_hostname }}
