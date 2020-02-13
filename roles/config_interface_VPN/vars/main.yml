@@ -1,7 +1,17 @@
 ---
-mikrotik_config_add: /ip address add address={{ ip_address }} netmask={{ netmask }} interface={{ interface }}
-mikrotik_config_remove: /ip address remove {{ numbers_ip_address }}
-mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
-mikrotik_config_disable: /ip address disable {{ numbers_ip_address }}
-
+mikrotik_config_eoip_add: /interface eoip add name={{ eoip }} remote-address={{ remote_address }} local-address={{ local_address }} tunnel-id={{ tunnel_id }}
+mikrotik_config_eoip_remove: /interface eoip remove {{ eoip }}
+mikrotik_config_eoip_enable: /interface eoip enable {{ eoip }}
+mikrotik_config_eoip_disable: /interface eoip disable {{ eoip }}
+mikrotik_config_eoip_set: /interface eoip set {{ eoip }} name={{ rename_eoip }} remote-address={{ remote_address }} local-address={{ local_address }} tunnel-id={{ tunnel_id }}
+mikrotik_config_ipip_add: /interface ipip add name={{ ipip }}  remote-address={{ remote_address }} local-address={{ local_address }}
+mikrotik_config_ipip_remove: /interface ipip remove {{ ipip }}
+mikrotik_config_ipip_enable: /interface ipip enable {{ ipip }}
+mikrotik_config_ipip_disable: /interface ipip disable {{ ipip }}
+mikrotik_config_ipip_set: /interface ipip set {{ ipip }} name={{ rename_ipip }} remote-address={{ remote_address }} local-address={{ local_address }}
+mikrotik_config_gre_add: /interface gre add name={{ gre }}  remote-address={{ remote_address }} local-address={{ local_address }}
+mikrotik_config_gre_remove: /interface gre remove {{ gre }}
+mikrotik_config_gre_enable: /interface gre enable {{ gre }}
+mikrotik_config_gre_disable: /interface gre disable {{ gre }}
+mikrotik_config_gre_set: /interface gre set {{ gre }} name={{ rename_gre }} remote-address={{ remote_address }} local-address={{ local_address }}
 cisco_config: /system identity set name={{ local_hostname }}
