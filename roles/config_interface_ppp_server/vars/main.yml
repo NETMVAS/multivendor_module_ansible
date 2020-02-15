@@ -1,0 +1,34 @@
+---
+mikrotik_config_add_pppoe_server: /interface pppoe-server server add service-name={{ pppoe_server }} interface={{ interface }} default-profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_remove_pppoe_server: /interface pppoe-server server remove numbers={{ numbers_pppoe_server }}
+mikrotik_config_enable_pppoe_server: /interface pppoe-server server enable numbers={{ numbers_pppoe_server }}
+mikrotik_config_disable_pppoe_server: /interface pppoe-server server disable numbers={{ numbers_pppoe_server }}
+mikrotik_config_set_pppoe_server: /interface pppoe-server server set numbers={{ numbers_pppoe_server }} service-name={{ pppoe_server }} interface={{ interface }} default-profile={{ ppp_profile }} authentication={{ authentication }}
+
+mikrotik_config_set_l2tp_server: /interface l2tp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }} one-session-per-host={{ one_session }}
+mikrotik_config_enable_l2tp_server: /interface l2tp-server server set enable={{ l2tp_server }}
+mikrotik_config_disable_l2tp_server: /interface l2tp-server server set enable={{ l2tp_server }}
+
+mikrotik_config_enable_sstp_server: /interface sstp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_disable_sstp_server: /interface sstp-server server set enable={{ sstp_server }}
+mikrotik_config_set_sstp_server: /interface sstp-server server set enable={{ sstp_server }}
+
+mikrotik_config_enable_pptp_server: /interface pptp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_disable_pptp_server: /interface pptp-server server enable={{ pptp_server }}
+mikrotik_config_set_pptp_server: /interface pptp-server server enable={{ pptp_server }}
+
+mikrotik_config_add_ppp_server: /interface ppp-server server add name={{ ppp_server }} profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_remove_ppp_server: /interface ppp-server remove numbers={{ numbers_ppp_server }}
+mikrotik_config_enable_ppp_server: /interface ppp-server enable numbers={{ numbers_ppp_server }}
+mikrotik_config_disable_ppp_server: /interface ppp-server disable numbers={{ numbers_ppp_server }}
+mikrotik_config_set_ppp_server: /interface ppp-server numbers={{ numbers_ppp_server }} name={{ rename_ppp_server }} profile={{ ppp_profile }} authentication={{ authentication }}
+
+mikrotik_config_add_ppp_profile: /ppp profile add name={{ ppp_profile }} bridge={{ bridge }} local_address={{ local_address }} remote_address={{ remote_address }} dns-server={{ dns_server }}
+mikrotik_config_remove_ppp_profile: /ppp profile remove {{ ppp_profile }}
+mikrotik_config_set_ppp_profile: /ppp profile set {{ ppp_profile }} bridge={{ bridge }} local_address={{ local_address }} remote_address={{ remote_address }} dns-server={{ dns_server }}
+
+mikrotik_config_add_ppp_secret: /ppp secret add name={{ username }} password={{ password }} local_address={{ local_address }} remote_address={{ remote_address }} profile={{ ppp_profile }}
+mikrotik_config_remove_ppp_secret: /ppp secret remove {{ username }}
+mikrotik_config_set_ppp_secret: /ppp secret set {{ username }} name={{ rename_username }} password={{ password }} local_address={{ local_address }} remote_address={{ remote_address }} profile={{ ppp_profile }}
+
+cisco_config: /system identity set name={{ local_hostname }}

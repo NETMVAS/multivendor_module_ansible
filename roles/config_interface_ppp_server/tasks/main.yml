@@ -1,0 +1,204 @@
+---
+  - name: add pppoe server mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_pppoe_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'pppoe_server'
+
+  - name: remove pppoe server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_pppoe_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'pppoe_server'
+
+  - name: enable pppoe server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_pppoe_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'pppoe_server'
+
+  - name: disable pppoe server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_pppoe_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'pppoe_server'
+
+  - name: set pppoe server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_pppoe_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'pppoe_server'
+
+  - name: enable l2tp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_l2tp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'l2tp_server'
+
+  - name: disable l2tp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_l2tp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'l2tp_server'
+
+  - name: set l2tp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_l2tp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'l2tp_server'
+
+  - name: enable sstp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_sstp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'sstp_server'
+
+  - name: disable sstp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_sstp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'sstp_server'
+
+  - name: set sstp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_sstp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'sstp_server'
+
+  - name: enable pptp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_pptp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'pptp_server'
+
+  - name: disable pptp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_pptp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'pptp_server'
+
+  - name: set pptp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_pptp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'pptp_server'
+
+  - name: add ppp server mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_ppp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'ppp_server'
+
+  - name: remove ppp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_ppp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'ppp_server'
+
+  - name: enable ppp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_ppp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'ppp_server'
+
+  - name: disable ppp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_ppp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'ppp_server'
+
+  - name: set ppp server  mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_ppp_server }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'ppp_server'
+
+  - name: add ppp profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_ppp_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'ppp_profile'
+
+  - name: remove ppp profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_ppp_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'ppp_profile'
+
+  - name: set ppp profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_ppp_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'ppp_profile'
+
+  - name: add ppp secret mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_ppp_secret }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'ppp_secret'
+
+  - name: remove ppp secret mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_ppp_secret }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'ppp_secret'
+
+  - name: set ppp secret mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_ppp_secret }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'ppp_secret'
+
+  - name: config pppoe server  cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
