@@ -1,0 +1,51 @@
+---
+  - name: enable wireless interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_interface }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'interface'
+  - name: disable wireless interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_interface }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'interface'
+
+  - name: set wireless interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_interface }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'interface'
+
+  - name: add wireless security profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_security_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'security_profile'
+
+  - name: remove wireless security profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_security_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'security_profile'
+
+  - name: set wireless security profile mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_security_profile }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'security_profile'
+
+  - name: config ipaddres interface cisco
+    raw: "{{ cisco_config }}"
+    when: ansible_network_os == 'ios'
