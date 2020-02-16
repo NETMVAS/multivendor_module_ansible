@@ -6,5 +6,5 @@
 
     - name: show interface
       routeros_facts:
-        gather_facts:
+        gather_subset:
           - interfaces
