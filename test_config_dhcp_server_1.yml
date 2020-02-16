@@ -1,0 +1,29 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_dhcp_server
+        dhcp_server: WI-FI_Client
+        interface: ether5
+        address_pool: default
+        action: add
+
+      - role: config_dhcp_server
+        dhcp_server: WI-FI_Client
+        action: disable
+
+      - role: config_dhcp_server
+        dhcp_server: WI-FI_Client
+        action: enable
+
+      - role: config_dhcp_server
+        dhcp_server: WI-FI_Client
+        rename_dhcp_server: WI-FI_Client_new
+        interface: ether5
+        address_pool: default
+        action: set
+
+      - role: config_dhcp_server
+        dhcp_server: WI-FI_Client_new
+        action: remove
