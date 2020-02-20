@@ -12,10 +12,12 @@
         action: add
 
       - role: config_interface_vpn
+        eoip: TEST_EOIP
         submenu: eoip
         action: disable
 
       - role: config_interface_vpn
+        eoip: TEST_EOIP
         submenu: eoip
         action: enable
 
@@ -29,6 +31,7 @@
         action: set
 
       - role: config_interface_vpn
+        eoip: TEST_EOIP1
         submenu: eoip
         action: remove
 
@@ -44,6 +47,7 @@
         action: disable
 
       - role: config_interface_vpn
+        ipip: TEST_IPIP
         submenu: ipip
         action: enable
 
@@ -56,6 +60,7 @@
         action: set
 
       - role: config_interface_vpn
+        ipip: TEST_IPIP1
         submenu: ipip
         action: remove
 
@@ -67,10 +72,12 @@
         action: add
 
       - role: config_interface_vpn
+        gre: TEST_GRE
         submenu: gre
         action: disable
 
       - role: config_interface_vpn
+        gre: TEST_GRE
         submenu: gre
         action: enable
 
@@ -83,5 +90,6 @@
         action: set
 
       - role: config_interface_vpn
+        gre: TEST_GRE1
         submenu: gre
         action: remove
