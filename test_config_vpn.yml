@@ -1,0 +1,87 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_interface_vpn
+        eoip: TEST_EOIP
+        local_address: 172.16.0.1
+        remote_address: 182.168.0.1
+        tunnel_id: 717
+        submenu: eoip
+        action: add
+
+      - role: config_interface_vpn
+        submenu: eoip
+        action: disable
+
+      - role: config_interface_vpn
+        submenu: eoip
+        action: enable
+
+      - role: config_interface_vpn
+        eoip: TEST_EOIP
+        local_address: 172.16.0.2
+        remote_address: 182.168.0.2
+        tunnel_id: 713
+        rename_eoip: TEST_EOIP1
+        submenu: eoip
+        action: set
+
+      - role: config_interface_vpn
+        submenu: eoip
+        action: remove
+
+      - role: config_interface_vpn
+        ipip: TEST_IPIP
+        local_address: 172.16.0.1
+        remote_address: 182.168.0.1
+        submenu: ipip
+        action: add
+
+      - role: config_interface_vpn
+        submenu: ipip
+        action: disable
+
+      - role: config_interface_vpn
+        submenu: ipip
+        action: enable
+
+      - role: config_interface_vpn
+        ipip: TEST_IPIP
+        local_address: 172.16.0.2
+        remote_address: 182.168.0.2
+        rename_ipip: TEST_IPIP1
+        submenu: ipip
+        action: set
+
+      - role: config_interface_vpn
+        submenu: ipip
+        action: remove
+
+      - role: config_interface_vpn
+        gre: TEST_GRE
+        local_address: 172.16.0.1
+        remote_address: 182.168.0.1
+        submenu: gre
+        action: add
+
+      - role: config_interface_vpn
+        submenu: gre
+        action: disable
+
+      - role: config_interface_vpn
+        submenu: gre
+        action: enable
+
+      - role: config_interface_vpn
+        gre: TEST_GRE
+        local_address: 172.16.0.2
+        remote_address: 182.168.0.2
+        rename_gre: TEST_GRE1
+        submenu: gre
+        action: set
+
+      - role: config_interface_vpn
+        submenu: gre
+        action: remove
