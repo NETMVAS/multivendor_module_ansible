@@ -9,4 +9,9 @@ mikrotik_config_ospf_network_remove: /routing ospf network remove numbers={{ num
 mikrotik_config_ospf_network_enable: /routing ospf network enable numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_disable: /routing ospf network disable numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_set: /routing ospf network set numbers={{ numbers_ospf_network }} area={{ area }} network={{ network }}
+mikrotik_config_ospf_area_add: /routing ospf area add area-id={{ area_id }} name={{ area }} type={{ type }} instance={{ instance }}
+mikrotik_config_ospf_area_remove: /routing ospf area remove {{ area }}
+mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area }}
+mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area }}
+mikrotik_config_ospf_area_set: /routing ospf area set {{ area }} area-id={{ area_id }} name={{ rename_area }} type={{ type }} instance={{ instance }}
 cisco_config: /system identity set name={{ local_hostname }}
