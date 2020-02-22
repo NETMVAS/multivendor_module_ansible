@@ -1,0 +1,98 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_routing_ospf
+        router_id: 10.10.1.2
+        ospf_instance: test_instance
+        redist_connect: no
+        redist_static: no
+        redist_ospf: no
+        submenu: instance
+        action: add
+
+      - role: config_routing_ospf
+        ospf_instance: test_instance
+        submenu: instance
+        action: disable
+
+      - role: config_routing_ospf
+        ospf_instance: test_instance
+        submenu: instance
+        action: enable
+
+      - role: config_routing_ospf
+        router_id: 10.10.1.2
+        ospf_instance: test_instance
+        rename_ospf_instaance: test_instance1
+        redist_connect: no
+        redist_static: no
+        redist_ospf: no
+        submenu: instance
+        action: set
+
+      - role: config_routing_ospf
+        ospf_instance: test_instance1
+        submenu: instance
+        action: remove
+
+      - role: config_routing_ospf
+        area: backbone
+        network: 172.16.0.0/16
+        submenu: network
+        action: add
+
+      - role: config_routing_ospf
+        numbers_ospf_network: 1
+        submenu: network
+        action: disable
+
+      - role: config_routing_ospf
+        numbers_ospf_network: 1
+        submenu: network
+        action: enable
+
+      - role: config_routing_ospf
+        numbers_ospf_network: 1
+        area: backbone
+        network: 172.18.0.0/16
+        submenu: network
+        action: set
+
+      - role: config_routing_ospf
+        numbers_ospf_network: 1
+        submenu: network
+        action: remove
+
+      - role: config_routing_ospf
+        area: test_area
+        area_id: 0.0.0.255
+        type: default
+        instance: default
+        submenu: area
+        action: add
+
+      - role: config_routing_ospf
+        area: test_area
+        submenu: area
+        action: disable
+
+      - role: config_routing_ospf
+        area: test_area
+        submenu: area
+        action: enable
+
+      - role: config_routing_ospf
+        area: test_area
+        area_id: 0.0.0.192
+        rename_area: test_area1
+        type: default
+        instance: default
+        submenu: area
+        action: set
+
+      - role: config_routing_ospf
+        area: test_area1
+        submenu: area
+        action: removr
