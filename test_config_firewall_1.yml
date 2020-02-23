@@ -10,5 +10,6 @@
         src_port: 22
         chain: input
         firewall_action: drop
+        protocol: tcp
         submenu: filter
         action: add
