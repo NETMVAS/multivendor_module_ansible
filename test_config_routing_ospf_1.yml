@@ -5,13 +5,13 @@
   roles:
 
     - role: config_routing_ospf
-    # router_id: 10.10.1.2
-        ospf_instance: test_instance
-        redist_connect: no
-        redist_static: no
-        redist_ospf: no
-        submenu: instance
-        action: add
+      router_id: 10.10.1.2
+      ospf_instance: test_instance
+      redist_connect: no
+      redist_static: no
+      redist_ospf: no
+      submenu: instance
+      action: add
 
      # - role: config_routing_ospf
      #    ospf_instance: test_instance
