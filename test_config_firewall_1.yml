@@ -49,6 +49,7 @@
         chain: srcnat
         firewall_action: accept
         protocol: tcp
+        out_interface: ether5
         submenu: nat
         action: add
 
@@ -71,6 +72,7 @@
         chain: srcnat
         firewall_action: accept
         protocol: tcp
+        out_interface: ether4
         submenu: nat
         action: set
 
