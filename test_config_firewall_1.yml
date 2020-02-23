@@ -13,3 +13,30 @@
         protocol: tcp
         submenu: filter
         action: add
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 11
+        submenu: filter
+        action: disable
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 11
+        submenu: filter
+        action: enable
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 11
+        dst_address: 4.4.4.4
+        dst_port: 22
+        src_address: 3.3.3.3
+        src_port: 22
+        chain: input
+        firewall_action: drop
+        protocol: tcp
+        submenu: filter
+        action: set
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 11
+        submenu: filter
+        action: remove
