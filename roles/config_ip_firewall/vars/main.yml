@@ -3,7 +3,7 @@ mikrotik_config_filter_add: /ip firewall filter add dst-address={{ dst_address }
 mikrotik_config_filter_remove: /ip firewall filter remove numbers={{ ip_firewall_filter }}
 mikrotik_config_filter_enable: /ip firewall filter enable numbers={{ ip_firewall_filter }}
 mikrotik_config_filter_disable: /ip firewall filter disable numbers={{ ip_firewall_filter }}
-mikrotik_config_filter_set: /ip firewall filter set numbers={{ ip_firewall_filter }} dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} action={{ firewall_action }} chain={{ chain }} protocol={{ protocol }}
+mikrotik_config_filter_set: /ip firewall filter set numbers={{ ip_firewall_filter }} dst-address={{ dst_address }} dst-port={{ dst_port }} src-address={{ src_address }} src-port={{ src_port}} action={{ firewall_action }} chain={{ chain }} protocol={{ protocol }}
 mikrotik_config_nat_add: /ip firewall nat add dst-address={{ dst_address }} dst-port={{ dst_port }} src-address={{ src_address }} src-port={{ src_port}} action={{ firewall_action }}
 mikrotik_config_nat_remove: /ip firewall nat remove numbers={{ ip_firewall_nat }}
 mikrotik_config_nat_enable: /ip firewall nat enable numbers={{ ip_firewall_nat }}
