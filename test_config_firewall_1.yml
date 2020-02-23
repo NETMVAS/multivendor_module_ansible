@@ -40,3 +40,41 @@
         ip_firewall_filter: 11
         submenu: filter
         action: remove
+
+      - role: config_ip_firewall
+        dst_address: 2.2.2.2
+        dst_port: 22
+        src_address: 3.3.3.3
+        src_port: 22
+        chain: srcnat
+        firewall_action: accept
+        protocol: tcp
+        submenu: nat
+        action: add
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 2
+        submenu: nat
+        action: disable
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 2
+        submenu: nat
+        action: enable
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 2
+        dst_address: 4.4.4.4
+        dst_port: 22
+        src_address: 3.3.3.3
+        src_port: 22
+        chain: srcnat
+        firewall_action: accept
+        protocol: tcp
+        submenu: nat
+        action: set
+
+      - role: config_ip_firewall
+        ip_firewall_filter: 2
+        submenu: filter
+        action: remove
