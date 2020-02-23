@@ -46,7 +46,7 @@
         dst_port: 22
         src_address: 3.3.3.3
         src_port: 22
-        chain: srcnat
+        chain: src-nat
         firewall_action: accept
         protocol: tcp
         out_interface: ether5
@@ -69,7 +69,7 @@
         dst_port: 22
         src_address: 3.3.3.3
         src_port: 22
-        chain: srcnat
+        chain: src-nat
         firewall_action: accept
         protocol: tcp
         out_interface: ether4
