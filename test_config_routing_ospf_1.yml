@@ -1,10 +1,8 @@
-
 - name: change ospf
   hosts: router_local
   gather_facts: false
   ignore_errors: true
   roles:
-
       - role: config_routing_ospf
         router_id: 10.10.1.2
         ospf_instance: test_instance

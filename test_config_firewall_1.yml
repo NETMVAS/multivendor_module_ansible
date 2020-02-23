@@ -1,0 +1,14 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_ip_firewall
+        dst_address: 2.2.2.2
+        dst_port: 22
+        src_address: 3.3.3.3
+        src_port: 22
+        chain: input
+        firewall_action: drop
+        submenu: filter
+        action: add
