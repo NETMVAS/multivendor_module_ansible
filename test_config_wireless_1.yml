@@ -1,0 +1,43 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_interface_wireless
+        wireless_interface: test_wlan
+        ssid: TEST_SSID
+        mode: ap bridge
+        security_profile: Profile_TEST
+        hide_ssid: no
+        submenu: interface
+        action: set
+
+      - role: config_interface_wireless
+        wireless_interface: test_wlan
+        submenu: interface
+        action: disable
+
+      - role: config_interface_wireless
+        wireless_interface: test_wlan
+        submenu: interface
+        action: enable
+
+      - role: config_interface_wireless
+        security_profile: Profile_TEST
+        password: rer
+        mode: dynamic-keys
+        submenu: security_profile
+        action: add
+
+      - role: config_interface_wireless
+        security_profile: Profile_TEST
+        rename_security_profile: Profile_TEST1
+        password: rer
+        mode: dynamic-keys
+        submenu: security_profile
+        action: set
+
+      - role: config_interface_wireless
+        security_profile: Profile_TEST1
+        submenu: security_profile
+        action: remove         
