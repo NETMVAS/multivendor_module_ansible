@@ -27,7 +27,7 @@
         password: rer
         mode: dynamic-keys
         submenu: security_profile
-        auth-type: wpa2-psk
+        auth-types: wpa2-psk
         action: add
 
       - role: config_interface_wireless
@@ -35,7 +35,7 @@
         rename_security_profile: Profile_TEST1
         password: rer
         mode: dynamic-keys
-        auth-type: wpa2-psk
+        auth-types: wpa2-psk
         submenu: security_profile
         action: set
 
