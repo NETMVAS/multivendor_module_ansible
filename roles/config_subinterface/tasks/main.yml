@@ -27,6 +27,12 @@
       - ansible_network_os == 'routeros'
       - action == 'disable'
 
+  - name: set interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
 
   - name: config ipaddres interface cisco
     raw: "{{ cisco_config }}"
