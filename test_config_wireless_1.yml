@@ -6,7 +6,7 @@
       - role: config_interface_wireless
         wireless_interface: test_wlan
         ssid: TEST_SSID
-        mode: ap bridge
+        mode: ap-bridge
         security_profile: Profile_TEST
         hide_ssid: no
         submenu: interface
@@ -24,22 +24,20 @@
 
       - role: config_interface_wireless
         security_profile: Profile_TEST
-        password: rer4erertgv
+        password: rer
         mode: dynamic-keys
-        submenu: security_profile
-        auth_types: wpa2-psk
+        submenu: profile
         action: add
 
       - role: config_interface_wireless
         security_profile: Profile_TEST
         rename_security_profile: Profile_TEST1
-        password: rer23edfdfs
+        password: rer
         mode: dynamic-keys
-        auth_types: wpa2-psk
-        submenu: security_profile
+        submenu: profile
         action: set
 
       - role: config_interface_wireless
         security_profile: Profile_TEST1
-        submenu: security_profile
-        action: remove         
+        submenu: profile
+        action: remove

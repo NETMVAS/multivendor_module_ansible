@@ -28,7 +28,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'add'
-      - submenu == 'security_profile'
+      - submenu == 'profile'
 
   - name: remove wireless security profile mikrotik
     routeros_command:
@@ -36,7 +36,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'remove'
-      - submenu == 'security_profile'
+      - submenu == 'profile'
 
   - name: set wireless security profile mikrotik
     routeros_command:
@@ -44,7 +44,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
-      - submenu == 'security_profile'
+      - submenu == 'profile'
 
   - name: config ipaddres interface cisco
     raw: "{{ cisco_config }}"
