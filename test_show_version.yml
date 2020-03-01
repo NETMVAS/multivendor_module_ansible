@@ -7,4 +7,4 @@
     - name: show interface
       routeros_facts:
         gather_subset:
-          - config
+          - hardware
