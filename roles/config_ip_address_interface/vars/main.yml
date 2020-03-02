@@ -8,11 +8,11 @@ cisco_config_add:
   - name: "{{ interface }}"
     ipv4:
     - address: "{{ address }}"
-      secondary: "{{ secondary | default("no", true) }}"
+      secondary: "{{ secondary|default("no", true) }}"
 cisco_config_remove:
   - name: "{{ interface }}"
 cisco_config_set:
   - name: "{{ interface }}"
     ipv4:
     - address: "{{ address }}"
-      secondary: "{{ secondary | default("no", true) }}"
+      secondary: "{{ secondary|default("no", true) }}"
