@@ -4,5 +4,5 @@
   ignore_errors: true
   roles:
       - role: config_hostname
-        hostname: test
+        hostname: test_cisco
         action: set
