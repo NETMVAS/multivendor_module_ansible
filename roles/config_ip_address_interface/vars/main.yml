@@ -1,7 +1,18 @@
 ---
-mikrotik_config_add: /ip address add interface={{ interface }} address={{ address }} netmask={{ netmask }}
+mikrotik_config_add: /ip address add interface={{ interface }} address={{ address }}
 mikrotik_config_remove: /ip address remove {{ numbers_ip_address }}
 mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
 mikrotik_config_disable: /ip address disable {{ numbers_ip_address }}
-mikrotik_config_set: /ip address set numbers={{ numbers_ip_address }} interface={{ interface }} address={{ address }} netmask={{ netmask }}
-cisco_config: /system identity set name={{ local_hostname }}
+mikrotik_config_set: /ip address set numbers={{ numbers_ip_address }} interface={{ interface }} address={{ address }}
+cisco_config_add:
+  - name: {{ interface }}
+    ipv4:
+    - address: {{ address }}
+      secondary: {{ secondary | default(no) }}
+cisco_config_remove:
+  - name: {{ interface }}
+cisco_config_set:
+  - name: {{ interface }}
+    ipv4:
+    - address: {{ address }}
+      secondary: {{ secondary | default(no) }}

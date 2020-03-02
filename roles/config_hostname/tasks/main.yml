@@ -5,6 +5,11 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
+      
   - name: change hostname cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+    ios_config:
+      lines:
+        - "{{ cisco_config }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'set'
