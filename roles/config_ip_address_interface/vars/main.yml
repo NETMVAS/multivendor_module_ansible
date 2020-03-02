@@ -5,14 +5,14 @@ mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
 mikrotik_config_disable: /ip address disable {{ numbers_ip_address }}
 mikrotik_config_set: /ip address set numbers={{ numbers_ip_address }} interface={{ interface }} address={{ address }}
 cisco_config_add:
-  - name: {{ interface }}
+  - name: "{{ interface }}"
     ipv4:
-    - address: {{ address }}
-      secondary: {{ secondary | default(no) }}
+    - address: "{{ address }}"
+      secondary: "{{ secondary | default(no) }}"
 cisco_config_remove:
-  - name: {{ interface }}
+  - name: "{{ interface }}"
 cisco_config_set:
-  - name: {{ interface }}
+  - name: "{{ interface }}"
     ipv4:
-    - address: {{ address }}
-      secondary: {{ secondary | default(no) }}
+    - address: "{{ address }}"
+      secondary: "{{ secondary | default(no) }}"
