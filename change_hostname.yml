@@ -1,10 +1,8 @@
 - name: "he"
-  hosts: router_local
+  hosts: router_cisco
   gather_facts: false
   ignore_errors: true
-  tasks:
-
-
-    - name: Sh ve
-      routeros_command: 
-         commands: /ip address print
+  roles:
+      - role: config_hostname
+        hostname: test
+        action: set
