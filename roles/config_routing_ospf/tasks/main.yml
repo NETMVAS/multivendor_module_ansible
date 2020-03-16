@@ -119,6 +119,10 @@
     - submenu == 'area'
     - action == 'set'
 
-  - name: config ipaddres interface cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+
+  - name: add ospf network cisco
+    ios_config: "{{ cisco_config_ospf_network_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'network'
+      - action == 'add'

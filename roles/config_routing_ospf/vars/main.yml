@@ -14,4 +14,10 @@ mikrotik_config_ospf_area_remove: /routing ospf area remove {{ area }}
 mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area }}
 mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area }}
 mikrotik_config_ospf_area_set: /routing ospf area set {{ area }} area-id={{ area_id }} name={{ rename_area }} type={{ type }} instance={{ instance }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+
+
+cisco_config_ospf_network_add:
+  - lines:
+    - network {{ network }} {{ mask }} area {{ area }}
+    parents: router ospf {{ ospf_number }}
