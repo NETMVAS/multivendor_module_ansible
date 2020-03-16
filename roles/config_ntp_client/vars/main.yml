@@ -1,0 +1,4 @@
+---
+mikrotik_config: /system ntp client set enabled=yes primary-ntp={{ ntp_servers }}
+
+cisco_config: ntp server {{ ntp_servers }}
