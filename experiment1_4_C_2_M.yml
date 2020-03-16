@@ -1,0 +1,8 @@
+- name: "first experiment 4 virtual cisco c3750  and 2 mikrotik RB750GR3"
+  hosts:
+  gather_facts: false
+  ignore_errors: true
+  roles:
+    - role: config_hostname
+      hostname: {{ hostname }}
+      action: set
