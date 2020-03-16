@@ -5,7 +5,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
-      
+
   - name: change hostname cisco
     ios_config:
       lines:

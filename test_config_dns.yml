@@ -4,5 +4,5 @@
   ignore_errors: true
   roles:
       - role: config_dns
-        servers: '8.8.8.8,1.1.1.1'
+        servers: '8.8.8.8'
         action: set

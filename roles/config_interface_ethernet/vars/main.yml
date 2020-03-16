@@ -1,6 +1,17 @@
 ---
 mikrotik_config_enable: /interface ethernet enable {{ interface }}
 mikrotik_config_disable: /interface ethernet disable {{ interface }}
-mikrotik_config_auto_negotiation: /interface ethernet set {{ interface }} auto_negotiation={{ auto_negotiation }}
-mikrotik_config_speed: /interface ethernet set {{ interface }} speed={{ speed }}
-cisco_config: /system identity set name={{ local_hostname }}
+mikrotik_config_set: /interface ethernet set {{ interface }} auto-negotiation={{ duplex('auto')|regex_replace('yes')|default('yes', true) }} auto-negotiation={{ duplex('half')|regex_replace('yes')|default('yes', true) }}
+
+cisco_config_enable:
+  - name: "{{ interface }}"
+    enabled: True
+
+cisco_config_disable:
+  - name: "{{ interface }}"
+    enabled: False
+
+cisco_config_set:
+  - name: "{{ interface }}"
+    duplex: {{ duplex|default('auto', true) }}
+    speed: {{ speed|default('auto', true) }}
