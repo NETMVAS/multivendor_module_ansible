@@ -23,21 +23,21 @@
 
   - name: config ipaddres interface cisco
     ios_interfaces:
-      config: {{ cisco_config_enable }}
+      config: "{{ cisco_config_enable }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'enable'
 
   - name: config ipaddres interface cisco
     ios_interfaces:
-      config: {{ cisco_config_disable }}
+      config: "{{ cisco_config_disable }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'disable'
 
   - name: config ipaddres interface cisco
     ios_interfaces:
-      config: {{ cisco_config_set }}
+      config: "{{ cisco_config_set }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'set'
