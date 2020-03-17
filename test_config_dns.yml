@@ -1,8 +1,8 @@
-- name: "change_hostname"
-  hosts: router_local
+- name: "set dns"
+  hosts: router_cisco
   gather_facts: false
   ignore_errors: true
   roles:
       - role: config_dns
-        servers: '8.8.8.8'
+        dns_servers: '8.8.8.8'
         action: set
