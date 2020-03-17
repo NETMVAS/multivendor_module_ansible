@@ -8,3 +8,7 @@
     - role: config_hostname
       hostname: "{{ hostname_test }}"
       action: set
+
+    - role: config_interface_ethernet
+      interface: {{ interface_test }}
+      action: enable
