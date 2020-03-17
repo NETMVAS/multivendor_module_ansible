@@ -6,5 +6,5 @@
   ignore_errors: true
   roles:
     - role: config_hostname
-      hostname: "{{ hostname_1 }}"
+      hostname: "{{ hostname_test }}"
       action: set
