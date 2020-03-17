@@ -13,5 +13,5 @@ cisco_config_disable:
 
 cisco_config_set:
   - name: "{{ interface }}"
-    duplex: {{ duplex|default('auto', true) }}
-    speed: {{ speed|default('auto', true) }}
+    duplex: "{{ duplex|default('auto', true) }}"
+    speed: "{{ speed|default('auto', true) }}"
