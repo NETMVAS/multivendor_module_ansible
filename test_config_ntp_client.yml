@@ -1,0 +1,10 @@
+- name: "set ntp client"
+  hosts:
+    - router_cisco
+    - router_mikrotik
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_ntp_client
+        ntp_servers: 'ntp2.stratum2.ru'
+        action: set
