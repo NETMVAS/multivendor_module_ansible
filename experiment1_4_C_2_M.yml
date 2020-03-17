@@ -10,5 +10,9 @@
       action: set
 
     - role: config_interface_ethernet
-      interface: {{ interface_test }}
+      interface: "{{ interface_test }}"
       action: enable
+
+    - role: config_ntp_client
+      ntp_servers: "{{ ntp_servers_test }}"
+      action: set
