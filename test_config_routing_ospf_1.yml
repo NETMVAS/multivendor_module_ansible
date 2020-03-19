@@ -1,4 +1,4 @@
-- name: change ospf
+- name: "change ospf"
   hosts: router_local
   gather_facts: false
   ignore_errors: true
