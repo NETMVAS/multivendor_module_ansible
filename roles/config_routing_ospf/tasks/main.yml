@@ -17,7 +17,7 @@
 
   - name: enable ospf instance mikrotik
     routeros_command:
-      commands: "{{ mikrotik_ospf_instance_enable }}"
+      commands: "{{ mikrotik_config_ospf_instance_enable }}"
     when:
       - ansible_network_os == 'routeros'
       - submenu == 'instance'
@@ -25,7 +25,7 @@
 
   - name: disable ospf instance mikrotik
     routeros_command:
-      commands: "{{ mikrotik_ospf_instance_disable }}"
+      commands: "{{ mikrotik_config_ospf_instance_disable }}"
     when:
       - ansible_network_os == 'routeros'
       - submenu == 'instance'
@@ -33,7 +33,7 @@
 
   - name: set ospf instance mikrotik
     routeros_command:
-      commands: "{{ mikrotik_ospf_instance_set }}"
+      commands: "{{ mikrotik_config_ospf_instance_set }}"
     when:
       - ansible_network_os == 'routeros'
       - submenu == 'instance'
