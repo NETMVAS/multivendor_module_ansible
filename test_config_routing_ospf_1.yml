@@ -25,7 +25,7 @@
       - role: config_routing_ospf
         router_id: 10.10.1.2
         ospf_instance: test_instance
-        rename_ospf_instaance: test_instance1
+        rename_ospf_instance: test_instance1
         redist_connect: 'no'
         redist_static: 'no'
         redist_ospf: 'no'
