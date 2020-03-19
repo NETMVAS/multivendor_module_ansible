@@ -1,5 +1,5 @@
 ---
-  - name: add 
+  - name: add instance mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_ospf_instance_add }}"
     when:
