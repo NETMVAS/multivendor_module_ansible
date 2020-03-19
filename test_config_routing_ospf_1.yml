@@ -12,7 +12,7 @@
         submenu: instance
         action: add
 
-     - role: config_routing_ospf
+      - role: config_routing_ospf
         ospf_instance: test_instance
         submenu: instance
         action: disable
