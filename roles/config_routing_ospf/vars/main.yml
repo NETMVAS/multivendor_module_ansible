@@ -21,3 +21,8 @@ cisco_config_ospf_network_add:
   - lines:
     - network {{ network }} {{ mask }} area {{ area }}
     parents: router ospf {{ ospf_number }}
+
+cisco_config_ospf_network_remove:
+  - lines:
+    - no network {{ network }} {{ mask }} area {{ area }}
+    parents: router ospf {{ ospf_number }}

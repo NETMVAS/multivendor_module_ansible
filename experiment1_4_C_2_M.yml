@@ -1,18 +1,31 @@
 - name: "first experiment 4 virtual cisco c3750  and 2 mikrotik RB750GR3"
   hosts:
-    - router_mikrotik
+    # - router_mikrotik
     - router_cisco
   gather_facts: false
   ignore_errors: true
   roles:
-    - role: config_hostname
-      hostname: "{{ hostname_test }}"
-      action: set
+    # - role: config_hostname
+    #   hostname: "{{ hostname_test }}"
+    #   action: set
+    #
+    # - role: config_interface_ethernet
+    #   interface: "{{ interface_test }}"
+    #   action: enable
+    #
+    # - role: config_ntp_client
+    #   ntp_servers: "{{ ntp_servers_test }}"
+    #   action: set
+    - role: config_routing_ospf
+      ospf_number: "{{ ospf_number_test }}"
+      network: "{{ network_test }}"
+      mask: "{{ mask_test }}"
+      area: "{{ area_test }}"
+      action: add
 
-    - role: config_interface_ethernet
-      interface: "{{ interface_test }}"
-      action: enable
-
-    - role: config_ntp_client
-      ntp_servers: "{{ ntp_servers_test }}"
-      action: set
+    - role: config_routing_ospf
+      ospf_number: "{{ ospf_number_test }}"
+      network: "{{ network_test }}"
+      mask: "{{ mask_test }}"
+      area: "{{ area_test }}"
+      action: remove
