@@ -13,13 +13,14 @@
       interface: "{{ interface_test }}"
       action: enable
 
-    - role: config_ntp_client
-      ntp_servers: "{{ ntp_servers_test }}"
-      action: set
+    # - role: config_ntp_client
+    #   ntp_servers: "{{ ntp_servers_test }}"
+    #   action: set
 
     - role: config_ip_address_interface
       address: "{{ address_test }}"
       interface: "{{ interface_test }}"
+      action: add
     # - role: config_routing_ospf
     #   ospf_number: "{{ ospf_number_test }}"
     #   network: "{{ network_test }}"
