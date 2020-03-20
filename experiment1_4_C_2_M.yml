@@ -21,6 +21,7 @@
       network: "{{ network_test }}"
       mask: "{{ mask_test }}"
       area: "{{ area_test }}"
+      submenu: network
       action: add
 
     - role: config_routing_ospf
@@ -28,4 +29,5 @@
       network: "{{ network_test }}"
       mask: "{{ mask_test }}"
       area: "{{ area_test }}"
+      submenu: network
       action: remove
