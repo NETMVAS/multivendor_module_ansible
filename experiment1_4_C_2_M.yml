@@ -5,22 +5,28 @@
   gather_facts: false
   ignore_errors: true
   roles:
-    # - role: config_hostname
-    #   hostname: "{{ hostname_test }}"
-    #   action: set
-    #
-    # - role: config_interface_ethernet
-    #   interface: "{{ interface_test }}"
-    #   action: enable
 
-    # - role: config_ntp_client
-    #   ntp_servers: "{{ ntp_servers_test }}"
-    #   action: set
+    - role: config_hostname
+      hostname: "{{ hostname_test }}"
+      action: set
 
-    - role: config_ip_address_interface
-      address: "{{ address_test }}"
+    - role: config_interface_ethernet
       interface: "{{ interface_test }}"
-      action: add
+      action: enable
+
+    - role: config_ntp_client
+      ntp_servers: "{{ ntp_servers_test }}"
+      action: set
+
+    - role: config_dns
+      dns_servers: "{{ dns_servers_test }}"
+      action: set
+
+    # - role: config_ip_address_interface
+    #   address: "{{ address_test }}"
+    #   interface: "{{ interface_test }}"
+    #   action: add
+
     # - role: config_routing_ospf
     #   ospf_number: "{{ ospf_number_test }}"
     #   network: "{{ network_test }}"
