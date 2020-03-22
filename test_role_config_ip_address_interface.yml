@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: router_cisco
+  hosts: 10.100.0.3
   gather_facts: false
   ignore_errors: true
   roles:
@@ -7,10 +7,10 @@
         interface: FastEthernet2/0
         address: 1.1.1.1/30
         action: add
-      - role: config_ip_address_interface
-        interface: FastEthernet2/0
-        address: 1.1.1.2/30
-        action: set
-      - role: config_ip_address_interface
-        interface: FastEthernet2/0
-        action: remove
+      # - role: config_ip_address_interface
+      #   interface: FastEthernet2/0
+      #   address: 1.1.1.2/30
+      #   action: set
+      # - role: config_ip_address_interface
+      #   interface: FastEthernet2/0
+      #   action: remove
