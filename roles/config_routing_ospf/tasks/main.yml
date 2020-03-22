@@ -121,14 +121,16 @@
 
 
   - name: add ospf network cisco
-    ios_config: "{{ cisco_config_ospf_network_add }}"
+    ios_config:
+      lines: "{{ cisco_config_ospf_network_add }}"
     when:
       - ansible_network_os == 'ios'
       - submenu == 'network'
       - action == 'add'
 
   - name: remove ospf network cisco
-    ios_config: "{{ cisco_config_ospf_network_remove }}"
+    ios_config: 
+      lines: "{{ cisco_config_ospf_network_remove }}"
     when:
       - ansible_network_os == 'ios'
       - submenu == 'network'
