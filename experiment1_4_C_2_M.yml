@@ -1,6 +1,6 @@
 - name: "first experiment 4 virtual cisco c3750  and 2 mikrotik RB750GR3"
   hosts:
-    # - router_mikrotik
+    - router_mikrotik
     - router_cisco
   gather_facts: false
   ignore_errors: true
