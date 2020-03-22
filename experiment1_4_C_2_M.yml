@@ -27,18 +27,10 @@
       interface: "{{ interface_test }}"
       action: add
 
-    # - role: config_routing_ospf
-    #   ospf_number: "{{ ospf_number_test }}"
-    #   network: "{{ network_test }}"
-    #   mask: "{{ mask_test }}"
-    #   area: "{{ area_test }}"
-    #   submenu: network
-    #   action: add
-    #
-    # - role: config_routing_ospf
-    #   ospf_number: "{{ ospf_number_test }}"
-    #   network: "{{ network_test }}"
-    #   mask: "{{ mask_test }}"
-    #   area: "{{ area_test }}"
-    #   submenu: network
-    #   action: remove
+    - role: config_routing_ospf
+      ospf_number: "{{ ospf_number_test }}"
+      network_ospf: "{{ network_test }}"
+      mask_ospf: "{{ mask_test }}"
+      area_ospf: "{{ area_test }}"
+      submenu: network
+      action: add
