@@ -6,6 +6,7 @@
       - role: config_ip_address_interface
         interface: FastEthernet2/0
         address: 172.16.20.1/24
+        secondary: 'True'
         action: add
       # - role: config_ip_address_interface
       #   interface: FastEthernet2/0
