@@ -4,16 +4,16 @@ mikrotik_config_ospf_instance_remove: /routing ospf instance remove {{ ospf_inst
 mikrotik_config_ospf_instance_enable: /routing ospf instance enable {{ ospf_instance }}
 mikrotik_config_ospf_instance_disable: /routing ospf instance disable {{ ospf_instance }}
 mikrotik_config_ospf_instance_set: /routing ospf instance set {{ ospf_instance }} router-id={{ router_id }} name={{ rename_ospf_instance }} redistribute-connected={{ redist_connect }}  redistribute-static={{ redist_static }} redistribute-other-ospf={{ redist_ospf }}
-mikrotik_config_ospf_network_add: /routing ospf network add area={{ area }} network={{ network }}
+mikrotik_config_ospf_network_add: /routing ospf network add area={{ area_ospf }} network={{ network }}
 mikrotik_config_ospf_network_remove: /routing ospf network remove numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_enable: /routing ospf network enable numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_disable: /routing ospf network disable numbers={{ numbers_ospf_network }}
-mikrotik_config_ospf_network_set: /routing ospf network set numbers={{ numbers_ospf_network }} area={{ area }} network={{ network }}
-mikrotik_config_ospf_area_add: /routing ospf area add area-id={{ area_id }} name={{ area }} type={{ type }} instance={{ instance }}
-mikrotik_config_ospf_area_remove: /routing ospf area remove {{ area }}
-mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area }}
-mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area }}
-mikrotik_config_ospf_area_set: /routing ospf area set {{ area }} area-id={{ area_id }} name={{ rename_area }} type={{ type }} instance={{ instance }}
+mikrotik_config_ospf_network_set: /routing ospf network set numbers={{ numbers_ospf_network }} area={{ area_ospf }} network={{ network }}
+mikrotik_config_ospf_area_add: /routing ospf area add area-id={{ area_id }} name={{ area_ospf }} type={{ type }} instance={{ instance }}
+mikrotik_config_ospf_area_remove: /routing ospf area remove {{ area_ospf }}
+mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area_ospf }}
+mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area_ospf }}
+mikrotik_config_ospf_area_set: /routing ospf area set {{ area_ospf }} area-id={{ area_id }} name={{ rename_area }} type={{ type }} instance={{ instance }}
 
 
 
