@@ -5,7 +5,7 @@
   roles:
       - role: config_ip_address_interface
         interface: FastEthernet2/0
-        address: 1.1.1.1/30
+        address: dhcp
         action: add
       # - role: config_ip_address_interface
       #   interface: FastEthernet2/0
