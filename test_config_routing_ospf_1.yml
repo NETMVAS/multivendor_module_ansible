@@ -2,14 +2,22 @@
   hosts: 10.100.0.3
   gather_facts: false
   ignore_errors: true
+
+tasks:
+  - name: test ospf config
+    ios_config:
+      - lines:
+        - network 10.55.24.0 0.0.0.255 area 0
+        parents: router ospf 1
+        
   roles:
-      - role: config_routing_ospf
-        ospf_number: 1
-        network: 10.55.1.0
-        mask: 0.0.0.255
-        area: 0
-        submenu: network
-        action: add
+      # - role: config_routing_ospf
+      #   ospf_number: 1
+      #   network: 10.55.1.0
+      #   mask: 0.0.0.255
+      #   area: 0
+      #   submenu: network
+      #   action: add
 
       # - role: config_routing_ospf
       #   router_id: 10.10.1.2
