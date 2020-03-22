@@ -37,7 +37,7 @@
   - name: add ip_address interface cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_add }}"
-    state: merged
+     state: merged
     when:
       - ansible_network_os == 'ios'
       - action == 'add'
@@ -45,7 +45,7 @@
   - name: remove ip_address interface cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_remove }}"
-    state: deleted
+     state: deleted
     when:
       - ansible_network_os == 'ios'
       - action == 'remove'
@@ -53,7 +53,7 @@
   - name: add ip_address interface cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_set }}"
-    state: replaced
+     state: replaced
     when:
       - ansible_network_os == 'ios'
       - action == 'set'
