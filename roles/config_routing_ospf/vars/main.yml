@@ -18,11 +18,11 @@ mikrotik_config_ospf_area_set: /routing ospf area set {{ area }} area-id={{ area
 
 
 cisco_config_ospf_network_add:
-  - lines:
-    - network {{ network }} {{ mask }} area {{ area }}
+    lines:
+    - network {{ network_ospf }} {{ mask_ospf }} area {{ area_ospf }}
     parents: router ospf {{ ospf_number }}
 
 cisco_config_ospf_network_remove:
-  - lines:
+    lines:
     - no network {{ network }} {{ mask }} area {{ area }}
     parents: router ospf {{ ospf_number }}

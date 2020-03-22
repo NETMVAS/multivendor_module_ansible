@@ -14,9 +14,9 @@
   roles:
       - role: config_routing_ospf
         ospf_number: 1
-        network: 10.55.1.0
-        mask: 0.0.0.255
-        area: '0'
+        network_ospf: 10.55.1.0
+        mask_ospf: 0.0.0.255
+        area_ospf: '0'
         submenu: network
         action: add
 
