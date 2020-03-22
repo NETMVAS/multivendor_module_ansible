@@ -1,5 +1,5 @@
 - name: "change ospf"
-  hosts: router_local
+  hosts: 10.100.0.3
   gather_facts: false
   ignore_errors: true
   roles:
