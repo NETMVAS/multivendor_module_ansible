@@ -4,7 +4,7 @@
   ignore_errors: true
   roles:
       - role: config_routing_ospf
-        ospf_number: 0
+        ospf_number: 1
         network: 10.55.1.0
         mask: 0.0.0.255
         area: 0
