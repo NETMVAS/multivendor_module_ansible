@@ -5,8 +5,8 @@ conf t
   interface FastEthernet2/0
     no shutdown
     ip address 172.16.1.1 255.255.255.0
-  ntp server ntp2.stratum2.ru
   ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
   router ospf 1
     network 172.16.1.0 0.0.0.255 area 0
 
@@ -18,8 +18,8 @@ conf t
   interface FastEthernet2/0
     no shutdown
     ip address 172.16.2.1 255.255.255.0
-  ntp server ntp2.stratum2.ru
   ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
   router ospf 1
     network 172.16.2.0 0.0.0.255 area 0
 
@@ -31,20 +31,20 @@ conf t
   interface FastEthernet2/0
     no shutdown
     ip address 172.16.3.1 255.255.255.0
-  ntp server ntp2.stratum2.ru
   ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
   router ospf 1
     network 172.16.3.0 0.0.0.255 area 0
 ________________________________________________________
- 
+
 enable
 conf t
   hostname core.nsk
   interface FastEthernet2/0
     no shutdown
     ip address 172.16.4.1 255.255.255.0
-  ntp server ntp2.stratum2.ru
   ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
   router ospf 1
     network 172.16.4.0 0.0.0.255 area 0
 ______________________________________________
@@ -53,7 +53,7 @@ ________________________________________________________
 
 /system identity set name=core.tko
 /interface ethernet set ether4 disabled=no
-/system ntp client primary-ntp=ntp2.stratum2.ru
+/system ntp client set primary-ntp=ntp2.stratum2.ru
 /ip dns set servers=8.8.8.8
 /ip address add address=172.16.22.1/24 interface=ether4
 /routing ospf network add network=172.16.22.0/24 area=backbone
@@ -63,7 +63,7 @@ ________________________________________________________
 
 /system identity set name=core.hkg
 /interface ethernet set ether4 disabled=no
-/system ntp client primary-ntp=ntp2.stratum2.ru
+/system ntp client set primary-ntp=ntp2.stratum2.ru
 /ip dns set servers=8.8.8.8
 /ip address add address=172.16.23.1/24 interface=ether4
 /routing ospf network add network=172.16.23.0/24 area=backbone
