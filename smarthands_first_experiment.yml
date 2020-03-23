@@ -48,7 +48,27 @@ conf t
   router ospf 1
     network 172.16.4.0 0.0.0.255 area 0
 ______________________________________________
-
+enable
+conf t
+  hostname core.nkz
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.5.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.5.0 0.0.0.255 area 0
+______________________________________________
+enable
+conf t
+  hostname core.kyk
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.6.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.6.0 0.0.0.255 area 0
 ________________________________________________________
 
 /system identity set name=core.tko
