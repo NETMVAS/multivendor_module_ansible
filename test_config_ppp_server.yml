@@ -8,7 +8,7 @@
         pppoe_server: PPPOE_SERVER1
         interface: ether4
         ppp_profile: default
-        authentication: mcshap1
+        authentication: mschap1
         action: add
         submenu: pppoe_server
 
@@ -28,7 +28,7 @@
         rename_pppoe_server: PPP_SET
         interface: ether4
         ppp_profile: default
-        authentication: mcshap1
+        authentication: mschap1
         action: set
         submenu: pppoe_server
 
@@ -39,7 +39,7 @@
 
       - role: config_interface_ppp_server
         ppp_profile: default
-        authentication: mcshap1
+        authentication: mschap1
         one_session: no
         action: set
         submenu: l2tp_server
@@ -54,7 +54,7 @@
 
       - role: config_interface_ppp_server
         ppp_profile: default
-        authentication: mcshap1
+        authentication: mschap1
         one_session: no
         action: set
         submenu: sstp_server
