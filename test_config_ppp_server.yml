@@ -1,29 +1,68 @@
-- name: "change_hostname"
-  hosts: router_local
+- name: "check roles ppp_server"
+  hosts: 10.100.2.2
   gather_facts: false
   ignore_errors: true
   roles:
-      - role: config_dhcp_server
-        dhcp_server: WI-FI_Client
-        interface: ether5
-        address_pool: default
+
+      - role: config_interface_ppp_server
+        pppoe_server: PPPOE_SERVER1
+        interface: ether4
+        ppp_profile: default
+        authentication: mcshap1
         action: add
+        submenu: pppoe_server
 
-      - role: config_dhcp_server
-        dhcp_server: WI-FI_Client
+      - role: config_interface_ppp_server
+        numbers_pppoe_server: 0
         action: disable
+        submenu: pppoe_server
 
-      - role: config_dhcp_server
-        dhcp_server: WI-FI_Client
+      - role: config_interface_ppp_server
+        numbers_pppoe_server: 0
         action: enable
+        submenu: pppoe_server
 
-      - role: config_dhcp_server
-        dhcp_server: WI-FI_Client
-        rename_dhcp_server: WI-FI_Client_new
-        interface: ether5
-        address_pool: default
+      - role: config_interface_ppp_server
+        numbers_pppoe_server: 0
+        pppoe_server: PPPOE_SERVER1
+        rename_pppoe_server: PPP_SET
+        interface: ether4
+        ppp_profile: default
+        authentication: mcshap1
         action: set
+        submenu: pppoe_server
 
-      - role: config_dhcp_server
-        dhcp_server: WI-FI_Client_new
+      - role: config_interface_ppp_server
+        numbers_pppoe_server: 0
         action: remove
+        submenu: pppoe_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: default
+        authentication: mcshap1
+        one_session: no
+        action: set
+        submenu: l2tp_server
+
+      - role: config_interface_ppp_server
+        action: enable
+        submenu: l2tp_server
+
+      - role: config_interface_ppp_server
+        action: disable
+        submenu: l2tp_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: default
+        authentication: mcshap1
+        one_session: no
+        action: set
+        submenu: sstp_server
+
+      - role: config_interface_ppp_server
+        action: enable
+        submenu: sstp_server
+
+      - role: config_interface_ppp_server
+        action: disable
+        submenu: sstp_server
