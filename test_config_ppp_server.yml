@@ -4,111 +4,111 @@
   ignore_errors: true
   roles:
 
-      - role: config_interface_ppp_server
-        pppoe_server: PPPOE_SERVER1
-        interface: ether4
-        ppp_profile: default
-        authentication: mschap1
-        action: add
-        submenu: pppoe_server
-
-      - role: config_interface_ppp_server
-        numbers_pppoe_server: 0
-        action: disable
-        submenu: pppoe_server
-
-      - role: config_interface_ppp_server
-        numbers_pppoe_server: 0
-        action: enable
-        submenu: pppoe_server
-
-      - role: config_interface_ppp_server
-        numbers_pppoe_server: 0
-        pppoe_server: PPPOE_SERVER1
-        rename_pppoe_server: PPP_SET
-        interface: ether4
-        ppp_profile: default
-        authentication: mschap1
-        action: set
-        submenu: pppoe_server
-
-      - role: config_interface_ppp_server
-        numbers_pppoe_server: 0
-        action: remove
-        submenu: pppoe_server
-
-      - role: config_interface_ppp_server
-        ppp_profile: default
-        authentication: mschap1
-        one_session: "no"
-        action: set
-        submenu: l2tp_server
-
-      - role: config_interface_ppp_server
-        action: enable
-        submenu: l2tp_server
-
-      - role: config_interface_ppp_server
-        action: disable
-        submenu: l2tp_server
-
-      - role: config_interface_ppp_server
-        ppp_profile: default
-        authentication: mschap1
-        action: set
-        submenu: sstp_server
-
-      - role: config_interface_ppp_server
-        action: enable
-        submenu: sstp_server
-
-      - role: config_interface_ppp_server
-        action: disable
-        submenu: sstp_server
-
-      - role: config_interface_ppp_server
-        ppp_profile: default
-        authentication: mschap1
-        action: set
-        submenu: pptp_server
-
-      - role: config_interface_ppp_server
-        action: enable
-        submenu: pptp_server
-
-      - role: config_interface_ppp_server
-        action: disable
-        submenu: pptp_server
-
-      - role: config_interface_ppp_server
-        ppp_server: PPP_SERVER
-        ppp_profile: default
-        authentication: mschap1
-        action: add
-        submenu: ppp_server
-
-      - role: config_interface_ppp_server
-        numbers_ppp_server: 0
-        action: disable
-        submenu: ppp_server
-
-      - role: config_interface_ppp_server
-        numbers_ppp_server: 0
-        action: enable
-        submenu: ppp_server
-
-      - role: config_interface_ppp_server
-        ppp_server: PPP_SERVER
-        rename_ppp_server: PPP_SERVER1
-        ppp_profile: default
-        authentication: mschap1
-        action: set
-        submenu: ppp_server
-
-      - role: config_interface_ppp_server
-        numbers_ppp_server: 0
-        action: remove
-        submenu: ppp_server
+      # - role: config_interface_ppp_server
+      #   pppoe_server: PPPOE_SERVER1
+      #   interface: ether4
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: add
+      #   submenu: pppoe_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_pppoe_server: 0
+      #   action: disable
+      #   submenu: pppoe_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_pppoe_server: 0
+      #   action: enable
+      #   submenu: pppoe_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_pppoe_server: 0
+      #   pppoe_server: PPPOE_SERVER1
+      #   rename_pppoe_server: PPP_SET
+      #   interface: ether4
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: set
+      #   submenu: pppoe_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_pppoe_server: 0
+      #   action: remove
+      #   submenu: pppoe_server
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   one_session: "no"
+      #   action: set
+      #   submenu: l2tp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: enable
+      #   submenu: l2tp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: disable
+      #   submenu: l2tp_server
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: set
+      #   submenu: sstp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: enable
+      #   submenu: sstp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: disable
+      #   submenu: sstp_server
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: set
+      #   submenu: pptp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: enable
+      #   submenu: pptp_server
+      #
+      # - role: config_interface_ppp_server
+      #   action: disable
+      #   submenu: pptp_server
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_server: PPP_SERVER
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: add
+      #   submenu: ppp_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_ppp_server: 0
+      #   action: disable
+      #   submenu: ppp_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_ppp_server: 0
+      #   action: enable
+      #   submenu: ppp_server
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_server: PPP_SERVER
+      #   rename_ppp_server: PPP_SERVER1
+      #   ppp_profile: default
+      #   authentication: mschap1
+      #   action: set
+      #   submenu: ppp_server
+      #
+      # - role: config_interface_ppp_server
+      #   numbers_ppp_server: 0
+      #   action: remove
+      #   submenu: ppp_server
 
       - role: config_interface_ppp_server
         ppp_profile: PPP_PROF
@@ -120,12 +120,12 @@
         submenu: ppp_profile
 
       - role: config_interface_ppp_server
-        ppp_profile: PPP_PROF
+        numbers_ppp_server: 0
         action: disable
         submenu: ppp_server
 
       - role: config_interface_ppp_server
-        ppp_profile: PPP_PROF
+        numbers_ppp_server: 0
         action: enable
         submenu: ppp_server
 
@@ -171,7 +171,7 @@
         username: TEST1
         action: remove
         submenu: ppp_secret
-                
+
       - role: config_interface_ppp_server
         ppp_profile: PPP_PROF
         action: remove
