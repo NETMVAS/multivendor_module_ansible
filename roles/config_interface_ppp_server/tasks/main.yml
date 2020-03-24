@@ -40,7 +40,7 @@
       - submenu == 'pppoe_server'
 
   - name: enable l2tp server  mikrotik
-    l2tp_server: 'yes'
+    l2tp_server: "yes"
     routeros_command:
       commands: "{{ mikrotik_config_enable_l2tp_server }}"
     when:
@@ -49,7 +49,7 @@
       - submenu == 'l2tp_server'
 
   - name: disable l2tp server  mikrotik
-    l2tp_server: 'no'
+    l2tp_server: "no"
     routeros_command:
       commands: "{{ mikrotik_config_disable_l2tp_server }}"
     when:
@@ -66,7 +66,7 @@
       - submenu == 'l2tp_server'
 
   - name: enable sstp server  mikrotik
-    sstp_server: 'yes'
+    sstp_server: "yes"
     routeros_command:
       commands: "{{ mikrotik_config_enable_sstp_server }}"
     when:
@@ -75,7 +75,7 @@
       - submenu == 'sstp_server'
 
   - name: disable sstp server  mikrotik
-    sstp_server: 'no'
+    sstp_server: "no"
     routeros_command:
       commands: "{{ mikrotik_config_disable_sstp_server }}"
     when:
