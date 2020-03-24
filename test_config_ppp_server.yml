@@ -55,7 +55,6 @@
       - role: config_interface_ppp_server
         ppp_profile: default
         authentication: mschap1
-        one_session: "no"
         action: set
         submenu: sstp_server
 
@@ -66,3 +65,114 @@
       - role: config_interface_ppp_server
         action: disable
         submenu: sstp_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: default
+        authentication: mschap1
+        action: set
+        submenu: pptp_server
+
+      - role: config_interface_ppp_server
+        action: enable
+        submenu: pptp_server
+
+      - role: config_interface_ppp_server
+        action: disable
+        submenu: pptp_server
+
+      - role: config_interface_ppp_server
+        ppp_server: PPP_SERVER
+        ppp_profile: default
+        authentication: mschap1
+        action: add
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        numbers_ppp_server: 0
+        action: disable
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        numbers_ppp_server: 0
+        action: enable
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        ppp_server: PPP_SERVER
+        rename_ppp_server: PPP_SERVER1
+        ppp_profile: default
+        authentication: mschap1
+        action: set
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        numbers_ppp_server: 0
+        action: remove
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: PPP_PROF
+        bridge: bridge
+        local_address: 1.1.1.1
+        remote_address: 2.2.2.2
+        dns_server: 8.8.8.8
+        action: add
+        submenu: ppp_profile
+
+      - role: config_interface_ppp_server
+        ppp_profile: PPP_PROF
+        action: disable
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: PPP_PROF
+        action: enable
+        submenu: ppp_server
+
+      - role: config_interface_ppp_server
+        ppp_profile: PPP_PROF
+        bridge: bridge
+        local_address: 1.1.1.2
+        remote_address: dhcp
+        dns_server: 8.8.8.8
+        action: set
+        submenu: ppp_profile
+
+      - role: config_interface_ppp_server
+        username: TEST
+        password: test
+        local_address: 1.1.1.2
+        remote_address: 192.168.88.150
+        ppp_profile: PPP_PROF
+        action: add
+        submenu: ppp_secret
+
+      - role: config_interface_ppp_server
+        username: TEST
+        action: disable
+        submenu: ppp_secret
+
+      - role: config_interface_ppp_server
+        username: TEST
+        action: enable
+        submenu: ppp_secret
+
+      - role: config_interface_ppp_server
+        username: TEST
+        password: test
+        rename_username: TEST1
+        local_address: 1.1.1.2
+        remote_address: 192.168.88.150
+        ppp_profile: PPP_PROF
+        action: add
+        submenu: ppp_secret
+
+      - role: config_interface_ppp_server
+        username: TEST1
+        action: remove
+        submenu: ppp_secret
+                
+      - role: config_interface_ppp_server
+        ppp_profile: PPP_PROF
+        action: remove
+        submenu: ppp_profile
