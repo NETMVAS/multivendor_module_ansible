@@ -114,20 +114,20 @@
         ppp_profile: PPP_PROF
         bridge: bridge
         local_address: 1.1.1.1
-        remote_address: 2.2.2.2
+        remote_address: dhcp
         dns_server: 8.8.8.8
         action: add
         submenu: ppp_profile
 
       - role: config_interface_ppp_server
-        numbers_ppp_server: 0
+        ppp_profile: PPP_PROF
         action: disable
-        submenu: ppp_server
+        submenu: ppp_profile
 
       - role: config_interface_ppp_server
-        numbers_ppp_server: 0
+        ppp_profile: PPP_PROF
         action: enable
-        submenu: ppp_server
+        submenu: ppp_profile
 
       - role: config_interface_ppp_server
         ppp_profile: PPP_PROF
@@ -138,41 +138,41 @@
         action: set
         submenu: ppp_profile
 
-      - role: config_interface_ppp_server
-        username: TEST
-        password: test
-        local_address: 1.1.1.2
-        remote_address: 192.168.88.150
-        ppp_profile: PPP_PROF
-        action: add
-        submenu: ppp_secret
-
-      - role: config_interface_ppp_server
-        username: TEST
-        action: disable
-        submenu: ppp_secret
-
-      - role: config_interface_ppp_server
-        username: TEST
-        action: enable
-        submenu: ppp_secret
-
-      - role: config_interface_ppp_server
-        username: TEST
-        password: test
-        rename_username: TEST1
-        local_address: 1.1.1.2
-        remote_address: 192.168.88.150
-        ppp_profile: PPP_PROF
-        action: add
-        submenu: ppp_secret
-
-      - role: config_interface_ppp_server
-        username: TEST1
-        action: remove
-        submenu: ppp_secret
-
-      - role: config_interface_ppp_server
-        ppp_profile: PPP_PROF
-        action: remove
-        submenu: ppp_profile
+      # - role: config_interface_ppp_server
+      #   username: TEST
+      #   password: test
+      #   local_address: 1.1.1.2
+      #   remote_address: 192.168.88.150
+      #   ppp_profile: PPP_PROF
+      #   action: add
+      #   submenu: ppp_secret
+      #
+      # - role: config_interface_ppp_server
+      #   username: TEST
+      #   action: disable
+      #   submenu: ppp_secret
+      #
+      # - role: config_interface_ppp_server
+      #   username: TEST
+      #   action: enable
+      #   submenu: ppp_secret
+      #
+      # - role: config_interface_ppp_server
+      #   username: TEST
+      #   password: test
+      #   rename_username: TEST1
+      #   local_address: 1.1.1.2
+      #   remote_address: 192.168.88.150
+      #   ppp_profile: PPP_PROF
+      #   action: add
+      #   submenu: ppp_secret
+      #
+      # - role: config_interface_ppp_server
+      #   username: TEST1
+      #   action: remove
+      #   submenu: ppp_secret
+      #
+      # - role: config_interface_ppp_server
+      #   ppp_profile: PPP_PROF
+      #   action: remove
+      #   submenu: ppp_profile
