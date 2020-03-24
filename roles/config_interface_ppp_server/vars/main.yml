@@ -9,9 +9,9 @@ mikrotik_config_set_l2tp_server: /interface l2tp-server server set default-profi
 mikrotik_config_enable_l2tp_server: /interface l2tp-server server set enable=yes
 mikrotik_config_disable_l2tp_server: /interface l2tp-server server set enable=no
 
-mikrotik_config_enable_sstp_server: /interface sstp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
-mikrotik_config_disable_sstp_server: /interface sstp-server server set enable=yes
-mikrotik_config_set_sstp_server: /interface sstp-server server set enable=no
+mikrotik_config_set_sstp_server: /interface sstp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_enable_sstp_server: /interface sstp-server server set enable=yes
+mikrotik_config_disable_sstp_server: /interface sstp-server server set enable=no
 
 mikrotik_config_set_pptp_server: /interface pptp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
 mikrotik_config_enable_pptp_server: /interface pptp-server server enable=yes
