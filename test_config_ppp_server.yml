@@ -40,7 +40,7 @@
       - role: config_interface_ppp_server
         ppp_profile: default
         authentication: mschap1
-        one_session: no
+        one_session: "no"
         action: set
         submenu: l2tp_server
 
@@ -55,7 +55,7 @@
       - role: config_interface_ppp_server
         ppp_profile: default
         authentication: mschap1
-        one_session: no
+        one_session: "no"
         action: set
         submenu: sstp_server
 
