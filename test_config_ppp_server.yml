@@ -154,7 +154,7 @@
         local_address: 1.1.1.2
         remote_address: 192.168.88.150
         ppp_profile: PPP_PROF
-        action: add
+        action: set
         submenu: ppp_secret
 
       - role: config_interface_ppp_server
