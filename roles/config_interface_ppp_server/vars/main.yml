@@ -6,16 +6,16 @@ mikrotik_config_disable_pppoe_server: /interface pppoe-server server disable num
 mikrotik_config_set_pppoe_server: /interface pppoe-server server set numbers={{ numbers_pppoe_server }} service-name={{ rename_pppoe_server }} interface={{ interface }} default-profile={{ ppp_profile }} authentication={{ authentication }}
 
 mikrotik_config_set_l2tp_server: /interface l2tp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }} one-session-per-host={{ one_session }}
-mikrotik_config_enable_l2tp_server: /interface l2tp-server server set enable={{ l2tp_server }}
-mikrotik_config_disable_l2tp_server: /interface l2tp-server server set enable={{ l2tp_server }}
+mikrotik_config_enable_l2tp_server: /interface l2tp-server server set enable=yes
+mikrotik_config_disable_l2tp_server: /interface l2tp-server server set enable=no
 
 mikrotik_config_enable_sstp_server: /interface sstp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
-mikrotik_config_disable_sstp_server: /interface sstp-server server set enable={{ sstp_server }}
-mikrotik_config_set_sstp_server: /interface sstp-server server set enable={{ sstp_server }}
+mikrotik_config_disable_sstp_server: /interface sstp-server server set enable=yes
+mikrotik_config_set_sstp_server: /interface sstp-server server set enable=no
 
-mikrotik_config_enable_pptp_server: /interface pptp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
-mikrotik_config_disable_pptp_server: /interface pptp-server server enable={{ pptp_server }}
-mikrotik_config_set_pptp_server: /interface pptp-server server enable={{ pptp_server }}
+mikrotik_config_set_pptp_server: /interface pptp-server server set default-profile={{ ppp_profile }} authentication={{ authentication }}
+mikrotik_config_enable_pptp_server: /interface pptp-server server enable=yes
+mikrotik_config_disable_pptp_server: /interface pptp-server server enable=no
 
 mikrotik_config_add_ppp_server: /interface ppp-server server add name={{ ppp_server }} profile={{ ppp_profile }} authentication={{ authentication }}
 mikrotik_config_remove_ppp_server: /interface ppp-server remove numbers={{ numbers_ppp_server }}
