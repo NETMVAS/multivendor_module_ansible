@@ -29,6 +29,8 @@ mikrotik_config_set_ppp_profile: /ppp profile set {{ ppp_profile }} bridge={{ br
 
 mikrotik_config_add_ppp_secret: /ppp secret add name={{ username }} password={{ password }} local-address={{ local_address }} remote-address={{ remote_address }} profile={{ ppp_profile }}
 mikrotik_config_remove_ppp_secret: /ppp secret remove {{ username }}
+mikrotik_config_enable_ppp_secret: /ppp secret enable {{ username }}
+mikrotik_config_disable_ppp_secret: /ppp secret disable {{ username }}
 mikrotik_config_set_ppp_secret: /ppp secret set {{ username }} name={{ rename_username }} password={{ password }} local-address={{ local_address }} remote-address={{ remote_address }} profile={{ ppp_profile }}
 
 cisco_config: /system identity set name={{ local_hostname }}

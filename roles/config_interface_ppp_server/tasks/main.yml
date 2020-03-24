@@ -191,6 +191,22 @@
       - action == 'remove'
       - submenu == 'ppp_secret'
 
+  - name: enable ppp secret mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_ppp_secret }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'ppp_secret'
+
+  - name: disable ppp secret mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_ppp_secret }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'ppp_secret'
+
   - name: set ppp secret mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_set_ppp_secret }}"
