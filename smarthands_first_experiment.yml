@@ -70,7 +70,52 @@ conf t
   router ospf 1
     network 172.16.6.0 0.0.0.255 area 0
 ________________________________________________________
+enable
+conf t
+  hostname core.nrt
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.7.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.7.0 0.0.0.255 area 0
+________________________________________________________
 
+enable
+conf t
+  hostname core.abk
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.8.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.8.0 0.0.0.255 area 0
+________________________________________________________
+enable
+conf t
+  hostname core.frt
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.9.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.9.0 0.0.0.255 area 0
+________________________________________________________
+
+enable
+conf t
+  hostname core.lnd
+  interface FastEthernet2/0
+    no shutdown
+    ip address 172.16.10.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.10.0 0.0.0.255 area 0
+________________________________________________________
 /system identity set name=core.tko
 /interface ethernet set ether4 disabled=no
 /system ntp client set primary-ntp=ntp2.stratum2.ru
