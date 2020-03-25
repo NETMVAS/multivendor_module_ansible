@@ -36,4 +36,6 @@
       submenu: network
       action: add
 
-- include: experiment1_4_C_soho_brl.yml
+
+  handlers:
+    - include: experiment1_4_C_soho_brl.yml
