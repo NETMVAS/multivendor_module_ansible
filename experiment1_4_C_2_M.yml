@@ -2,7 +2,6 @@
   hosts:
     - router_mikrotik
     - router_cisco
-    - router_soho_brl
   gather_facts: false
   ignore_errors: true
   roles:
