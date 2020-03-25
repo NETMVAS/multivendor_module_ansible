@@ -21,21 +21,21 @@
       - action == 'set'
 
 
-  - name: config ipaddres interface cisco
+  - name: enable interface  ethernet cisco
     ios_interfaces:
       config: "{{ cisco_config_enable }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'enable'
 
-  - name: config ipaddres interface cisco
+  - name: disable interface ethernet cisco
     ios_interfaces:
       config: "{{ cisco_config_disable }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'disable'
 
-  - name: config ipaddres interface cisco
+  - name: set interface ethernet cisco
     ios_interfaces:
       config: "{{ cisco_config_set }}"
     when:
