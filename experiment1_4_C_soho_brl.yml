@@ -1,4 +1,5 @@
-- name: "first experiment 4 virtual cisco c3750  and 2 mikrotik RB750GR3"
+---
+- name: "soho mikrotik RB750GR3"
   hosts:
     - router_soho_brl
   gather_facts: false
