@@ -2,6 +2,7 @@
   hosts:
     - router_mikrotik
     - router_cisco
+    - router_soho_brl
   gather_facts: false
   ignore_errors: true
   roles:
@@ -34,3 +35,6 @@
       area_ospf: "{{ area_test }}"
       submenu: network
       action: add
+
+    tasks:
+      - include: experiment1_4_C_soho_brl.yml
