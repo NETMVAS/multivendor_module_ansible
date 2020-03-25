@@ -35,8 +35,3 @@
       area_ospf: "{{ area_test }}"
       submenu: network
       action: add
-
-
-  handlers:
-    
-    - include: experiment1_4_C_soho_brl.yml
