@@ -36,5 +36,5 @@
       submenu: network
       action: add
 
-    tasks:
+  tasks:
       - include: experiment1_4_C_soho_brl.yml
