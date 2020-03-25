@@ -116,6 +116,111 @@ conf t
   router ospf 1
     network 172.16.10.0 0.0.0.255 area 0
 ________________________________________________________
+
+
+enable
+conf t
+  hostname r1
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.101.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.101.0 0.0.0.255 area 0
+
+________________________________________________________
+
+enable
+conf t
+  hostname r2
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.102.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.102.0 0.0.0.255 area 0
+
+________________________________________________________
+enable
+conf t
+  hostname r3
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.103.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.103.0 0.0.0.255 area 0
+
+________________________________________________________
+
+enable
+conf t
+  hostname r4
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.104.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.104.0 0.0.0.255 area 0
+
+________________________________________________________
+
+
+enable
+conf t
+  hostname r5
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.105.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.105.0 0.0.0.255 area 0
+
+________________________________________________________
+
+enable
+conf t
+  hostname r6
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.106.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.106.0 0.0.0.255 area 0
+
+________________________________________________________
+
+enable
+conf t
+  hostname r7
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.107.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.107.0 0.0.0.255 area 0
+
+________________________________________________________
+
+enable
+conf t
+  hostname r8
+  interface Ethernet0
+    no shutdown
+    ip address 172.16.108.1 255.255.255.0
+  ip name-server 8.8.8.8
+  ntp server ntp2.stratum2.ru
+  router ospf 1
+    network 172.16.108.0 0.0.0.255 area 0
+
+________________________________________________________
 /system identity set name=core.tko
 /interface ethernet set ether4 disabled=no
 /system ntp client set primary-ntp=ntp2.stratum2.ru
