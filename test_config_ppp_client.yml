@@ -134,3 +134,8 @@
         remote_address: 12.14.13.12
         action: set
         submenu: pptp_client
+
+      - role: config_interface_ppp_client
+        pptp_client: PPTP_CLIENT_TYRMA1
+        action: remove
+        submenu: pptp_client
