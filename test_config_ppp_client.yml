@@ -1,0 +1,136 @@
+- name: "check roles ppp_client"
+  hosts: 10.100.2.2
+  gather_facts: false
+  ignore_errors: true
+  roles:
+
+      - role: config_interface_ppp_client
+        pppoe_client: PPPOE_client_TYRMA
+        interface: ether4
+        pppoe_user: TYR000001
+        pppoe_password: 12345678
+        action: add
+        submenu: pppoe_client
+
+      - role: config_interface_ppp_client
+        pppoe_client: PPPOE_client_TYRMA
+        action: disable
+        submenu: pppoe_client
+
+      - role: config_interface_ppp_client
+        pppoe_client: PPPOE_client_TYRMA
+        action: enable
+        submenu: pppoe_client
+
+      - role: config_interface_ppp_client
+        pppoe_client: PPPOE_client_TYRMA
+        interface: ether4
+        pppoe_user: TYR000002
+        pppoe_password: 12345678
+        rename_pppoe_client: PPPOE_client_TYRMA1
+        action: set
+        submenu: pppoe_client
+
+      - role: config_interface_ppp_client
+        pppoe_client: PPPOE_client_TYRMA
+        action: remove
+        submenu: pppoe_client
+
+      - role: config_interface_ppp_client
+        l2tp_client: L2TP_client_TYRMA
+        remote_address: 12.13.14.12
+        l2tp_user: TEST_USER
+        l2tp_password: 12345678
+        ppp_profile: default
+        action: add
+        submenu: l2tp_client
+
+      - role: config_interface_ppp_client
+        l2tp_client: L2TP_client_TYRMA
+        action: enable
+        submenu: l2tp_client
+
+      - role: config_interface_ppp_client
+        l2tp_client: L2TP_client_TYRMA
+        action: disable
+        submenu: l2tp_client
+
+      - role: config_interface_ppp_client
+        l2tp_client: L2TP_client_TYRMA
+        rename_l2tp_client: L2TP_client_TYRMA1
+        remote_address: 12.13.14.12
+        l2tp_user: TEST_USER
+        l2tp_password: 12345678
+        ppp_profile: default
+        action: set
+        submenu: l2tp_client
+
+      - role: config_interface_ppp_client
+        l2tp_client: L2TP_client_TYRMA
+        action: remove
+        submenu: l2tp_client
+
+      - role: config_interface_ppp_client
+        sstp_client: SSTP_CLIENT_TYRMA
+        sstp_user: TEST_USER
+        sstp_password: 12345678
+        ppp_profile: default
+        remote_address: 12.13.14.12
+        remote_port: 433
+        action: add
+        submenu: sstp_client
+
+
+      - role: config_interface_ppp_client
+        sstp_client: SSTP_CLIENT_TYRMA
+        action: enable
+        submenu: sstp_client
+
+      - role: config_interface_ppp_client
+        sstp_client: SSTP_CLIENT_TYRMA
+        action: disable
+        submenu: sstp_client
+
+
+      - role: config_interface_ppp_client
+        sstp_client: SSTP_CLIENT_TYRMA
+        rename_sstp_client: SSTP_CLIENT_TYRMA1
+        sstp_user: TEST_USER
+        sstp_password: 12345678
+        ppp_profile: default
+        remote_address: 12.13.14.12
+        remote_port: 433
+        action: set
+        submenu: sstp_client
+
+      - role: config_interface_ppp_client
+        sstp_client: SSTP_CLIENT_TYRMA1
+        action: remove
+        submenu: sstp_client
+
+      - role: config_interface_ppp_client
+        pptp_client: PPTP_CLIENT_TYRMA
+        pptp_user: TEST_USER
+        pptp_password: 12345678
+        remote_address: 12.14.13.12
+        action: add
+        submenu: pptp_client
+
+      - role: config_interface_ppp_client
+        pptp_client: PPTP_CLIENT_TYRMA
+        action: enable
+        submenu: pptp_client
+
+      - role: config_interface_ppp_client
+        pptp_client: PPTP_CLIENT_TYRMA
+        action: disable
+        submenu: pptp_client
+
+      - role: config_interface_ppp_client
+        pptp_client: PPTP_CLIENT_TYRMA
+        rename_pptp_client: PPTP_CLIENT_TYRMA1
+        pptp_user: TEST_USER
+        pptp_password: 12345678
+        remote_address: 12.14.13.12
+        action: set
+        submenu: pptp_client
