@@ -1,36 +1,43 @@
 ---
-  - name: add ppp client interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_add_ppp_client }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'add'
-      - submenu == 'ppp_client'
-
-  - name: remove ppp client  interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_remove_ppp_client }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'remove'
-      - submenu == 'ppp_client'
-
-  - name: enable ppp client interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_enable_ppp_client }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'enable'
-      - submenu == 'ppp_client'
-
-  - name: disable ppp client interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_disable_ppp_client }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'disable'
-      - submenu == 'ppp_client'
-
+  # - name: add ppp client interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_add_ppp_client }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - action == 'add'
+  #     - submenu == 'ppp_client'
+  #
+  # - name: remove ppp client  interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_remove_ppp_client }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - action == 'remove'
+  #     - submenu == 'ppp_client'
+  #
+  # - name: enable ppp client interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_enable_ppp_client }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - action == 'enable'
+  #     - submenu == 'ppp_client'
+  #
+  # - name: disable ppp client interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_disable_ppp_client }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - action == 'disable'
+  #     - submenu == 'ppp_client'
+  #
+  # - name: set ppp client interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_set_ppp_client }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - action == 'set'
+  #     - submenu == 'ppp_client'
 
 
   - name: add pptp client interface mikrotik
@@ -65,8 +72,13 @@
       - action == 'disable'
       - submenu == 'pptp_client'
 
-
-
+  - name: set pptp client interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_pptp_client }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'pptp_client'
 
 
 
@@ -103,7 +115,13 @@
       - action == 'disable'
       - submenu == 'sstp_client'
 
-
+  - name: set sstp client interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_sstp_client }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'sstp_client'
 
 
 
@@ -140,7 +158,13 @@
       - action == 'disable'
       - submenu == 'l2tp_client'
 
-
+  - name: set l2tp client interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_l2tp_client }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'l2tp_client'
 
 
 
@@ -176,7 +200,13 @@
       - action == 'disable'
       - submenu == 'pppoe_client'
 
-
+  - name: set pppoe client interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_pppoe_client }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'pppoe_client'
 
   - name: config ipaddres interface cisco
     raw: "{{ cisco_config }}"
