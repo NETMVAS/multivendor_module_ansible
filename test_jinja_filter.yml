@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-    description_vlan: TEST
+    description_vlan:
   tasks:
     - name: check jinja filter
       debug:
