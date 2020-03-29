@@ -39,10 +39,10 @@ cisco_config_ospf_network_remove:
 
 cisco_config_ospf_area_add:
     lines:
-    - area {{ area_id }} {{ area_type | default(' ') }} area {{ area_ospf }}
+    - area {{ area_id }} {{ area_type | default (omit) }} area {{ area_ospf }}
     parents: router ospf {{ ospf_number }}
 
 cisco_config_ospf_area_remove:
     lines:
-    - no area {{ area_id }} {{ area_type | default(' ') }} area {{ area_ospf }}
+    - no area {{ area_id }} {{ area_type |default (omit) }} area {{ area_ospf }}
     parents: router ospf {{ ospf_number }}
