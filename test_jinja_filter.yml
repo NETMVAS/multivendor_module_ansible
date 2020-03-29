@@ -1,0 +1,9 @@
+- name: test jinja filter
+  hosts: localhost
+  gather_facts: false
+  vars:
+  description_vlan: TEST
+  tasks:
+    - name: check jinja filter
+      debug:
+        msg: "{{ description_vlan | default ' ' }}"
