@@ -1,0 +1,19 @@
+---
+mikrotik_config_vlan_add: /interface bridge vlan add vlan-ids={{ vlan_id }} bridge={{ bridge }} tagged={{ tagged_interface | default (omit) }}
+mikrotik_config_vlan_remove: /interface bridge vlan remove {{ numbers_vlan }}
+mikrotik_config_vlan_enable: /interface bridge vlan enable {{ numbers_vlan }}
+mikrotik_config_vlan_disable: /interface bridge vlan disable {{ numbers_vlan }}
+mikrotik_config_vlan_set: /interface bridge vlan set {{ numbers_vlan }} vlan-ids={{ vlan_id }} bridge={{ bridge }} tagged={{ tagged_interface | default (omit) }}
+mikrotik_config_vlan_tagged_set:
+mikrotik_config_vlan_untagged_set: /interface bridge port set numbers={{ numbers_port }} pvid={{ vlan_id }} hw=yes
+
+cisco_config_vlan_add:
+      - name: {{ description_vlan | default (omit) }}
+        vlan_id: {{ vlan_id }}
+        state: active
+        shutdown: disabled  
+cisco_config_vlan_remove:
+cisco_config_vlan_enable:
+cisco_config_vlan_disable:
+cisco_config_vlan_tagged_set:
+cisco_config_vlan_untagged_set:
