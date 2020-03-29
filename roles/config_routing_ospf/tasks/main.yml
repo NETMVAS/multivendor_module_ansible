@@ -119,6 +119,19 @@
       - submenu == 'area'
       - action == 'set'
 
+  - name: add ospf instance cisco
+    ios_config: "{{ cisco_config_ospf_instance_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'instance'
+      - action == 'add'
+
+  - name: remove ospf instance cisco
+    ios_config: "{{ cisco_config_ospf_instance_remove }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'instance'
+      - action == 'remove'
 
   - name: add ospf network cisco
     ios_config: "{{ cisco_config_ospf_network_add }}"
@@ -132,4 +145,18 @@
     when:
       - ansible_network_os == 'ios'
       - submenu == 'network'
+      - action == 'remove'
+
+  - name: add ospf area cisco
+    ios_config: "{{ cisco_config_ospf_area_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'area'
+      - action == 'add'
+
+  - name: remove ospf area cisco
+    ios_config: "{{ cisco_config_ospf_area_remove }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'area'
       - action == 'remove'

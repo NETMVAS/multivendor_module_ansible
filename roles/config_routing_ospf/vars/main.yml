@@ -9,13 +9,22 @@ mikrotik_config_ospf_network_remove: /routing ospf network remove numbers={{ num
 mikrotik_config_ospf_network_enable: /routing ospf network enable numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_disable: /routing ospf network disable numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_set: /routing ospf network set numbers={{ numbers_ospf_network }} area={{ area_ospf }} network={{ network }}
-mikrotik_config_ospf_area_add: /routing ospf area add area-id={{ area_id }} name={{ area_ospf }} type={{ type }} instance={{ instance }}
+mikrotik_config_ospf_area_add: /routing ospf area add area-id={{ area_id }} name={{ area_ospf }} type={{ area_type }} instance={{ instance }}
 mikrotik_config_ospf_area_remove: /routing ospf area remove {{ area_ospf }}
 mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area_ospf }}
 mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area_ospf }}
-mikrotik_config_ospf_area_set: /routing ospf area set {{ area_ospf }} area-id={{ area_id }} name={{ rename_area }} type={{ type }} instance={{ instance }}
+mikrotik_config_ospf_area_set: /routing ospf area set {{ area_ospf }} area-id={{ area_id }} name={{ rename_area }} type={{ area_type }} instance={{ instance }}
 
 
+cisco_config_ospf_instance_add:
+    lines:
+    -
+    parents: router ospf {{ ospf_number }}
+
+cisco_config_ospf_instance_remove:
+    lines:
+    -
+    parents: router ospf {{ ospf_number }}
 
 cisco_config_ospf_network_add:
     lines:
@@ -24,5 +33,16 @@ cisco_config_ospf_network_add:
 
 cisco_config_ospf_network_remove:
     lines:
-    - no network {{ network }} {{ mask }} area {{ area }}
+    - no network {{ network }} {{ mask }} area {{ area_ospf }}
+    parents: router ospf {{ ospf_number }}
+
+
+cisco_config_ospf_area_add:
+    lines:
+    - area {{ area_id }} {{ area_type | default(' ') }} area {{ area_ospf }}
+    parents: router ospf {{ ospf_number }}
+
+cisco_config_ospf_area_remove:
+    lines:
+    - no area {{ area_id }} {{ area_type | default(' ') }} area {{ area_ospf }}
     parents: router ospf {{ ospf_number }}
