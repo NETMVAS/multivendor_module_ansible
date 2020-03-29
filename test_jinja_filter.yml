@@ -6,4 +6,4 @@
   tasks:
     - name: check jinja filter
       debug:
-        msg: "{{ description_vlan | default ' ' }}"
+        msg: "{{ description_vlan | default (omit)}}"
