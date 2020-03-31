@@ -1,4 +1,4 @@
-- name: "first experiment 4 virtual cisco c3750  and 2 mikrotik RB750GR3"
+- name: "first experiment"
   hosts:
     - router_mikrotik
     - router_cisco
