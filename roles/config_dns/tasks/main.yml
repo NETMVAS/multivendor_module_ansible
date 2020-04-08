@@ -5,6 +5,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
+      
   - name: set dns cisco
     ios_config:
       lines: "{{ cisco_config }}"

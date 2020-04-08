@@ -1,19 +1,40 @@
 ---
-mikrotik_config_vlan_add: /interface bridge vlan add vlan-ids={{ vlan_id }} bridge={{ bridge }} tagged={{ tagged_interface | default (omit) }}
+mikrotik_config_vlan_add: /interface bridge vlan add vlan-ids={{ vlan_id }} bridge={{ bridge }}
 mikrotik_config_vlan_remove: /interface bridge vlan remove {{ numbers_vlan }}
 mikrotik_config_vlan_enable: /interface bridge vlan enable {{ numbers_vlan }}
 mikrotik_config_vlan_disable: /interface bridge vlan disable {{ numbers_vlan }}
-mikrotik_config_vlan_set: /interface bridge vlan set {{ numbers_vlan }} vlan-ids={{ vlan_id }} bridge={{ bridge }} tagged={{ tagged_interface | default (omit) }}
-mikrotik_config_vlan_tagged_set:
+mikrotik_config_vlan_set: /interface bridge vlan set {{ numbers_vlan }} vlan-ids={{ vlan_id }} bridge={{ bridge }}
+mikrotik_config_vlan_tagged_set: /interface bridge vlan set {{ numbers_vlan }} tagged={{ tagged_interface | default (omit) }}
 mikrotik_config_vlan_untagged_set: /interface bridge port set numbers={{ numbers_port }} pvid={{ vlan_id }} hw=yes
 
 cisco_config_vlan_add:
       - name: {{ description_vlan | default (omit) }}
         vlan_id: {{ vlan_id }}
         state: active
-        shutdown: disabled  
+        shutdown: disabled
 cisco_config_vlan_remove:
+      - vlan_id: {{ vlan_id }}
 cisco_config_vlan_enable:
+      - vlan_id: {{ vlan_id }}
+        state: active
+        shutdown: disabled
 cisco_config_vlan_disable:
+      - vlan_id: {{ vlan_id }}
+        state: active
+        shutdown: enabled
+cisco_config_vlan_set:
+      - name: {{ description_vlan | default (omit) }}
+        vlan_id: {{ vlan_id }}
+        state: active
+        shutdown: disabled
+
 cisco_config_vlan_tagged_set:
+      - name: {{ interface }}
+        access:
+          vlan: {{ vlan_id }}
+          
 cisco_config_vlan_untagged_set:
+      - name: {{ interface }}
+        trunk:
+          allowed_vlan: {{ vlan_id }}
+          encapsulation: dot1q

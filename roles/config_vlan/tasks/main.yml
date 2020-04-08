@@ -41,10 +41,87 @@ This roles support config vlan cisco ios and mikrotik CRS3XX series
       - submenu == 'vlan'
       - action == 'set'
 
+  - name:  set tagged interface vlan mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_vlan_tagged_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'tagged-interface'
+      - action == 'set'
+
   - name:  set untagged interface vlan mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_vlan_untagged_set }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'untagged-interface'
+      - action == 'set'
+
+
+
+
+
+
+- name: add vlan cisco
+  ios_vlans:
+    config: "{{ cisco_config_vlan_add }}"
+    state: merged
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'vlan'
+    - action == 'add'
+
+- name: remove vlan cisco
+  ios_vlans:
+    config: "{{ cisco_config_vlan_remove }}"
+    state: deleted
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'vlan'
+    - action == 'remove'
+
+- name: enable vlan cisco
+  ios_vlans:
+    config: "{{ cisco_config_vlan_enable }}"
+    state: merged
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'vlan'
+    - action == 'enable'
+
+- name: disable vlan cisco
+  ios_vlans:
+    config: "{{ cisco_config_vlan_disable }}"
+    state: merged
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'vlan'
+    - action == 'disable'
+
+- name: set vlan cisco
+  ios_vlans:
+    config: "{{ cisco_config_vlan_set }}"
+    state: replaced
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'vlan'
+    - action == 'set'
+
+
+  - name:  set tagged interface vlan cisco
+    ios_l2_interfaces:
+        config: "{{ cisco_config_vlan_tagged_set }}"
+        state: merged
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'tagged-interface'
+      - action == 'set'
+
+  - name:  set untagged interface vlan cisco
+    ios_l2_interfaces:
+        config: "{{ cisco_config_vlan_untagged_set }}"
+        state: merged
+    when:
+      - ansible_network_os == 'ios'
       - submenu == 'untagged-interface'
       - action == 'set'
