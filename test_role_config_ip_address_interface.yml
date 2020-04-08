@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: 10.100.0.3
+  hosts: router_cisco
   gather_facts: false
   ignore_errors: true
   roles:
