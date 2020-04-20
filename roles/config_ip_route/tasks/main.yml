@@ -34,14 +34,14 @@
       - ansible_network_os == 'routeros'
       - action == 'set'
 
-  - name: add ipaddres interface cisco
+  - name: add ip static route cisco
     raw: "{{ cisco_config_add }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'add'
 
-  - name: add ipaddres interface cisco
+  - name: remove ip static route cisco
     raw: "{{ cisco_config_remove }}"
     when:
       - ansible_network_os == 'ios'
-      - action == 'add'
+      - action == 'remove'
