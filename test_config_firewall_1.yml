@@ -15,17 +15,17 @@
         action: add
 
       - role: config_ip_firewall
-        ip_firewall_filter: 11
+        ip_firewall_filter: 9
         submenu: filter
         action: disable
 
       - role: config_ip_firewall
-        ip_firewall_filter: 11
+        ip_firewall_filter: 9
         submenu: filter
         action: enable
 
       - role: config_ip_firewall
-        ip_firewall_filter: 11
+        ip_firewall_filter: 9
         dst_address: 4.4.4.4
         dst_port: 22
         src_address: 3.3.3.3
@@ -37,7 +37,7 @@
         action: set
 
       - role: config_ip_firewall
-        ip_firewall_filter: 11
+        ip_firewall_filter: 9
         submenu: filter
         action: remove
 
