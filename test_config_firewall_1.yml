@@ -78,5 +78,5 @@
 
       - role: config_ip_firewall
         ip_firewall_nat: 2
-        submenu: filter
+        submenu: nat
         action: remove
