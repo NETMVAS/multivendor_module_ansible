@@ -4,4 +4,5 @@ mikrotik_config_disable_interface: /interface wireless disable {{ wireless_inter
 mikrotik_config_set_interface: /interface wireless set {{ wireless_interface }} ssid={{ ssid }} mode={{ mode }} security-profile={{ security_profile }} hide-ssid={{ hide_ssid }}
 mikrotik_config_add_security_profile: /interface wireless security-profiles add name={{ security_profile }} mode={{ mode }} wpa2-pre-shared-key={{ password }} authentication-types={{ auth_types|default('wpa2-psk', true) }}
 mikrotik_config_remove_security_profile: /interface wireless security-profiles remove {{ security_profile }}
-mikrotik_config_set_security_profile: /interface wireless security-profiles set {{ security_profile }}  name={{ rename_security_profile }}  mode={{ mode }} wpa2-pre-shared-key={{ password }}
+mikrotik_config_set_security_profile: /interface wireless security-profiles set {{ security_profile }}  name={{ rename_security_profile }}  mode={{ mode }} wpa2-pre-shared-key={{ password }} authentication-types={{ auth_types|default('wpa2-psk', true) }}
+cisco_config: /system identity set name={{ local_hostname }}
