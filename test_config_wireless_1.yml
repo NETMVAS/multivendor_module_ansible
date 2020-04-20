@@ -6,7 +6,7 @@
 
       - role: config_interface_wireless
         security_profile: Profile_TEST
-        password: rer
+        password: rerfefereetg34342
         mode: dynamic-keys
         submenu: profile
         action: add
@@ -34,7 +34,7 @@
       - role: config_interface_wireless
         security_profile: Profile_TEST
         rename_security_profile: Profile_TEST1
-        password: rer
+        password: rer3445466757
         mode: dynamic-keys
         submenu: profile
         action: set
