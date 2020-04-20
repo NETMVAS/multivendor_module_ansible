@@ -49,22 +49,22 @@
         chain: src-nat
         firewall_action: accept
         protocol: tcp
-        out_interface: ether5
+        out_interface: ether4
         submenu: nat
         action: add
 
       - role: config_ip_firewall
-        ip_firewall_filter: 2
+        ip_firewall_nat: 2
         submenu: nat
         action: disable
 
       - role: config_ip_firewall
-        ip_firewall_filter: 2
+        ip_firewall_nat: 2
         submenu: nat
         action: enable
 
       - role: config_ip_firewall
-        ip_firewall_filter: 2
+        ip_firewall_nat: 2
         dst_address: 4.4.4.4
         dst_port: 22
         src_address: 3.3.3.3
@@ -77,6 +77,6 @@
         action: set
 
       - role: config_ip_firewall
-        ip_firewall_filter: 2
+        ip_firewall_nat: 2
         submenu: filter
         action: remove
