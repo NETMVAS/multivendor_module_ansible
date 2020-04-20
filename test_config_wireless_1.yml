@@ -3,6 +3,14 @@
   gather_facts: false
   ignore_errors: true
   roles:
+
+      - role: config_interface_wireless
+        security_profile: Profile_TEST
+        password: rer
+        mode: dynamic-keys
+        submenu: profile
+        action: add
+
       - role: config_interface_wireless
         wireless_interface: test_wlan
         ssid: TEST_SSID
@@ -22,12 +30,6 @@
         submenu: interface
         action: enable
 
-      - role: config_interface_wireless
-        security_profile: Profile_TEST
-        password: rer
-        mode: dynamic-keys
-        submenu: profile
-        action: add
 
       - role: config_interface_wireless
         security_profile: Profile_TEST
