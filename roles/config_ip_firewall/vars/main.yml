@@ -8,5 +8,5 @@ mikrotik_config_nat_add: /ip firewall nat add dst-address={{ dst_address }} dst-
 mikrotik_config_nat_remove: /ip firewall nat remove numbers={{ ip_firewall_nat }}
 mikrotik_config_nat_enable: /ip firewall nat enable numbers={{ ip_firewall_nat }}
 mikrotik_config_nat_disable: /ip firewall nat disable numbers={{ ip_firewall_nat }}
-mikrotik_config_nat_set: /ip firewall nat set numbers={{ ip_firewall_nat }} dst-address={{ dst-address }} dst-port={{ dst-port }} src-address={{ src-address }} src-port={{ src-port}} action={{ firewall_action }} chain={{ chain }} protocol={{ protocol }}
+mikrotik_config_nat_set: /ip firewall nat set numbers={{ ip_firewall_nat }} dst-address={{ dst_address }} dst-port={{ dst_port }} src-address={{ src_address }} src-port={{ src_port}} action={{ firewall_action }} chain={{ chain }} protocol={{ protocol }}
 cisco_config: /system identity set name={{ local_hostname }}
