@@ -8,7 +8,7 @@
         ssid: TEST_SSID
         mode: ap-bridge
         security_profile: Profile_TEST
-        hide_ssid: 'no'
+        hide_ssid: 'no' #все no , yes в скобочках!
         submenu: interface
         action: set
 
