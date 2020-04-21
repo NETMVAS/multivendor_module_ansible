@@ -1,0 +1,44 @@
+- name: config vlan
+  hosts: switch_mikrotik
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_vlan
+        vlan_id: 333
+        bridge: bridge
+        action: add
+        submenu: vlan
+
+      - role: config_vlan
+        numbers_vlan: 5
+        action: disable
+        submenu: vlan
+
+      - role: config_vlan
+        numbers_vlan: 5
+        action: enable
+        submenu: vlan
+
+      - role: config_vlan
+        numbers_vlan: 5
+        vlan_id: 444
+        bridge: bridge
+        action: set
+        submenu: vlan
+
+      - role: config_vlan
+        numbers_vlan: 5
+        interface: ether17
+        action: set
+        submenu: tagged-interface
+
+      - role: config_vlan
+        numbers_vlan: 5
+        interface: ether17
+        action: set
+        submenu: untagged-interface
+
+      - role: config_vlan
+        numbers_vlan: 5
+        action: remove
+        submenu: vlan
