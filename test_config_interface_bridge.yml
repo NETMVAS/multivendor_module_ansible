@@ -16,7 +16,8 @@
         action: enable
 
       - role: config_interface_bridge
-        bridge: Test_bridge1
+        bridge: Test_bridge
+        rename_bridge: Test_bridge1
         action: set
 
       - role: config_interface_bridge
