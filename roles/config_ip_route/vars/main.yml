@@ -1,5 +1,5 @@
 ---
-mikrotik_config_add: /ip route add dst-address={{ address }} gateway={{ gateway }} distance={{ distance|default('1', true )}} check-gateway={{ check_gateway|default (omit) }}
+mikrotik_config_add: /ip route add dst-address={{ address }} gateway={{ gateway }} distance={{ distance|default('1', true )}} check-gateway={{ check_gateway | default (omit)}}
 mikrotik_config_remove: /ip route remove numbers={{ numbers_route }}
 mikrotik_config_enable: /ip route enable numbers={{ numbers_route }}
 mikrotik_config_disable: /ip route disable numbers={{ numbers_route }}
