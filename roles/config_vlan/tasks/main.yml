@@ -1,5 +1,5 @@
 ---
-This roles support config vlan cisco ios and mikrotik CRS3XX series
+# This roles support config vlan cisco ios and mikrotik CRS3XX series
 
   - name: add vlan mikrotik
     routeros_command:
@@ -56,7 +56,6 @@ This roles support config vlan cisco ios and mikrotik CRS3XX series
       - ansible_network_os == 'routeros'
       - submenu == 'untagged-interface'
       - action == 'set'
-
 
   - name: add vlan cisco
     ios_vlans:
