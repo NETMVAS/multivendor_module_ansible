@@ -1,0 +1,24 @@
+- name: config bridge
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_interface_bridge
+        bridge: Test_bridge
+        action: add
+
+      - role: config_interface_bridge
+        bridge: Test_bridge
+        action: disable
+
+      - role: config_interface_bridge
+        bridge: Test_bridge
+        action: enable
+
+      - role: config_interface_bridge
+        bridge: Test_bridge1
+        action: set
+
+      - role: config_interface_bridge
+        bridge: Test_bridge1
+        action: remove
