@@ -8,33 +8,33 @@ mikrotik_config_vlan_tagged_set: /interface bridge vlan set {{ numbers_vlan }} t
 mikrotik_config_vlan_untagged_set: /interface bridge vlan set numbers={{ numbers_vlan }} untagged={{ interface | default (omit) }}
 
 cisco_config_vlan_add:
-      - name: {{ description_vlan | default (omit) }}
-        vlan_id: {{ vlan_id }}
+      - name: "{{ description_vlan | default (omit) }}"
+        vlan_id: "{{ vlan_id }}"
         state: active
         shutdown: disabled
 cisco_config_vlan_remove:
-      - vlan_id: {{ vlan_id }}
+      - vlan_id: "{{ vlan_id }}"
 cisco_config_vlan_enable:
-      - vlan_id: {{ vlan_id }}
+      - vlan_id: "{{ vlan_id }}"
         state: active
         shutdown: disabled
 cisco_config_vlan_disable:
-      - vlan_id: {{ vlan_id }}
+      - vlan_id: "{{ vlan_id }}"
         state: active
         shutdown: enabled
 cisco_config_vlan_set:
-      - name: {{ description_vlan | default (omit) }}
-        vlan_id: {{ vlan_id }}
+      - name: "{{ description_vlan | default (omit) }}"
+        vlan_id: "{{ vlan_id }}"
         state: active
         shutdown: disabled
 
 cisco_config_vlan_tagged_set:
-      - name: {{ interface }}
+      - name: "{{ interface }}"
         access:
-          vlan: {{ vlan_id }}
+          vlan: "{{ vlan_id }}"
 
 cisco_config_vlan_untagged_set:
-      - name: {{ interface }}
+      - name: "{{ interface }}"
         trunk:
-          allowed_vlan: {{ vlan_id }}
+          allowed_vlan: "{{ vlan_id }}"
           encapsulation: dot1q
