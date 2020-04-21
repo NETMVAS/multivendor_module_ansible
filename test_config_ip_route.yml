@@ -3,26 +3,26 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      - config_ip_route:
+      - role: config_ip_route
         address: 5.5.5.5/32
         gateway: wlan1
         action: add
 
-      - config_ip_route:
+      - role: config_ip_route
         numbers_route: 1
         action: disable
 
-      - config_ip_route:
+      - role: config_ip_route
         numbers_route: 1
         action: enable
 
-      - config_ip_route:
+      - role: config_ip_route
         numbers_route: 1
         address: 5.5.5.5/32
         gateway: wlan1
         check_gateway: ping
         action: set
 
-      - config_ip_route:
+      - role: config_ip_route
         numbers_route: 1
         action: remove
