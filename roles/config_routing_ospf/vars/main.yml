@@ -1,9 +1,9 @@
 ---
-mikrotik_config_ospf_instance_add: /routing ospf instance add router-id={{ router_id }} name={{ ospf_instance }} redistribute-connected={{ redist_connect }}  redistribute-static={{ redist_static }} redistribute-other-ospf={{ redist_ospf }}
+mikrotik_config_ospf_instance_add: /routing ospf instance add router-id={{ router_id }} name={{ ospf_instance }} redistribute-connected={{ redist_connected | default('no', true)}}  redistribute-static={{ redist_static | default('no', true) }} redistribute-other-ospf={{ redist_ospf | default('no', true) }}
 mikrotik_config_ospf_instance_remove: /routing ospf instance remove {{ ospf_instance }}
 mikrotik_config_ospf_instance_enable: /routing ospf instance enable {{ ospf_instance }}
 mikrotik_config_ospf_instance_disable: /routing ospf instance disable {{ ospf_instance }}
-mikrotik_config_ospf_instance_set: /routing ospf instance set {{ ospf_instance }} router-id={{ router_id }} name={{ rename_ospf_instance }} redistribute-connected={{ redist_connect }}  redistribute-static={{ redist_static }} redistribute-other-ospf={{ redist_ospf }}
+mikrotik_config_ospf_instance_set: /routing ospf instance set {{ ospf_instance }} router-id={{ router_id }} name={{ rename_ospf_instance }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-other-ospf={{ redist_ospf | default('no', true) }}
 mikrotik_config_ospf_network_add: /routing ospf network add area={{ area_ospf }} network={{ network }}
 mikrotik_config_ospf_network_remove: /routing ospf network remove numbers={{ numbers_ospf_network }}
 mikrotik_config_ospf_network_enable: /routing ospf network enable numbers={{ numbers_ospf_network }}
