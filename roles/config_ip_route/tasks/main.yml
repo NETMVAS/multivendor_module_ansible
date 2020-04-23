@@ -35,13 +35,13 @@
       - action == 'set'
 
   - name: add ip static route cisco
-    raw: "{{ cisco_config_add }}"
+    ios_static_route: "{{ cisco_config_add }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'add'
 
   - name: remove ip static route cisco
-    raw: "{{ cisco_config_remove }}"
+    ios_static_route: "{{ cisco_config_remove }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'remove'
