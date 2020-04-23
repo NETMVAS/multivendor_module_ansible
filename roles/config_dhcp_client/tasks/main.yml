@@ -35,6 +35,19 @@
       - action == 'set'
 
 
-  - name: config ipaddres interface cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+  - name: add dhcp_client cisco
+    ios_l3_interfaces:
+      config: "{{ cisco_config_add }}"
+      state: merged
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'add'
+
+
+  - name: remove dhcp_client cisco
+    ios_l3_interfaces:
+      config: "{{ cisco_config_remove }}"
+      state: deleted
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'remove'

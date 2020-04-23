@@ -4,4 +4,11 @@ mikrotik_config_remove: /ip dhcp-client remove {{ numbers_dhcp_client }}
 mikrotik_config_enable: /ip dhcp-client enable {{ numbers_dhcp_client }}
 mikrotik_config_disable: /ip dhcp-client disable {{ numbers_dhcp_client }}
 mikrotik_config_set: /ip dhcp-client set numbers={{ numbers_dhcp_client }} interface={{ interface }} add-default-route={{ state_default_route }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+cisco_config_add:
+  - name: {{ interface }}
+    ipv4:
+      - address: dhcp
+
+cisco_config_remove:
+  - name: {{ interface }}
