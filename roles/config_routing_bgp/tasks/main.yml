@@ -1,0 +1,122 @@
+---
+
+  - name: add bgp instance mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'add'
+
+  - name: remove bgp instance mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'remove'
+
+  - name: enable bgp instance mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'enable'
+
+  - name: disable bgp instance mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'disable'
+
+  - name: set bgp instance mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'set'
+
+
+  - name: add bgp peer mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_peer_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'peer'
+      - action == 'add'
+
+  - name: remove bgp peer mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_peer_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'peer'
+      - action == 'remove'
+
+  - name: enable bgp peer mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_peer_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'instance'
+      - action == 'enable'
+
+  - name: disable bgp peer mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_peer_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'peer'
+      - action == 'disable'
+
+  - name: set bgp peer mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_peer_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'peer'
+      - action == 'set'
+
+  - name: add bgp network mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_network_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'network'
+      - action == 'add'
+
+  - name: remove bgp network mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_network_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'network'
+      - action == 'remove'
+
+  - name: enable bgp network mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_network_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'network'
+      - action == 'enable'
+
+  - name: disable bgp network mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_network_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'network'
+      - action == 'disable'
+
+  - name: set bgp network mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_network_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'network'
+      - action == 'set'
