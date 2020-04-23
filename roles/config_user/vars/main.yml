@@ -4,4 +4,11 @@ mikrotik_config_remove: /user remove {{ username }}
 mikrotik_config_enable: /user enable {{ username }}
 mikrotik_config_disable: /user disable {{ username }}
 mikrotik_config_set: /user set {{ username }} password={{ password }} group={{ group }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+cisco_config_add:
+  - name: {{ username }}
+    configured_password: {{ password }}
+    privilege: {{ privilege }}
+
+cisco_config_remove:
+  - name: {{ username }}
