@@ -7,6 +7,6 @@
         interface: FastEthernet2/0
         action: add
 
-      # - role: config_dhcp_client
-      #   interface: FastEthernet2/0
-      #   action: remove
+      - role: config_dhcp_client
+        interface: FastEthernet2/0
+        action: remove
