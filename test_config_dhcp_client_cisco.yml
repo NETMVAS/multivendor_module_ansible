@@ -1,0 +1,12 @@
+- name: "change_hostname"
+  hosts: 10.100.0.3
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_dhcp_client
+        interface: FastEthernet2/0
+        action: add
+
+      # - role: config_dhcp_client
+      #   interface: FastEthernet2/0
+      #   action: remove
