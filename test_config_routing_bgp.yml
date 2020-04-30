@@ -23,7 +23,7 @@
 
       - role: config_routing_bgp
         bgp_instance: EBGP_TEST
-        rename_bgp_peer: EBGP_TEST1
+        rename_bgp_instance: EBGP_TEST1
         router_id: 1.1.1.1
         as: 65530
         redist_connected: 'yes'
@@ -31,6 +31,6 @@
         action: set
 
       - role: config_routing_bgp
-        bgp_instance: EBGP_TEST
+        bgp_instance: EBGP_TEST1
         submenu: instance
         action: remove
