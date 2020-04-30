@@ -15,4 +15,4 @@ cisco_config_set:
   - name: "{{ interface }}"
     ipv4:
     - address: "{{ address }}"
-      secondary: "{{ secondary|default('no', true) }}"
+      # secondary: "{{ secondary|default('no', true) }}"
