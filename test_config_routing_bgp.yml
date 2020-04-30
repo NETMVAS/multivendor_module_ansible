@@ -32,4 +32,5 @@
 
       - role: config_routing_bgp
         bgp_instance: EBGP_TEST
+        submenu: instance
         action: remove
