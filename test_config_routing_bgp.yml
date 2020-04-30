@@ -67,6 +67,6 @@
         action: add
 
       - role: config_routing_bgp
-        bgp_instance: EBGP_TEST_PEER1
+        bgp_peer: EBGP_TEST_PEER1
         submenu: peer
         action: remove

@@ -5,11 +5,11 @@ mikrotik_config_instance_enable: /routing bgp instance enable {{ bgp_instance }}
 mikrotik_config_instance_disable: /routing bgp instance disable {{ bgp_instance }}
 mikrotik_config_instance_set: /routing bgp instance set {{ bgp_instance }} name={{ rename_bgp_instance }} router-id={{ router_id }} as={{ as }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-other-bgp={{ redist_bgp | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-ospf={{ redist_ospf | default('no', true) }}    redistribute-rip={{ redist_rip | default('no', true) }}
 
-mikrotik_config_peer_add: /routing bgp peer add name={{ bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use_bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
+mikrotik_config_peer_add: /routing bgp peer add name={{ bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use-bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
 mikrotik_config_peer_remove: /routing bgp peer remove {{ bgp_peer }}
 mikrotik_config_peer_enable: /routing bgp peer enable {{ bgp_peer }}
 mikrotik_config_peer_disable: /routing bgp peer disable {{ bgp_peer }}
-mikrotik_config_peer_set: /routing bgp peer set {{ bgp_peer }} name={{ rename_bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use_bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
+mikrotik_config_peer_set: /routing bgp peer set {{ bgp_peer }} name={{ rename_bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use-bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
 
 mikrotik_config_network_add: /routing bgp network add network={{ network }} synchronize={{ sync | default('yes', true) }}
 mikrotik_config_network_remove: /routing bgp network remove numbers={{ nubers_bgp_network }}
