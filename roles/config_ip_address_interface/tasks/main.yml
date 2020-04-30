@@ -50,7 +50,7 @@
       - ansible_network_os == 'ios'
       - action == 'remove'
 
-  - name: add ip_address interface cisco
+  - name: set ip_address interface cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_set }}"
       state: replaced
