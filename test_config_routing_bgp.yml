@@ -92,3 +92,8 @@
         network: 2.2.2.3/32
         submenu: network
         action: set
+
+      - role: config_routing_bgp
+        nubers_bgp_network: 0
+        submenu: network
+        action: remove
