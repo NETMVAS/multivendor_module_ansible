@@ -11,4 +11,4 @@ cisco_config_add:
       - address: dhcp
 
 cisco_config_remove:
-  - name: {{ interface }}"
+  - name: {{ interface }}"D
