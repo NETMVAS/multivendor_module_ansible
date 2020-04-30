@@ -58,7 +58,7 @@
 
       - role: config_routing_bgp
         bgp_peer: EBGP_TEST_PEER
-        renane_bgp_peer: EBGP_TEST_PEER1
+        rename_bgp_peer: EBGP_TEST_PEER1
         remote_address: 2.2.2.2
         remote_as: 65530
         update_source: KSPD
