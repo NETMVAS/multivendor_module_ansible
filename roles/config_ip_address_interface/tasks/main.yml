@@ -37,45 +37,45 @@
 
 
 
-  - name: add  secondary ip_address interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_secondary_add }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - submenu == 'secondary'
-      - action == 'add'
-
-  - name: remove secondary ip_address interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_secondary_remove }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - submenu == 'secondary'
-      - action == 'remove'
-
-  - name: enable secondary ip_address interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_secondary_enable }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - submenu == 'secondary'
-      - action == 'enable'
-
-  - name: disable secondary ip_address interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_secondary_disable }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - submenu == 'secondary'
-      - action == 'disable'
-
-  - name: set secondary ip_address interface mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_secondary_set }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - submenu == 'secondary'
-      - action == 'set'
+  # - name: add  secondary ip_address interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_secondary_add }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - submenu == 'secondary'
+  #     - action == 'add'
+  #
+  # - name: remove secondary ip_address interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_secondary_remove }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - submenu == 'secondary'
+  #     - action == 'remove'
+  #
+  # - name: enable secondary ip_address interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_secondary_enable }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - submenu == 'secondary'
+  #     - action == 'enable'
+  #
+  # - name: disable secondary ip_address interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_secondary_disable }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - submenu == 'secondary'
+  #     - action == 'disable'
+  #
+  # - name: set secondary ip_address interface mikrotik
+  #   routeros_command:
+  #     commands: "{{ mikrotik_config_secondary_set }}"
+  #   when:
+  #     - ansible_network_os == 'routeros'
+  #     - submenu == 'secondary'
+  #     - action == 'set'
 
 
 
@@ -112,29 +112,29 @@
 
 
 
-  - name: add secondary ip_address interface cisco
-    ios_l3_interfaces:
-      config: "{{ cisco_config_secondary_add }}"
-      state: merged
-    when:
-      - ansible_network_os == 'ios'
-      - submenu == 'secondary'
-      - action == 'add'
-
-  - name: remove secondary ip_address interface cisco
-    ios_l3_interfaces:
-      config: "{{ cisco_config_secondary_remove }}"
-      state: replaced
-    when:
-      - ansible_network_os == 'ios'
-      - submenu == 'secondary'
-      - action == 'remove'
-
-  - name: set secondary ip_address interface cisco
-    ios_l3_interfaces:
-      config: "{{ cisco_config_secondary_set }}"
-      state: replaced
-    when:
-      - ansible_network_os == 'ios'
-      - submenu == 'secondary'
-      - action == 'set'
+  # - name: add secondary ip_address interface cisco
+  #   ios_l3_interfaces:
+  #     config: "{{ cisco_config_secondary_add }}"
+  #     state: merged
+  #   when:
+  #     - ansible_network_os == 'ios'
+  #     - submenu == 'secondary'
+  #     - action == 'add'
+  #
+  # - name: remove secondary ip_address interface cisco
+  #   ios_l3_interfaces:
+  #     config: "{{ cisco_config_secondary_remove }}"
+  #     state: replaced
+  #   when:
+  #     - ansible_network_os == 'ios'
+  #     - submenu == 'secondary'
+  #     - action == 'remove'
+  #
+  # - name: set secondary ip_address interface cisco
+  #   ios_l3_interfaces:
+  #     config: "{{ cisco_config_secondary_set }}"
+  #     state: replaced
+  #   when:
+  #     - ansible_network_os == 'ios'
+  #     - submenu == 'secondary'
+  #     - action == 'set'

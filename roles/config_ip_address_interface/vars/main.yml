@@ -18,7 +18,7 @@ mikrotik_config_secondary_set:
 
 cisco_config_add:
   - name: "{{ interface }}"
-    "{{ protocol | default('ipv4:', true) }}"
+    - "{{ protocol | default('ipv4:', true) }}"
     - address: "{{ address }}"
 
 cisco_config_remove:
@@ -26,7 +26,7 @@ cisco_config_remove:
 
 cisco_config_set:
   - name: "{{ interface }}"
-    "{{ protocol | default('ipv4:', true) }}"
+    - "{{ protocol | default('ipv4:', true) }}"
     - address: "{{ address }}"
 
 
