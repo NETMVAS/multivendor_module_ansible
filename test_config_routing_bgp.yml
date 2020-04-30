@@ -13,10 +13,12 @@
 
       - role: config_routing_bgp
         bgp_instance: EBGP_TEST
+        submenu: instance
         action: disable
 
       - role: config_routing_bgp
         bgp_instance: EBGP_TEST
+        submenu: instance
         action: enable
 
       - role: config_routing_bgp
