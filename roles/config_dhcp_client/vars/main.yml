@@ -6,9 +6,9 @@ mikrotik_config_disable: /ip dhcp-client disable {{ numbers_dhcp_client }}
 mikrotik_config_set: /ip dhcp-client set numbers={{ numbers_dhcp_client }} interface={{ interface }} add-default-route={{ state_default_route }}
 
 cisco_config_add:
-  - name: {{ interface }}
+  - name: "{{ interface }}"
     ipv4:
       - address: dhcp
 
 cisco_config_remove:
-  - name: {{ interface }}
+  - name: {{ interface }}"
