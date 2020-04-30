@@ -36,37 +36,59 @@
       #   action: remove
       #
       #
+      #
+      # - role: config_routing_bgp
+      #   bgp_peer: EBGP_TEST_PEER
+      #   remote_address: 2.2.2.2
+      #   remote_as: 65530
+      #   update_source: KSPD
+      #   bgp_instance: default
+      #   submenu: peer
+      #   action: add
+      #
+      # - role: config_routing_bgp
+      #   bgp_peer: EBGP_TEST_PEER
+      #   submenu: peer
+      #   action: disable
+      #
+      # - role: config_routing_bgp
+      #   bgp_peer: EBGP_TEST_PEER
+      #   submenu: peer
+      #   action: enable
+      #
+      # - role: config_routing_bgp
+      #   bgp_peer: EBGP_TEST_PEER
+      #   rename_bgp_peer: EBGP_TEST_PEER1
+      #   remote_address: 2.2.2.2
+      #   remote_as: 65530
+      #   update_source: KSPD
+      #   bgp_instance: default
+      #   submenu: peer
+      #   action: set
+      #
+      # - role: config_routing_bgp
+      #   bgp_peer: EBGP_TEST_PEER1
+      #   submenu: peer
+      #   action: remove
 
       - role: config_routing_bgp
-        bgp_peer: EBGP_TEST_PEER
-        remote_address: 2.2.2.2
-        remote_as: 65530
-        update_source: KSPD
-        bgp_instance: default
-        submenu: peer
+        network: 2.2.2.2/32
+        submenu: network
         action: add
 
       - role: config_routing_bgp
-        bgp_peer: EBGP_TEST_PEER
-        submenu: peer
+        nubers_bgp_network: 1
+        submenu: network
         action: disable
 
       - role: config_routing_bgp
-        bgp_peer: EBGP_TEST_PEER
-        submenu: peer
+        nubers_bgp_network: 1
+        submenu: network
         action: enable
 
-      - role: config_routing_bgp
-        bgp_peer: EBGP_TEST_PEER
-        rename_bgp_peer: EBGP_TEST_PEER1
-        remote_address: 2.2.2.2
-        remote_as: 65530
-        update_source: KSPD
-        bgp_instance: default
-        submenu: peer
-        action: set
 
       - role: config_routing_bgp
-        bgp_peer: EBGP_TEST_PEER1
-        submenu: peer
-        action: remove
+        nubers_bgp_network: 1
+        network: 2.2.2.3/32
+        submenu: network
+        action: set
