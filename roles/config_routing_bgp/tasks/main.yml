@@ -62,7 +62,7 @@
       commands: "{{ mikrotik_config_peer_enable }}"
     when:
       - ansible_network_os == 'routeros'
-      - submenu == 'instance'
+      - submenu == 'peer'
       - action == 'enable'
 
   - name: disable bgp peer mikrotik
