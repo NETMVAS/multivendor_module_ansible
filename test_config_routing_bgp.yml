@@ -1,0 +1,33 @@
+- name: "change_hostname"
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        router_id: 1.1.1.1
+        as: 65530
+        redist_connected: 'yes'
+        submenu: instance
+        action: add
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        action: disable
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        action: enable
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        rename_bgp_peer: EBGP_TEST1
+        router_id: 1.1.1.1
+        as: 65530
+        redist_connected: 'yes'
+        submenu: instance
+        action: set
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        action: remove
