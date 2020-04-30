@@ -3,73 +3,73 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      # - role: config_routing_bgp
-      #   bgp_instance: EBGP_TEST
-      #   router_id: 1.1.1.1
-      #   as: 65530
-      #   redist_connected: 'yes'
-      #   submenu: instance
-      #   action: add
-      #
-      # - role: config_routing_bgp
-      #   bgp_instance: EBGP_TEST
-      #   submenu: instance
-      #   action: disable
-      #
-      # - role: config_routing_bgp
-      #   bgp_instance: EBGP_TEST
-      #   submenu: instance
-      #   action: enable
-      #
-      # - role: config_routing_bgp
-      #   bgp_instance: EBGP_TEST
-      #   rename_bgp_instance: EBGP_TEST1
-      #   router_id: 1.1.1.1
-      #   as: 65530
-      #   redist_connected: 'yes'
-      #   submenu: instance
-      #   action: set
-      #
-      # - role: config_routing_bgp
-      #   bgp_instance: EBGP_TEST1
-      #   submenu: instance
-      #   action: remove
-      #
-      #
-      #
-      # - role: config_routing_bgp
-      #   bgp_peer: EBGP_TEST_PEER
-      #   remote_address: 2.2.2.2
-      #   remote_as: 65530
-      #   update_source: KSPD
-      #   bgp_instance: default
-      #   submenu: peer
-      #   action: add
-      #
-      # - role: config_routing_bgp
-      #   bgp_peer: EBGP_TEST_PEER
-      #   submenu: peer
-      #   action: disable
-      #
-      # - role: config_routing_bgp
-      #   bgp_peer: EBGP_TEST_PEER
-      #   submenu: peer
-      #   action: enable
-      #
-      # - role: config_routing_bgp
-      #   bgp_peer: EBGP_TEST_PEER
-      #   rename_bgp_peer: EBGP_TEST_PEER1
-      #   remote_address: 2.2.2.2
-      #   remote_as: 65530
-      #   update_source: KSPD
-      #   bgp_instance: default
-      #   submenu: peer
-      #   action: set
-      #
-      # - role: config_routing_bgp
-      #   bgp_peer: EBGP_TEST_PEER1
-      #   submenu: peer
-      #   action: remove
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        router_id: 1.1.1.1
+        as: 65530
+        redist_connected: 'yes'
+        submenu: instance
+        action: add
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        submenu: instance
+        action: disable
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        submenu: instance
+        action: enable
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST
+        rename_bgp_instance: EBGP_TEST1
+        router_id: 1.1.1.1
+        as: 65530
+        redist_connected: 'yes'
+        submenu: instance
+        action: set
+
+      - role: config_routing_bgp
+        bgp_instance: EBGP_TEST1
+        submenu: instance
+        action: remove
+
+
+
+      - role: config_routing_bgp
+        bgp_peer: EBGP_TEST_PEER
+        remote_address: 2.2.2.2
+        remote_as: 65530
+        update_source: KSPD
+        bgp_instance: default
+        submenu: peer
+        action: add
+
+      - role: config_routing_bgp
+        bgp_peer: EBGP_TEST_PEER
+        submenu: peer
+        action: disable
+
+      - role: config_routing_bgp
+        bgp_peer: EBGP_TEST_PEER
+        submenu: peer
+        action: enable
+
+      - role: config_routing_bgp
+        bgp_peer: EBGP_TEST_PEER
+        rename_bgp_peer: EBGP_TEST_PEER1
+        remote_address: 2.2.2.2
+        remote_as: 65530
+        update_source: KSPD
+        bgp_instance: default
+        submenu: peer
+        action: set
+
+      - role: config_routing_bgp
+        bgp_peer: EBGP_TEST_PEER1
+        submenu: peer
+        action: remove
 
       - role: config_routing_bgp
         network: 2.2.2.2/32
@@ -77,18 +77,18 @@
         action: add
 
       - role: config_routing_bgp
-        nubers_bgp_network: 1
+        nubers_bgp_network: 0
         submenu: network
         action: disable
 
       - role: config_routing_bgp
-        nubers_bgp_network: 1
+        nubers_bgp_network: 0
         submenu: network
         action: enable
 
 
       - role: config_routing_bgp
-        nubers_bgp_network: 1
+        nubers_bgp_network: 0
         network: 2.2.2.3/32
         submenu: network
         action: set
