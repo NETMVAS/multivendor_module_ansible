@@ -64,7 +64,7 @@
         update_source: KSPD
         bgp_instance: default
         submenu: peer
-        action: add
+        action: set
 
       - role: config_routing_bgp
         bgp_peer: EBGP_TEST_PEER1
