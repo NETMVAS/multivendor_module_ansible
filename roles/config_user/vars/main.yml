@@ -9,6 +9,8 @@ cisco_config_add:
   - name: "{{ username }}"
     configured_password: "{{ password }}"
     privilege: "{{ privilege }}"
+    state: present
 
 cisco_config_remove:
   - name: "{{ username }}"
+    state: absent
