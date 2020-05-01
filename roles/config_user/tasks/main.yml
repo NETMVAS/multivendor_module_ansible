@@ -36,14 +36,14 @@
 
   - name: add user cisco
     ios_user: "{{ cisco_config_add }}"
-    state: present
+      state: present
     when:
       - ansible_network_os == 'ios'
       - action == 'add'
 
   - name: remove user cisco
     ios_user: "{{ cisco_config_remove }}"
-    state: absent
+      state: absent
     when:
       - ansible_network_os == 'ios'
       - action == 'remove'
