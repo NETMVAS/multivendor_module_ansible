@@ -6,9 +6,9 @@ mikrotik_config_disable: /user disable {{ username }}
 mikrotik_config_set: /user set {{ username }} password={{ password }} group={{ group }}
 
 cisco_config_add:
-  - name: {{ username }}
-    configured_password: {{ password }}
-    privilege: {{ privilege }}
+  - name: "{{ username }}"
+    configured_password: "{{ password }}"
+    privilege: "{{ privilege }}"
 
 cisco_config_remove:
-  - name: {{ username }}
+  - name: "{{ username }}"
