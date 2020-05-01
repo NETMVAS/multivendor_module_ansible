@@ -7,3 +7,4 @@
         username: test_user
         password: test_user
         privilege: 15
+        action: add
