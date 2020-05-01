@@ -4,6 +4,7 @@
   ignore_errors: true
   roles:
       - role: config_ip_route
-        address: 5.5.5.5/32
+        address: 5.5.5.5
+        mask: 255.255.255.0
         gateway: 1.1.1.1
         action: add
