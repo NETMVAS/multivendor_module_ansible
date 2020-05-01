@@ -8,7 +8,7 @@ mikrotik_config_set: /ip route set numbers={{ numbers_route }} dst-address={{ ad
 
 cisco_config_add:
     - prefix: "{{ address }}"
-      mask: {{ mask }}
+      mask: "{{ mask }}"
       next_hop: "{{ gateway }}"
 cisco_config_remove:
     - prefix: "{{ address }}"
