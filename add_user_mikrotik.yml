@@ -1,0 +1,9 @@
+- name: "change_hostname"
+  hosts: WISP_TYRMA
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_user
+        username: AWX_AUTOMATION
+        password: kMhREK
+        group: full
