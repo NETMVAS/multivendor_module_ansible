@@ -1,5 +1,8 @@
 - name: "change_hostname"
-  hosts: WISP_TYRMA
+  hosts:
+    - AP
+    - BRAS
+    - SWITCH
   gather_facts: false
   ignore_errors: true
   roles:
