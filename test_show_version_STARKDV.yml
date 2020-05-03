@@ -1,0 +1,9 @@
+- name: "change_hostname"
+  hosts: BRAS
+  gather_facts: false
+  ignore_errors: true
+  tasks:
+
+    - name: show interface
+      routeros_facts:
+        gather_subset: config
