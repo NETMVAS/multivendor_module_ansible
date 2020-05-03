@@ -7,3 +7,4 @@
         username: AWX_AUTOMATION
         password: kMhREK
         group: full
+        action: add
