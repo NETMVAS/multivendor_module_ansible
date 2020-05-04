@@ -5,21 +5,6 @@
     - SWITCH
   gather_facts: false
   ignore_errors: true
-  vars_prompt:
-    - name: username
-      prompt: " Введите имя нового пользователя"
-      private: no
-
-    - name: password
-      prompt: " Введите пароль нового пользователя "
-      private: yes
-
-    - name: group
-      prompt: " Введите уровень доступа (write/read/full)"
-      private: no
-
-    - name: action
-      prompt: " Введите, что нужно сделать (add, remove, enable, disable)"
   roles:
       - role: config_user
         username: "{{ username }}"
