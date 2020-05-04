@@ -1,5 +1,6 @@
 - name: "change_hostname"
   hosts: router_local
+  gather_facts: false
   ignore_errors: true
   tasks:
 
