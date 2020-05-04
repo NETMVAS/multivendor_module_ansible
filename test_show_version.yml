@@ -1,9 +1,8 @@
 - name: "change_hostname"
   hosts: router_local
-  gather_facts: true
   ignore_errors: true
   tasks:
 
     - name: show interface
       routeros_facts:
-        gather_subset: config
+        gather_subset: all
