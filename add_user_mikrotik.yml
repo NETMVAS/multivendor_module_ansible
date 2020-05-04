@@ -1,8 +1,6 @@
 - name: "change_hostname"
   hosts:
-    - AP
-    - BRAS
-    - SWITCH
+    - {{ select_hosts }}
   gather_facts: false
   ignore_errors: true
   roles:
