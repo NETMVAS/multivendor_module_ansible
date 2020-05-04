@@ -22,7 +22,7 @@
       prompt: " Введите, что нужно сделать (add, remove, enable, disable)"
   roles:
       - role: config_user
-        username: {{ username }}
-        password: {{ password }}
-        group: {{ group }}
-        action: {{ action }}
+        username: "{{ username }}"
+        password: "{{ password }}"
+        group: "{{ group }}"
+        action: "{{ action }}"
