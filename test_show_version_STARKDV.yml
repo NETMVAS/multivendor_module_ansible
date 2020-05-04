@@ -10,4 +10,4 @@
       register: config_mikrotik
 
     - name: Debug config
-      debug: var=config_mikrotik
+      debug: var=config_mikrotik.ansible_net_model
