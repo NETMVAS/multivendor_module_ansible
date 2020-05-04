@@ -1,6 +1,6 @@
 - name: "change_hostname"
   hosts: BRAS
-  gather_facts: false
+  gather_facts: true
   ignore_errors: true
   tasks:
 
