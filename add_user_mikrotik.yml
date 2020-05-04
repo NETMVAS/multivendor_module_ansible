@@ -1,6 +1,5 @@
 - name: "change_hostname"
-  hosts:
-    - "{{ select_hosts }}"
+  hosts: "{{ select_hosts }}"
   gather_facts: false
   ignore_errors: true
   roles:
