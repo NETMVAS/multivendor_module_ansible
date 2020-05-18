@@ -1,12 +1,12 @@
 - name: "change_hostname"
-  hosts: BRAS
+  hosts: AP01.L3.01.TYRMA
   gather_facts: true
   ignore_errors: true
   tasks:
 
     - name: show interface
       routeros_facts:
-        gather_subset: config
+        gather_subset: "!hardware"
       register: config_mikrotik
 
     - name: Debug config
