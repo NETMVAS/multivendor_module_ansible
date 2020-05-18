@@ -6,7 +6,7 @@
 
     - name: show interface
       routeros_facts:
-        gather_subset: config
+        gather_subset: interfaces
       register: config_mikrotik
 
     - name: Debug config
