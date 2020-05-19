@@ -1,0 +1,8 @@
+- name: "set_ntp"
+  hosts: "{{ hosts }}"
+  gather_facts: true
+  ignore_errors: true
+  roles:
+    - role: config_ntp
+      ntp_servers: "{{ ntp }}"
+      action: set
