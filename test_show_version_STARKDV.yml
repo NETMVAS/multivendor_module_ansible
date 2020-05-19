@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: 10.10.50.11
+  hosts: "{{ hosts }}"
   gather_facts: true
   ignore_errors: true
   tasks:
