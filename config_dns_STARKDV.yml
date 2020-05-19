@@ -1,4 +1,4 @@
-- name: "change_dns"
+- name: "set_dns"
   hosts: "{{ hosts }}"
   gather_facts: true
   ignore_errors: true
