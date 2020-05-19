@@ -1,0 +1,8 @@
+- name: "change_dns"
+  hosts: "{{ hosts }}"
+  gather_facts: true
+  ignore_errors: true
+  roles:
+    - role: config_dns
+      dns_servers: "{{ dns }}"
+      action: set
