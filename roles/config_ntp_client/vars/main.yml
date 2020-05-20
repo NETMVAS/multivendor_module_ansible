@@ -1,4 +1,4 @@
 ---
-mikrotik_config: /system ntp client set enabled=yes server-dns-names={{ ntp_servers }}
+mikrotik_config: /system ntp client set enabled=yes  primary-ntp={{ ip_ntp }} server-dns-names={{ dns_ntp | default(omit) }}
 
 cisco_config: ntp server {{ ntp_servers }}
