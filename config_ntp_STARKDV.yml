@@ -3,6 +3,6 @@
   gather_facts: true
   ignore_errors: true
   roles:
-    - role: config_ntp
+    - role: config_ntp_client
       ntp_servers: "{{ ntp }}"
       action: set
