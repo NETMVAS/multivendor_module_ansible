@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: AP01.L3.01.TYRMA
+  hosts: "{{ hosts }}"
   gather_facts: true
   ignore_errors: true
   tasks:
