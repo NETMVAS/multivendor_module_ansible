@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: 10.10.50.11
+  hosts: AP01.L3.01.TYRMA
   gather_facts: true
   ignore_errors: true
   tasks:
