@@ -1,0 +1,40 @@
+The full traceback is:
+Traceback (most recent call last):
+  File "/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py", line 102, in <module>
+    _ansiballz_main()
+  File "/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py", line 94, in _ansiballz_main
+    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+  File "/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py", line 40, in invoke_module
+    runpy.run_module(mod_name='ansible.modules.routeros_facts', init_globals=None, run_name='__main__', alter_sys=True)
+  File "/usr/lib64/python3.6/runpy.py", line 205, in run_module
+    return _run_module_code(code, init_globals, run_name, mod_spec)
+  File "/usr/lib64/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py", line 428, in <module>
+  File "/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py", line 416, in main
+  File "/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py", line 264, in populate
+  File "/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py", line 322, in parse_addresses
+  File "/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py", line 307, in preprocess
+IndexError: list index out of range
+
+"module_stderr": "Traceback (most recent call last):
+File \"/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py\", line 102, in <module>\
+_ansiballz_main()\
+File \"/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py\", line 94, in _ansiballz_main\
+invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+File \"/var/lib/awx/.ansible/tmp/ansible-local-150240rm4j74s/ansible-tmp-1589769723.4984572-15092-89369285659322/AnsiballZ_routeros_facts.py\", line 40, in invoke_module\
+unpy.run_module(mod_name='ansible.modules.routeros_facts', init_globals=None, run_name='__main__', alter_sys=True)
+File \"/usr/lib64/python3.6/runpy.py\", line 205, in run_module\
+return _run_module_code(code, init_globals, run_name, mod_spec)
+File \"/usr/lib64/python3.6/runpy.py\", line 96, in _run_module_code
+mod_name, mod_spec, pkg_name, script_name)
+File \"/usr/lib64/python3.6/runpy.py\", line 85, in _run_code
+exec(code, run_globals)
+ File \"/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py\", line 428, in <module>
+ File \"/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py\", line 416, in main
+ File \"/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py\", line 264, in populate
+ File \"/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py\", line 322, in parse_addresses
+ File \"/tmp/ansible_routeros_facts_payload_vxmp9owl/ansible_routeros_facts_payload.zip/ansible/modules/routeros_facts.py\", line 307, in preprocess
+ IndexError: list index out of range",

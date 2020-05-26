@@ -7,34 +7,34 @@
     - name: test
       routeros_command:
         commands:
-          # - /interface bridge
-          #     add fast-forward=no name=MTS_L2
-          #     add fast-forward=no name=LAN_LIDOGA
-          # - /interface ethernet
-          #     set [ find default-name=ether2 ]
-          #     set [ find default-name=ether3 ] name={{ downlink_name }}
-          #     set [ find default-name=ether4 ]
-          #     set [ find default-name=ether5 ] name=MGMT
-          #     set [ find default-name=ether1 ] name={{ uplink_name }}
-          # - /interface eoip
-          #     add name=EOIP_TO_KHV remote-address=10.0.1.2 tunnel-id={{ tunnel_id }}
-          # - /interface vlan
-          #     add interface={{ downlink_name }} name={{ vlan_name }} vlan-id={{ vlan_id }}
-          # - /ip address
-          #     add address={{ mts_ip }} interface={{ vlan_name }}
-          #     add address={{ uplink_ip }} interface={{ uplink_name }}
-          # - /interface gre
-          #     add name=GRE_TO_KHV_MGMT remote_address=10.0.1.2 local_address={{ uplink_ip }}
-          # - /ip address
-          #     add address={{ loopback }} interface=GRE_TO_KHV_MGMT
-          # - /interface bridge port
-          #     add bridge=MTS_L2 interface=EOIP_TO_KHV
-          #     add bridge=MTS_L2 interface={{ vlan_name }}
-          #     add bridge=LAN_LIDOGA interface=MGMT
-          #     add bridge=LAN_LIDOGA interface={{ GRE_NAME }}
-          # - /ip route
-          #     add distance=1 gateway={{ gateway }}
-          # - /ip service
-          #     set ftp disabled=yes
-          #     set www disabled=yes
+          - /interface bridge
+              add fast-forward=no name=MTS_L2
+              add fast-forward=no name=LAN_LIDOGA
+          - /interface ethernet
+              set [ find default-name=ether2 ]
+              set [ find default-name=ether3 ] name={{ downlink_name }}
+              set [ find default-name=ether4 ]
+              set [ find default-name=ether5 ] name=MGMT
+              set [ find default-name=ether1 ] name={{ uplink_name }}
+          - /interface eoip
+              add name=EOIP_TO_KHV remote-address=10.0.1.2 tunnel-id={{ tunnel_id }}
+          - /interface vlan
+              add interface={{ downlink_name }} name={{ vlan_name }} vlan-id={{ vlan_id }}
+          - /ip address
+              add address={{ mts_ip }} interface={{ vlan_name }}
+              add address={{ uplink_ip }} interface={{ uplink_name }}
+          - /interface gre
+              add name=GRE_TO_KHV_MGMT remote_address=10.0.1.2 local_address={{ uplink_ip }}
+          - /ip address
+              add address={{ loopback }} interface=GRE_TO_KHV_MGMT
+          - /interface bridge port
+              add bridge=MTS_L2 interface=EOIP_TO_KHV
+              add bridge=MTS_L2 interface={{ vlan_name }}
+              add bridge=LAN_LIDOGA interface=MGMT
+              add bridge=LAN_LIDOGA interface={{ GRE_NAME }}
+          - /ip route
+              add distance=1 gateway={{ gateway }}
+          - /ip service
+              set ftp disabled=yes
+              set www disabled=yes
           - /system identity set name={{ hostname }}
