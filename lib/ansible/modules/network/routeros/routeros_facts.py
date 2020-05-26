@@ -74,6 +74,10 @@ ansible_net_hostname:
   description: The configured hostname of the device
   returned: always
   type: str
+ansible_net_arcitec:
+  description: The arcitect
+  returned: always
+  type: str
 
 # hardware
 ansible_net_spacefree_mb:
@@ -164,6 +168,10 @@ class Default(FactsBase):
             self.facts['model'] = self.parse_model(data)
             self.facts['serialnum'] = self.parse_serialnum(data)
 
+        data = self.responses[3]
+        if data:
+            self.facts['architec'] = self.parse_architec(data)
+
     def parse_hostname(self, data):
         match = re.search(r'name:\s(.*)\s*$', data, re.M)
         if match:
@@ -176,6 +184,11 @@ class Default(FactsBase):
 
     def parse_model(self, data):
         match = re.search(r'model:\s(.*)\s*$', data, re.M)
+        if match:
+            return match.group(1)
+
+    def parse_architec(self, data):
+        match = re.search(r'architecture-name:\s(.*)\s*$', data, re.M)
         if match:
             return match.group(1)
 
