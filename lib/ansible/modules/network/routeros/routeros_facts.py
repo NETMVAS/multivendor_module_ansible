@@ -163,14 +163,14 @@ class Default(FactsBase):
         if data:
             self.facts['version'] = self.parse_version(data)
 
-        data = self.responses[2]
-        if data:
-            self.facts['model'] = self.parse_model(data)
-            self.facts['serialnum'] = self.parse_serialnum(data)
-
-        data = self.responses[1]
-        if data:
-            self.facts['architec'] = self.parse_architec(data)
+        # data = self.responses[2]
+        # if data:
+        #     self.facts['model'] = self.parse_model(data)
+        #     self.facts['serialnum'] = self.parse_serialnum(data)
+        #
+        # data = self.responses[1]
+        # if data:
+        #     self.facts['architec'] = self.parse_architec(data)
 
     def parse_hostname(self, data):
         match = re.search(r'name:\s(.*)\s*$', data, re.M)
