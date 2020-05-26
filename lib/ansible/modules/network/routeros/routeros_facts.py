@@ -168,7 +168,7 @@ class Default(FactsBase):
             self.facts['model'] = self.parse_model(data)
             self.facts['serialnum'] = self.parse_serialnum(data)
 
-        data = self.responses[3]
+        data = self.responses[1]
         if data:
             self.facts['architec'] = self.parse_architec(data)
 
