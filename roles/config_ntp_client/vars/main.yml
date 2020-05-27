@@ -1,4 +1,7 @@
 ---
-mikrotik_config: /system ntp client set enabled=yes  primary-ntp={{ ip_ntp }} server-dns-names={{ dns_ntp | default(omit) }}
+mikrotik_config:
+  - /system ntp client set enabled=yes  primary-ntp={{ ip_ntp }} server-dns-names={{ dns_ntp | default(omit) }}
+  - system clock set time-zone-autodetect=no time-zone-name={{ time_zone }} 
+
 
 cisco_config: ntp server {{ ntp_servers }}
