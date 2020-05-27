@@ -1,0 +1,22 @@
+- name: "network_check"
+  hosts: "{{ inventory_name }}"
+  gather_facts: true
+  ignore_errors: true
+  roles:
+    - role: config_dns
+      dns_servers: 10.10.100.1
+      action: set
+
+    - role: config_ntp_client
+      ip_ntp: 10.10.100.1
+      action: set
+
+    - role: config_hostname
+      hostname: "{{ ansible_net_hostname }}"
+      action: set
+
+    - role: config_user
+      username: admin_satarkdv
+      password: kMhREK
+      group: full
+      action: add
