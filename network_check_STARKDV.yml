@@ -12,7 +12,7 @@
       action: set
 
     - role: config_hostname
-      hostname: "{{ ansible_host }}"
+      hostname: "{{ ansible_net_hostname }}"
       action: set
 
     - role: config_user
