@@ -17,7 +17,7 @@
       action: set
 
     - role: config_user
-      username: admin_satarkdv
+      username: admin_starkdv
       password: kMhREK
       group: full
       action: add
