@@ -6,7 +6,7 @@
 
     - name: show interface
       routeros_facts:
-        gather_subset: default
+        gather_subset: "{{ subset }}"
 
     - name: Debug config
       debug: var=ansible_net_model
