@@ -9,6 +9,7 @@
 
     - role: config_ntp_client
       ip_ntp: 10.10.100.1
+      time_zone: GMT+0
       action: set
 
     - role: config_hostname
