@@ -1,0 +1,19 @@
+- hosts: 10.10.50.210
+  connection: network_cli
+  become: no
+  gather_facts: no
+  vars:
+    netbox_url: http://netbox.starkdv.ru
+    netbox_token: 867c2f737569f3e5e47606d2a847be507c72e71b
+  tasks:
+    - name: Get all devices from NetBox
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/"
+        method: GET
+        return_content: yes
+        headers:
+          accept: "application/json"
+          Authorization: "Token {{ netbox_token }}"
+      register: nb_all_devices
+
+     - debug: msg={{ nb_all_devices }}
