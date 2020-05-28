@@ -15,6 +15,4 @@
           accept: "application/json"
           Authorization: "Token {{ netbox_token }}"
       register: nb_all_devices
-
-     - name: Debug config
-       debug: msg={{ nb_all_devices }}
+      debug: msg={{ nb_all_devices }}
