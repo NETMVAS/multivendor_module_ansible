@@ -1,0 +1,18 @@
+- name: "Test Netbox modules"
+  connection: local
+  hosts: netbox
+  gather_facts: False
+  vars:
+    netbox_url: http://netbox.starkdv.ru
+    netbox_token: 867c2f737569f3e5e47606d2a847be507c72e71b
+  tasks:
+    - name: Create device within Netbox with only required information
+      netbox_device:
+        netbox_url: {{ netbox_url }}
+        netbox_token: {{ netbox_token }}
+        data:
+          name: UPER_MEGA_SUPER_TEST
+          device_type: TEST_DEVICE_TYPE
+          device_role: TEST_DEVICE_ROLE
+          site: TEST_SITE
+        state: present
