@@ -1,6 +1,6 @@
 - name: "Test Netbox modules"
   connection: local
-  hosts: 10.10.50.212
+  hosts: netbox
   gather_facts: False
   vars:
     netbox_url: http://netbox.starkdv.ru
