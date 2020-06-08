@@ -1,6 +1,1 @@
-before_script:
-  - apt-get install ansible
-
-run-test:
-  script:
-    - ansible --version
+cat file1.txt file2.txt | grep -q "Hello world"
