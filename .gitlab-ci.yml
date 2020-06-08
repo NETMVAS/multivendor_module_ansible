@@ -1,4 +1,8 @@
 image: ubuntu
+before_script:
+  - apt-get install ansible
+
+
 run-test:
   script:
-    apt install ansible
+    - ansible --version
