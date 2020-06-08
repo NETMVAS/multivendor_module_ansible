@@ -1,4 +1,4 @@
-
+image: ubuntu
 run-test:
   script:
-    - ruby --version
+    apt install ansible
