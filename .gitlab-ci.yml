@@ -1,5 +1,3 @@
-before_script:
-  - apt-get install rubygems ruby-dev -y
 
 run-test:
   script:
