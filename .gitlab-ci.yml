@@ -1,6 +1,6 @@
 before_script:
-  - apt-get install rubygems ruby-dev -y
+  - apt-get install ansible
 
 run-test:
   script:
-    - ruby --version
+    - ansible --version
