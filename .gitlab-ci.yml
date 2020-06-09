@@ -1,2 +1,4 @@
+image: debian
+
 test:
-  script: ls
+  script: apt install curl
