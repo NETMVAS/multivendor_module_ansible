@@ -1,4 +1,3 @@
-
-
 test:
-  script: ls
+  script: 
+  - apt install ansible
