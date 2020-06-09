@@ -1,4 +1,4 @@
-image: debian:latest
+
 
 test:
   script: ls
