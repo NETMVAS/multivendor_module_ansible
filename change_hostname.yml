@@ -3,6 +3,6 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      - role: config_hostname1
+      - role: config_hostname
         hostname: test_cisco
         action: set
