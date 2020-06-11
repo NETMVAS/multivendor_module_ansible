@@ -5,3 +5,7 @@ stages:
 test:
   script: 
   - ansible --version
+ 
+deploy:
+  script: 
+  - ansible --version
