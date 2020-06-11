@@ -13,7 +13,7 @@ test_deploy:
 test_play:
   stage: test
   script: 
-  - ansible $CI_COMMIT_REF_NAME
+  - ansible $CI_JOB_STAGE
   tags:
   - ansible_test
  
