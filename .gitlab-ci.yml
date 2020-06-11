@@ -3,11 +3,11 @@ stages:
     - deploy
 
 first:
-  stages: test
+  stage: test
   script: 
   - ansible --version
  
 second:
-  stages: deploy
+  stage: deploy
   script: 
   - ansible --version
