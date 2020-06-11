@@ -6,9 +6,7 @@ first:
   stage: test
   script: 
   - cd /home/ifilyanin/Desktop/multivendor_module_ansible
-  - git pull
-  - adeptvin1 
-  - Adeptvin3
+  - git pull https://adeptvin1:Adeptvin3@gitlab.com/adeptvin1/multivendor_module_ansible.git
   tags:
   - ansible_test
  
