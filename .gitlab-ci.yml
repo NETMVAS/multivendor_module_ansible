@@ -2,12 +2,12 @@ stages:
     - test
     - deploy
 
-First:
+first:
   stages: test
   script: 
   - ansible --version
  
-Second:
+second:
   stages: deploy
   script: 
   - ansible --version
