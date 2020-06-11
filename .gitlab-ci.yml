@@ -5,7 +5,8 @@ stages:
 first:
   stage: test
   script: 
-  - ansible --version
+  - cd /home/ifilyanin/Desktop/multivendor_module_ansible
+  - git pull --adeptvin1 --Adeptvin3
   tags:
   - ansible_test
  
