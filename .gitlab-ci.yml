@@ -1,8 +1,7 @@
-
 stages: 
-    - Testing
-    - Deploy production
+    - test
+    - deploy
 
-Testing:
+test:
   script: 
   - ansible --version
