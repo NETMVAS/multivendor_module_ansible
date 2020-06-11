@@ -2,11 +2,18 @@ stages:
     - test
     - deploy
 
-first:
+test_deploy:
   stage: test
   script: 
   - cd /home/ifilyanin/Desktop/multivendor_module_ansible
   - git pull https://adeptvin1:Adeptvin3@gitlab.com/adeptvin1/multivendor_module_ansible.git
+  tags:
+  - ansible_test
+
+test_play:
+  stage: test
+  script: 
+  - ansible --version
   tags:
   - ansible_test
  
