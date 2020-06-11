@@ -13,7 +13,9 @@ test_deploy:
 test_play:
   stage: test
   script: 
-  - echo $CI_COMMIT_TITLE
+  - ansible-playbook $CI_COMMIT_TITLE
+  rules:
+  - if: '$CI_COMMIT_TITLE != ".gitlab-ci.yml"'
   tags:
   - ansible_test
  
