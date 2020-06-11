@@ -23,7 +23,7 @@ test_play:
  
 second:
   stage: deploy
-    rules:
+  rules:
   - if: '$CI_COMMIT_TITLE == "playbook_*"'
   script: 
   - ansible --version
