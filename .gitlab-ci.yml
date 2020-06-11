@@ -4,6 +4,8 @@ stages:
 
 test_deploy:
   stage: test
+  before_script:
+    - sudo apt install yamllint --yes
   script: 
   - cd /home/ifilyanin/Desktop/multivendor_module_ansible
   - git pull https://adeptvin1:Adeptvin3@gitlab.com/adeptvin1/multivendor_module_ansible.git
