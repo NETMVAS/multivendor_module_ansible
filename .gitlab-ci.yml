@@ -6,8 +6,12 @@ first:
   stage: test
   script: 
   - ansible --version
+  tags:
+  - ansible_test
  
 second:
   stage: deploy
   script: 
   - ansible --version
+  tags:
+  - ansible_test
