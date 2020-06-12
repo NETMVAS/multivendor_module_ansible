@@ -1,5 +1,5 @@
 ---
-- name: "change_hostname"
+- name: "gather_facts"
   hosts: router_mikrotik
   gather_facts: false
   ignore_errors: true
