@@ -1,6 +1,6 @@
 - name: "network_check"
   hosts: "{{ inventory_name }}"
-  gather_facts: true
+  gather_facts: false
   ignore_errors: true
   roles:
     - role: config_dns
