@@ -1,6 +1,6 @@
 - name: "change_hostname"
   hosts: "{{ hosts }}"
-  gather_facts: true
+  gather_facts: false
   ignore_errors: true
   tasks:
 
@@ -8,5 +8,5 @@
       routeros_facts:
         gather_subset: "{{ subset }}"
 
-    - name: Debug config
-      debug: var=ansible_net_model
+    # - name: Debug config
+    #   debug: var=ansible_net_model
