@@ -1,0 +1,41 @@
+stages: 
+    - test
+    - deploy
+
+test_deploy:
+  stage: test
+  before_script:
+    - sudo apt install yamllint --yes
+  script: 
+  - cd /home/ifilyanin/Desktop/multivendor_module_ansible
+  - git pull https://adeptvin1:Adeptvin3@gitlab.com/adeptvin1/multivendor_module_ansible.git
+  tags:
+  - ansible_test
+
+test_playbook_lint:
+  stage: test
+  script: 
+  - yamllint $CI_COMMIT_TITLE && echo "OK"
+  rules:
+  - if: '$CI_COMMIT_TITLE != ".gitlab-ci.yml"'
+  - if: '$CI_COMMIT_TITLE == "*_playbook.yml"'
+  tags:
+  - ansible_test
+
+
+test_playbook_play:
+  stage: test
+  script: 
+  - sudo ansible-playbook $CI_COMMIT_TITLE
+  rules:
+  - if: '$CI_COMMIT_TITLE != ".gitlab-ci.yml"'
+  - if: '$CI_COMMIT_TITLE == "*_playbook.yml"'
+  tags:
+  - ansible_test
+ 
+second:
+  stage: deploy
+  script: 
+  - echo $CI_COMMIT_REF_SLUG
+  tags:
+  - ansible_test
