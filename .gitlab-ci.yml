@@ -16,7 +16,7 @@ test_play:
   stage: test
   script: 
   - ansible-playbook $CI_COMMIT_TITLE
-  - yamllint *_playbook.yml
+  - yamllint *_playbook.yml && echo "OK"
   rules:
   - if: '$CI_COMMIT_TITLE != ".gitlab-ci.yml"'
   tags:
