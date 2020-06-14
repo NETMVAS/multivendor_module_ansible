@@ -12,7 +12,7 @@ test_deploy:
   tags:
   - ansible_test
 
-playbook_lint:
+test_playbook_lint:
   stage: test
   script: 
   - yamllint $CI_COMMIT_TITLE && echo "OK"
@@ -23,12 +23,13 @@ playbook_lint:
   - ansible_test
 
 
-test_play:
+test_playbook_play:
   stage: test
   script: 
-  - ansible-playbook $CI_COMMIT_TITLE
+  - sudo ansible-playbook $CI_COMMIT_TITLE
   rules:
   - if: '$CI_COMMIT_TITLE != ".gitlab-ci.yml"'
+  - if: '$CI_COMMIT_TITLE == "*_playbook.yml"'
   tags:
   - ansible_test
  
