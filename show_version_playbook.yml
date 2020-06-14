@@ -5,6 +5,6 @@
   ignore_errors: true
   tasks:
 
-    - name: show interfaces
+    - name: show interface
       routeros_facts:
         gather_subset: all
