@@ -128,6 +128,14 @@ ansible_net_neighbors:
    description: The dict bgp peer
    returned: peer information
    type: dict
+ ansible_net_bgp_vpnv4_route:
+   description: The dict bgp vpnv4 route
+   returned: vpnv4 route information
+   type: dict
+ ansible_net_bgp_instance:
+   description: The dict bgp instance
+   returned: bgp instance information
+   type: dict
 """
 import re
 
