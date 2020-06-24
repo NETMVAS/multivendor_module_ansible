@@ -136,6 +136,18 @@ ansible_net_neighbors:
    description: The dict bgp instance
    returned: bgp instance information
    type: dict
+ ansible_net_route:
+   description: The dict routes in all routing table
+   returned: routes information in all routing table
+   type: dict
+ ansible_net_ospf_instance:
+   description: The dict ospf instance
+   returned: ospf instance information
+   type: dict
+ ansible_net_ospf_neighbor:
+   description: The dict ospf neighbor
+   returned: ospf neighbor information
+   type: dict
 """
 import re
 
@@ -403,7 +415,10 @@ class Routing(FactsBase):
     COMMANDS = [
         '/routing bgp peer print detail without-paging',
         '/routing bgp vpnv4-route print detail without-paging',
-        '/routing bgp instance print detail without-paging'
+        '/routing bgp instance print detail without-paging',
+        '/ip route print detail without-paging',
+        '/routing ospf instance print detail without-paging',
+        '/routing ospf neighbor print detail without-paging'
 
     ]
 
@@ -416,6 +431,9 @@ class Routing(FactsBase):
         self.facts['bgp_peer'] = dict()
         self.facts['bgp_vpnv4_route'] = dict()
         self.facts['bgp_instance'] = dict()
+        self.facts['route'] = dict()
+        self.facts['ospf_instance'] = dict()
+        self.facts['ospf_neighbor'] = dict()
         data = self.responses[0]
         if data:
             peer = self.parse_bgp_peer(data)
@@ -427,7 +445,22 @@ class Routing(FactsBase):
         data = self.responses[2]
         if data:
             instance = self.parse_instance(data)
-            self.populate_instance(instance)
+            self.populate_bgp_instance(instance)
+
+        data = self.responses[3]
+        if data:
+            route = self.parse_route(data)
+            self.populate_route(route)
+
+        data = self.responses[4]
+        if data:
+            instance = self.parse_instance(data)
+            self.populate_ospf_instance(instance)
+
+        data = self.responses[5]
+        if data:
+            instance = self.parse_ospf_neighbor(data)
+            self.populate_ospf_neighbor(instance)
 
     def preprocess(self, data):
         preprocessed = list()
@@ -449,6 +482,20 @@ class Routing(FactsBase):
         match = re.search(r'interface=([\w\d\-]+)', data, re.M)
         if match:
             return match.group(1)
+
+    def parse_instance_name(self, data):
+        match = re.search(r'instance=([\w\d\-]+)', data, re.M)
+        if match:
+            return match.group(1)
+
+
+    def parse_routing_mark(self, data):
+        match = re.search(r'routing-mark=([\w\d\-]+)', data, re.M)
+        if match:
+            return match.group(1)
+        else:
+            match = 'main'
+            return match
 
     def parse_bgp_peer(self, data):
         facts = dict()
@@ -480,6 +527,37 @@ class Routing(FactsBase):
                 facts[name][key] = value
         return facts
 
+    def parse_route(self, data):
+        facts = dict()
+        data = self.preprocess(data)
+        for line in data:
+            name = self.parse_routing_mark(line)
+            facts[name] = dict()
+            for (key, value) in re.findall(self.DETAIL_RE, line):
+                facts[name][key] = value
+        return facts
+
+    def parse_ospf_instance(self, data):
+        facts = dict()
+        data = self.preprocess(data)
+        for line in data:
+            name = self.parse_name(line)
+            facts[name] = dict()
+            for (key, value) in re.findall(self.DETAIL_RE, line):
+                facts[name][key] = value
+        return facts
+
+    def parse_ospf_neighbor(self, data):
+        facts = dict()
+        data = self.preprocess(data)
+        for line in data:
+            name = self.parse_instance_name(line)
+            facts[name] = dict()
+            for (key, value) in re.findall(self.DETAIL_RE, line):
+                facts[name][key] = value
+        return facts
+
+
     def populate_bgp_peer(self, data):
         for key, value in iteritems(data):
             self.facts['bgp_peer'][key] = value
@@ -488,9 +566,21 @@ class Routing(FactsBase):
         for key, value in iteritems(data):
             self.facts['bgp_vpnv4_route'][key] = value
 
-    def populate_instance(self, data):
+    def populate_bgp_instance(self, data):
         for key, value in iteritems(data):
             self.facts['bgp_instance'][key] = value
+
+    def populate_route(self, data):
+        for key, value in iteritems(data):
+            self.facts['route'][key] = value
+
+    def populate_ospf_instance(self, data):
+        for key, value in iteritems(data):
+            self.facts['ospf_instance'][key] = value
+
+    def populate_ospf_neighbor(self, data):
+        for key, value in iteritems(data):
+            self.facts['ospf_neighbor'][key] = value
 
 FACT_SUBSETS = dict(
     default=Default,
