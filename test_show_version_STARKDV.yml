@@ -10,4 +10,4 @@
 
     - name: Debug config
       debug:
-        msg: "{{  ansible_net_interfaces['GRE_TO_KHV_MGMT'] }}"
+        msg: L2MTU = "{{  ansible_net_interfaces['GRE_TO_KHV_MGMT'][l2mtu] }}"
