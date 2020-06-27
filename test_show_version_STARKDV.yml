@@ -10,4 +10,4 @@
 
     - name: Debug config
       debug:
-        msg: {{  ansible_net_interfaces['GRE_TO_KHV_MGMT'] }}
+        msg: "{{  ansible_net_interfaces['GRE_TO_KHV_MGMT'] }}"
