@@ -9,4 +9,4 @@
         gather_subset: "{{ subset }}"
 
     - name: Debug config
-      debug: msg={{ ansible_net_interfaces}}
+      debug: var=ansible_net_model
