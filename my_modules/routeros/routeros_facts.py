@@ -292,7 +292,8 @@ class Interfaces(FactsBase):
         '/interface print detail without-paging',
         '/ip address print detail without-paging',
         '/ipv6 address print detail without-paging',
-        '/ip neighbor print detail without-paging'
+        '/ip neighbor print detail without-paging',
+        '/interface bridge host print detail without-paging '
     ]
 
     DETAIL_RE = re.compile(r'([\w\d\-]+)=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)')
@@ -305,6 +306,7 @@ class Interfaces(FactsBase):
         self.facts['all_ipv4_addresses'] = list()
         self.facts['all_ipv6_addresses'] = list()
         self.facts['neighbors'] = dict()
+        self.facts['mac_address'] = dict()
 
         data = self.responses[0]
         if data:
@@ -325,9 +327,18 @@ class Interfaces(FactsBase):
         if data:
             self.facts['neighbors'] = self.parse_neighbors(data)
 
+        data = self.responses[4]
+        if data:
+            data = self.parse_mac_address(data)
+            self.populate_mac_address(data)
+
     def populate_interfaces(self, data):
         for key, value in iteritems(data):
             self.facts['interfaces'][key] = value
+
+    def populate_mac_address(self, data):
+        for key, value in iteritems(data):
+            self.facts['mac_address'][key] = value
 
     def populate_ipv4_interfaces(self, data):
         for key, value in iteritems(data):
@@ -396,6 +407,16 @@ class Interfaces(FactsBase):
                 facts[name][key] = value
         return facts
 
+    def parse_mac_address(self, data):
+        facts = dict()
+        data = self.preprocess(data)
+        for line in data:
+            name = self.parse_interface(line)
+            facts[name] = dict()
+            for (key, value) in re.findall(self.DETAIL_RE, line):
+                facts[name][key] = value
+        return facts
+
     def parse_name(self, data):
         match = re.search(r'name=\"([\w\d\-]+)\"', data, re.M)
         if match:
@@ -405,7 +426,6 @@ class Interfaces(FactsBase):
         match = re.search(r'interface=([\w\d\-]+)', data, re.M)
         if match:
             return match.group(1)
-
 
 
 
