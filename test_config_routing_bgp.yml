@@ -63,7 +63,7 @@
         action: set
 
       - role: config_routing_bgp
-        numbers: 0
+        numbers_bgp_vrf: 0
         submenu: vrf
         action: remove
 
