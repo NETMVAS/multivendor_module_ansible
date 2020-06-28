@@ -9,7 +9,7 @@
 
     - name: Get all devices from NetBox
       uri:
-        url: "{{ netbox_url }}/api/dcim/devices/"
+        url: "{{ netbox_url }}/api/dcim/devices/17/"
         method: GET
         return_content: yes
         headers:
