@@ -41,6 +41,50 @@
       - action == 'set'
 
 
+
+  - name: add bgp instance vrf mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_vrf_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'vrf'
+      - action == 'add'
+
+  - name: remove bgp instance vrf mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_vrf_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'vrf'
+      - action == 'remove'
+
+  - name: enable bgp instance vrf mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_vrf_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'vrf'
+      - action == 'enable'
+
+  - name: disable bgp instance vrf mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_vrf_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'vrf'
+      - action == 'disable'
+
+  - name: set bgp instance vrf mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_instance_vrf_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'vrf'
+      - action == 'set'
+
+
+
+
   - name: add bgp peer mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_peer_add }}"
