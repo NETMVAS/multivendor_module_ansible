@@ -6,10 +6,10 @@ mikrotik_config_instance_disable: /routing bgp instance disable {{ bgp_instance 
 mikrotik_config_instance_set: /routing bgp instance set {{ bgp_instance }} name={{ rename_bgp_instance }} router-id={{ router_id }} as={{ as }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-other-bgp={{ redist_bgp | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-ospf={{ redist_ospf | default('no', true) }}    redistribute-rip={{ redist_rip | default('no', true) }}
 
 mikrotik_config_instance_vrf_add: /routing bgp instance vrf add routing-mark={{ routing_mark }} instance={{ bgp_instance }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-other-bgp={{ redist_bgp | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-ospf={{ redist_ospf | default('no', true) }}    redistribute-rip={{ redist_rip | default('no', true) }}
-mikrotik_config_instance_vrf_remove: /routing bgp instance vrf remove numbers={{ nubers_bgp_vrf }}
-mikrotik_config_instance_vrf_enable: /routing bgp instance vrf enable numbers={{ nubers_bgp_vrf }}
-mikrotik_config_instance_vrf_disable: /routing bgp instance vrf disable numbers={{ nubers_bgp_vrf }}
-mikrotik_config_instance_vrf_set: /routing bgp instance vrf set numbers={{ nubers_bgp_vrf }} routing-mark={{ routing_mark }} instance={{ bgp_instance }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-other-bgp={{ redist_bgp | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-ospf={{ redist_ospf | default('no', true) }}    redistribute-rip={{ redist_rip | default('no', true) }}
+mikrotik_config_instance_vrf_remove: /routing bgp instance vrf remove numbers={{ numbers_bgp_vrf }}
+mikrotik_config_instance_vrf_enable: /routing bgp instance vrf enable numbers={{ numbers_bgp_vrf }}
+mikrotik_config_instance_vrf_disable: /routing bgp instance vrf disable numbers={{ numbers_bgp_vrf }}
+mikrotik_config_instance_vrf_set: /routing bgp instance vrf set numbers={{ numbers_bgp_vrf }} routing-mark={{ routing_mark }} instance={{ bgp_instance }} redistribute-connected={{ redist_connected | default('no', true) }}  redistribute-other-bgp={{ redist_bgp | default('no', true) }}  redistribute-static={{ redist_static | default('no', true) }} redistribute-ospf={{ redist_ospf | default('no', true) }}    redistribute-rip={{ redist_rip | default('no', true) }}
 
 mikrotik_config_peer_add: /routing bgp peer add name={{ bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use-bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
 mikrotik_config_peer_remove: /routing bgp peer remove {{ bgp_peer }}
@@ -18,7 +18,7 @@ mikrotik_config_peer_disable: /routing bgp peer disable {{ bgp_peer }}
 mikrotik_config_peer_set: /routing bgp peer set {{ bgp_peer }} name={{ rename_bgp_peer }} remote-address={{ remote_address }} remote-as={{ remote_as }} update-source={{ update_source }} instance={{ bgp_instance }} use-bfd={{ bfd | default('no', true) }} multihop={{ multihop | default('no', true) }}
 
 mikrotik_config_network_add: /routing bgp network add network={{ network }} synchronize={{ sync | default('yes', true) }}
-mikrotik_config_network_remove: /routing bgp network remove numbers={{ nubers_bgp_network }}
-mikrotik_config_network_enable: /routing bgp network enable numbers={{ nubers_bgp_network }}
-mikrotik_config_network_disable: /routing bgp network disable numbers={{ nubers_bgp_network }}
-mikrotik_config_network_set: /routing bgp network set numbers={{ nubers_bgp_network }} network={{ network }} synchronize={{ sync | default('yes', true) }}
+mikrotik_config_network_remove: /routing bgp network remove numbers={{ numbers_bgp_network }}
+mikrotik_config_network_enable: /routing bgp network enable numbers={{ numbers_bgp_network }}
+mikrotik_config_network_disable: /routing bgp network disable numbers={{ numbers_bgp_network }}
+mikrotik_config_network_set: /routing bgp network set numbers={{ numbers_bgp_network }} network={{ network }} synchronize={{ sync | default('yes', true) }}
