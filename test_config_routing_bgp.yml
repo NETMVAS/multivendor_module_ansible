@@ -45,17 +45,17 @@
         action: add
 
       - role: config_routing_bgp
-        numbers: 0
+        numbers_bgp_vrf: 0
         submenu: vrf
         action: disable
 
       - role: config_routing_bgp
-        numbers: 0
+        numbers_bgp_vrf: 0
         submenu: vrf
         action: enable
 
       - role: config_routing_bgp
-        numbers: 0
+        numbers_bgp_vrf: 0
         instance: default
         routing_mark: test
         redist_connected: 'yes'
