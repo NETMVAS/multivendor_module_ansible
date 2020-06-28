@@ -39,7 +39,7 @@
 
       - role: config_routing_bgp
         routing_mark: test
-        instance: default
+        bgp_instance: default
         redist_connected: 'yes'
         submenu: vrf
         action: add
@@ -56,7 +56,7 @@
 
       - role: config_routing_bgp
         numbers_bgp_vrf: 0
-        instance: default
+        bgp_instance: default
         routing_mark: test
         redist_connected: 'yes'
         submenu: vrf
