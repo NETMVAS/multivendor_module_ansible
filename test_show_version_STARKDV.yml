@@ -2,13 +2,13 @@
   hosts: "{{ hosts }}"
   gather_facts: false
   ignore_errors: true
-  collect_facts: true
   tasks:
 
     - name: show interface
       routeros_facts:
         gather_subset: "{{ subset }}"
       register: substes_register
+      setup:
 
 
     # - copy: content="{{ substes_register | to_yaml }}" dest=/home/stark/Desktop/test.yml
