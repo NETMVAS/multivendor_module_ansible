@@ -7,7 +7,8 @@
     - name: show interface
       routeros_facts:
         gather_subset: "{{ subset }}"
+      register: substes_register
 
     - name: Debug config
       debug:
-        msg: mac_address = "{{  ansible_net_mac_address }}"
+        msg: register = "{{  substes_register | to_yaml }}"
