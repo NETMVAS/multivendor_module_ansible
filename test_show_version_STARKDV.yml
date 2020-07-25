@@ -2,6 +2,7 @@
   hosts: "{{ hosts }}"
   gather_facts: false
   ignore_errors: true
+  collect_facts: true
   tasks:
 
     - name: show interface
