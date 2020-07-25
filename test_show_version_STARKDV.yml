@@ -7,11 +7,6 @@
     - name: show interface
       routeros_facts:
         gather_subset: "{{ subset }}"
-      register: substes_register
-
-    - name: collect_facts
-      setup:
-        fact_path: /facts.yml
 
 
     # - copy: content="{{ substes_register | to_yaml }}" dest=/home/stark/Desktop/test.yml
