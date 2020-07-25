@@ -9,6 +9,4 @@
         gather_subset: "{{ subset }}"
       register: substes_register
 
-    - name: Debug config
-      debug:
-        msg: register = "{{  substes_register | to_yaml }}"
+    - copy: content="{{ substes_register | to_yaml }}" dest=/home/stark/Desktop/test.yml
