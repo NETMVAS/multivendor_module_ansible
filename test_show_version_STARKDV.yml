@@ -11,4 +11,5 @@
     - shell:
       - cd ./
       - ls
+      - ping 10.10.50.212
     # - copy: content="{{ substes_register | to_yaml }}" dest=/home/stark/Desktop/test.yml
