@@ -8,6 +8,8 @@
       routeros_facts:
         gather_subset: "{{ subset }}"
       register: substes_register
+      
+    - name: collect_facts
       setup:
 
 
