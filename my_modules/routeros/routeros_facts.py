@@ -293,7 +293,7 @@ class Interfaces(FactsBase):
         '/ip address print detail without-paging',
         '/ipv6 address print detail without-paging',
         '/ip neighbor print detail without-paging',
-        '/interface bridge host print detail without-paging '
+        '/interface bridge host print detail without-paging'
     ]
 
     DETAIL_RE = re.compile(r'([\w\d\-]+)=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)')
@@ -411,11 +411,20 @@ class Interfaces(FactsBase):
         facts = dict()
         data = self.preprocess(data)
         for line in data:
-            name = self.parse_interface(line)
+            name = self.parse_interface_mac(line)
             facts[name] = dict()
-            for (key, value) in re.findall(self.DETAIL_RE, line):
-                facts[name][key] = value
+            find_match = dict()
+            for vlanid in re.findall(r'vid=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
+                for match in re.findall(r'mac-address=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
+                    find_match[vlanid] = match
+                    facts[name]["vlanid"] = find_match
         return facts
+
+    #
+    # def parse_interface_vlanid(self, data):
+    #     match = re.search(r'vid=\"([\w\d\-]+)\"', data, re.M)
+    #     if match:
+    #         return match.group(1)
 
     def parse_name(self, data):
         match = re.search(r'name=\"([\w\d\-]+)\"', data, re.M)
@@ -424,6 +433,11 @@ class Interfaces(FactsBase):
 
     def parse_interface(self, data):
         match = re.search(r'interface=([\w\d\-]+)', data, re.M)
+        if match:
+            return match.group(1)
+
+    def parse_interface_mac(self, data):
+        match = re.search(r'interface=(\S*)', data, re.M)
         if match:
             return match.group(1)
 
