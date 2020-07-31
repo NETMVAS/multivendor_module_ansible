@@ -7,8 +7,8 @@
     - name: show interface
       routeros_facts:
         gather_subset: "{{ subset }}"
-      register: substes_register
-      setup:
-
-
-    - copy: content="{{ substes_register | to_yaml | }}" dest=test.yml
+    #   register: substes_register
+    #   setup:
+    #
+    #
+    # - copy: content="{{ substes_register | to_yaml | }}" dest=test.yml
