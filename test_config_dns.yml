@@ -3,6 +3,6 @@
   gather_facts: false
   ignore_errors: true
   roles:
-      - role: config_dns
-        dns_servers: '8.8.8.8'
-        action: set
+    - role: config_dns
+      dns_servers: 8.8.8.8
+      action: set
