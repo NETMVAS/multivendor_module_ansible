@@ -1,10 +1,10 @@
 ---
-- name: "gather_facts"
-  hosts: router_mikrotik
+- name: show facts
+  hosts: {{ hosts }}
   gather_facts: false
   ignore_errors: true
   tasks:
 
-    - name: show interface
+    - name: show facts
       routeros_facts:
         gather_subset: default
