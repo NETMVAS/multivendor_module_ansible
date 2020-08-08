@@ -1,6 +1,6 @@
 ---
 - name: show facts
-  hosts: {{ hosts }}
+  hosts: "{{ hosts }}"
   gather_facts: false
   ignore_errors: true
   tasks:
