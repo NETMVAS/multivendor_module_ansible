@@ -1,14 +1,15 @@
 ---
 mikrotik_config_ldp_interface_add: /mpls ldp interface add interface={{ interfaces }} transport-address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes')}}
-mikrotik_config_remove: /ip dhcp-client remove {{ numbers_dhcp_client }}
-mikrotik_config_enable: /ip dhcp-client enable {{ numbers_dhcp_client }}
-mikrotik_config_disable: /ip dhcp-client disable {{ numbers_dhcp_client }}
-mikrotik_config_set: /ip dhcp-client set numbers={{ numbers_dhcp_client }} interface={{ interface }} add-default-route={{ state_default_route }}
+mikrotik_config_ldp_interface_remove: /mpls ldp interface remove numbers={{ numbers_ldp_interface }}
+mikrotik_config_ldp_interface_enable: /mpls ldp interface enable={{ numbers_ldp_interface }}
+mikrotik_config_ldp_interface_disable: /mpls ldp interface disable={{ numbers_ldp_interface }}
+mikrotik_config_ldp_interface_set: /mpls ldp interface set interface={{ interfaces }} transport_address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes')}}
 
-cisco_config_add:
-  - name: "{{ interface }}"
-    ipv4:
-      - address: dhcp
+mikrotik_config_ldp_neighbor_add: /mpls ldp neighbor add transport={{ transport_address }} send-targeted={{ send_targeted | default('yes') }}
+mikrotik_config_ldp_neighbor_remove: /mpls ldp neighbor remove numbers={{ numbers_ldp_neighbor }}
+mikrotik_config_ldp_neighbor_enable: /mpls ldp neighbor enable numbers={{ numbers_ldp_neighbor }}
+mikrotik_config_ldp_neighbor_disable: /mpls ldp neighbor disable numbers={{ numbers_ldp_neighbor }}
+mikrotik_config_ldp_neighbor_set: /mpls ldp neighbor set numbers={{ numbers_ldp_neighbor }} transport={{ transport_address }} send-targeted={{ send_targeted | default('yes') }}
 
-cisco_config_remove:
-  - name: "{{ interface }}"
+mikrotik_config_mpls_settings: /mpls set dynamic-label-range={{ range }} propagate-ttl={{propagate_ttl | default('yes') }}
+mikrotik_config_ldp_settings: /mpls ldp set enabled={{ ldp }}  lsr-id={{ lsr_id }} transport-address={{ transport_address }}  loop-detect={{  loop_detect | default('no')}} use-explicit-null={{ use_explicit_null | default('no')}} distribute-for-default-route={{distribute_for_default_route | default('no')}} 

@@ -65,10 +65,40 @@
 
   - name: set mpls ldp neighbor mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_ldp_neighbor _set }}"
+      commands: "{{ mikrotik_config_ldp_neighbor_set }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
+
+  - name: set mpls settings mikrotik
+    routeros_command:
+       commands: "{{ mikrotik_config_mpls_settings }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+
+  - name: set mpls ldp settings mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_settings }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
