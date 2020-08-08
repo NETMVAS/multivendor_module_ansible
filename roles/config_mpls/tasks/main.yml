@@ -1,0 +1,90 @@
+---
+  - name: add mpls ldp interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_interface_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+
+  - name: remove  mpls ldp interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_interface_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+
+  - name: enable mpls ldp interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_interface_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+
+  - name: disable mpls ldp interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_interface_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+
+  - name: set mpls ldp interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_interface_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+
+
+  - name: add mpls ldp neighbor mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_neighbor_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+
+  - name: remove  mpls ldp neighbor mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_neighbor_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+
+  - name: enable mpls ldp neighbor mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_neighbor_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+
+  - name: disable mpls ldp neighbor mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_neighbor_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+
+  - name: set mpls ldp neighbor mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_ldp_neighbor _set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+
+
+
+  - name: add dhcp_client cisco
+    ios_l3_interfaces:
+      config: "{{ cisco_config_add }}"
+      state: merged
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'add'
+
+
+  - name: remove dhcp_client cisco
+    ios_l3_interfaces:
+      config: "{{ cisco_config_remove }}"
+      state: deleted
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'remove'
