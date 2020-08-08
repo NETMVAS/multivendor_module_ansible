@@ -1,0 +1,9 @@
+---
+- name: upload routeros fimware
+  hosts: {{ hosts }}
+  gather_facts: false
+  ignore_errors: true
+  tasks:
+    - name: upload ftp routeros
+      routeros_command:
+        command: tool fetch mode=ftp address=172.21.254.20 src-path=/mikrotik/{{ ansible_net_architec }}/routeros-{{ ansible_net_architec }}-{{ ansible_net_version }}.npk
