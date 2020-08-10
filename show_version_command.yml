@@ -1,0 +1,10 @@
+---
+- name: show facts
+  hosts: "{{ hosts }}"
+  gather_facts: false
+  ignore_errors: true
+  tasks:
+
+    - name: show facts
+      routeros_command:
+        commands: /export
