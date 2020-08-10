@@ -292,8 +292,9 @@ class Interfaces(FactsBase):
         '/interface print detail without-paging',
         '/ip address print detail without-paging',
         '/ipv6 address print detail without-paging',
-        '/ip neighbor print detail without-paging',
-        '/interface bridge host print detail without-paging'
+        '/ip neighbor print detail without-paging'
+        # '/interface bridge host print detail without-paging',
+        # '/interface bridge host print detail without-paging'
     ]
 
     DETAIL_RE = re.compile(r'([\w\d\-]+)=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)')
@@ -306,7 +307,8 @@ class Interfaces(FactsBase):
         self.facts['all_ipv4_addresses'] = list()
         self.facts['all_ipv6_addresses'] = list()
         self.facts['neighbors'] = dict()
-        self.facts['mac_address'] = dict()
+        # self.facts['mac_address'] = dict()
+        # self.facts['debug'] = dict()
 
         data = self.responses[0]
         if data:
@@ -327,18 +329,28 @@ class Interfaces(FactsBase):
         if data:
             self.facts['neighbors'] = self.parse_neighbors(data)
 
-        data = self.responses[4]
-        if data:
-            data = self.parse_mac_address(data)
-            self.populate_mac_address(data)
+        # data = self.responses[4]
+        # if data:
+        #     data = self.parse_mac_address(data)
+        #     self.populate_mac_address(data)
+
+        # data = self.responses[5]
+        # if data:
+        #     data = self.parse_debug_mac_address(data)
+        #     self.populate_debug(data)
+
+
+    # def populate_debug(self, data):
+    #     for key, value in iteritems(data):
+    #         self.facts['debug'][key] = value
 
     def populate_interfaces(self, data):
         for key, value in iteritems(data):
             self.facts['interfaces'][key] = value
 
-    def populate_mac_address(self, data):
-        for key, value in iteritems(data):
-            self.facts['mac_address'][key] = value
+    # def populate_mac_address(self, data):
+    #     for key, value in iteritems(data):
+    #         self.facts['mac_address'][key] = value
 
     def populate_ipv4_interfaces(self, data):
         for key, value in iteritems(data):
@@ -407,18 +419,28 @@ class Interfaces(FactsBase):
                 facts[name][key] = value
         return facts
 
-    def parse_mac_address(self, data):
-        facts = dict()
-        data = self.preprocess(data)
-        for line in data:
-            name = self.parse_interface_mac(line)
-            facts[name] = dict()
-            find_match = dict()
-            for vlanid in re.findall(r'vid=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
-                for match in re.findall(r'mac-address=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
-                    find_match[vlanid] = match
-                    facts[name]["vlanid"] = find_match
-        return facts
+    # def parse_mac_address(self, data):
+    #     facts = dict()
+    #     data = self.preprocess(data)
+    #     for line in data:
+    #         name = self.parse_interface_mac(line)
+    #         facts[name] = dict()
+    #         find_match = dict()
+    #         for vlanid in re.findall(r'vid=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
+    #             list = []
+    #             for match in re.findall(r'mac-address=\"?(\w{3}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2}|[\w\d\-\.:/]+)', line, re.M):
+    #                 list.append(match)
+    #                 find_match[vlanid] = list
+    #         facts[name]["vlanid"] = find_match
+    #     return facts
+
+    # def parse_debug_mac_address(self, data):
+    #     facts = dict()
+    #     data1 = self.preprocess(data)
+    #     for line in data:
+    #         for numbers in [1, 2, 3, 4, 5, 6]:
+    #             facts[numbers] = line
+    #     return facts
 
     #
     # def parse_interface_vlanid(self, data):
@@ -436,10 +458,10 @@ class Interfaces(FactsBase):
         if match:
             return match.group(1)
 
-    def parse_interface_mac(self, data):
-        match = re.search(r'interface=(\S*)', data, re.M)
-        if match:
-            return match.group(1)
+    # def parse_interface_mac(self, data):
+    #     match = re.search(r'interface=(\S*)', data, re.M)
+    #     if match:
+    #         return match.group(1)
 
 
 
