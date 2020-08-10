@@ -7,4 +7,4 @@
 
     - name: show facts
       routeros_facts:
-        gather_subset: all
+        gather_subset: hardware
