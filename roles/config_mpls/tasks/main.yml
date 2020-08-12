@@ -28,6 +28,7 @@
       commands: "{{ mikrotik_config_ldp_interface_disable }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_interface'
       - action == 'disable'
 
   - name: set mpls ldp interface mikrotik
