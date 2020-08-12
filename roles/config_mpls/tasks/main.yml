@@ -4,6 +4,7 @@
       commands: "{{ mikrotik_config_ldp_interface_add }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_interface'
       - action == 'add'
 
   - name: remove  mpls ldp interface mikrotik
@@ -11,6 +12,7 @@
       commands: "{{ mikrotik_config_ldp_interface_remove }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_interface'
       - action == 'remove'
 
   - name: enable mpls ldp interface mikrotik
@@ -18,6 +20,7 @@
       commands: "{{ mikrotik_config_ldp_interface_enable }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_interface'
       - action == 'enable'
 
   - name: disable mpls ldp interface mikrotik
@@ -32,6 +35,7 @@
       commands: "{{ mikrotik_config_ldp_interface_set }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_interface'
       - action == 'set'
 
 
@@ -40,6 +44,7 @@
       commands: "{{ mikrotik_config_ldp_neighbor_add }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_neighbor'
       - action == 'add'
 
   - name: remove  mpls ldp neighbor mikrotik
@@ -47,6 +52,7 @@
       commands: "{{ mikrotik_config_ldp_neighbor_remove }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_neighbor'
       - action == 'remove'
 
   - name: enable mpls ldp neighbor mikrotik
@@ -54,6 +60,7 @@
       commands: "{{ mikrotik_config_ldp_neighbor_enable }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_neighbor'
       - action == 'enable'
 
   - name: disable mpls ldp neighbor mikrotik
@@ -61,6 +68,7 @@
       commands: "{{ mikrotik_config_ldp_neighbor_disable }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_neighbor'
       - action == 'disable'
 
   - name: set mpls ldp neighbor mikrotik
@@ -68,6 +76,7 @@
       commands: "{{ mikrotik_config_ldp_neighbor_set }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_neighbor'
       - action == 'set'
 
   - name: set mpls settings mikrotik
@@ -75,6 +84,7 @@
        commands: "{{ mikrotik_config_mpls_settings }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'mpls_settings'
       - action == 'set'
 
   - name: set mpls ldp settings mikrotik
@@ -82,6 +92,7 @@
       commands: "{{ mikrotik_config_ldp_settings }}"
     when:
       - ansible_network_os == 'routeros'
+      - submenu == 'ldp_settings'
       - action == 'set'
 
 
