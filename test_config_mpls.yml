@@ -1,0 +1,28 @@
+- name: config mpls
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_mpls
+        interface: ether4
+        transport_address: 1.1.1.1
+        submenu: ldp_interface
+        action: add
+
+      - role: config_mpls
+        numbers_ldp_interface: 0
+        submenu: ldp_interface
+        action: disable
+
+      - role: config_mpls
+        numbers_ldp_interface: 0
+        submenu: ldp_interface
+        action: enable
+
+      - role: config_mpls
+        numbers_ldp_interface: 0
+        interface: ether4
+        transport_address: 8.8.8.8
+        dynamic_neighbors: 'no'
+        submenu: ldp_interface
+        action: set
