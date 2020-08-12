@@ -20,6 +20,7 @@
         action: enable
 
       - role: config_mpls
+        numbers_ldp_interface: 0
         interface: ether4
         transport_address: 8.8.8.8
         dynamic_neighbors: no
