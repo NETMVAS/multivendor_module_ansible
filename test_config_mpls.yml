@@ -1,0 +1,11 @@
+- name: config mpls
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_mpls
+
+        action: add
+
+
+    
