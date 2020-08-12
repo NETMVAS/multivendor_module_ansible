@@ -7,4 +7,4 @@
 
     - name: show facts
       routeros_facts:
-        gather_subset: hardware
+        gather_subset: {{ gather_facts }}
