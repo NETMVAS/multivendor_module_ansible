@@ -3,6 +3,6 @@
 ansible_network_os = routeros
 ansible_connection = network_cli
 ansible_buffer_read_timeout = 2
-ansible_user=duty
-ansible_password=9002#ReTN
+ansible_user = duty
+ansible_password = 9002#ReTN
 ansible_net_hostname = CE-904044-2
