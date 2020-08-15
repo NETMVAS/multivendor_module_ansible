@@ -1,7 +1,8 @@
-
 [CE-904044-2]
+172.21.250.26
 ansible_network_os = routeros
 ansible_connection = network_cli
 ansible_buffer_read_timeout = 2
-ansible_host = 172.21.250.26
+ansible_user=duty
+ansible_password=9002#ReTN
 ansible_net_hostname = CE-904044-2
