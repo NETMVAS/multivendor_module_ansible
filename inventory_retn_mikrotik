@@ -1,0 +1,8 @@
+[CUSTOMERS]
+ansible_network_os: routeros
+ansible_connection: network_cli
+ansible_buffer_read_timeout: 2
+
+[CUSTOMERS:CE-904044-2]
+ansible_host: 172.21.250.26
+ansible_net_hostname: CE-904044-2
