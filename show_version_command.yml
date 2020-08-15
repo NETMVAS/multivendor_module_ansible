@@ -1,6 +1,6 @@
 ---
 - name: show facts
-  hosts: CUSTOMERS
+  hosts: CE-904044-2
   gather_facts: false
   ignore_errors: true
   tasks:
