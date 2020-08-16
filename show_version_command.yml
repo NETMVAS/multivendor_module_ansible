@@ -6,5 +6,5 @@
   tasks:
 
     - name: show facts
-      routeros_command:
+      community.network.routeros_command:
         commands: /export
