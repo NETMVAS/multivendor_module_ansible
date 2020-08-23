@@ -1,6 +1,6 @@
 ---
 - name: show facts
-  hosts: 172.21.250.26
+  hosts: test
   gather_facts: false
   ignore_errors: true
   tasks:
