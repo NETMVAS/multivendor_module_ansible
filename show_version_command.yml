@@ -6,5 +6,5 @@
   tasks:
 
     - name: show facts
-      routeros_facts:
-        gather_subset: config
+      routeros_command:
+        commands: /export
