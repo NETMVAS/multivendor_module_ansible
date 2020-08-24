@@ -6,8 +6,5 @@
   tasks:
 
     - name: show facts
-      routeros_command:
-          commands: /export
-    - name: debug
-      debug:
-        var: prompt
+      routeros_facts:
+        gather_subset: all
