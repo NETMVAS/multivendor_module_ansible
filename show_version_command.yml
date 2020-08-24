@@ -9,4 +9,4 @@
     - name: show facts
       routeros_command:
         commands: /export
-      debug: {{ prompt }}
+      debug: "{{ prompt }}"
