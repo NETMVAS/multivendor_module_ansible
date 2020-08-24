@@ -4,10 +4,10 @@
   gather_facts: false
   ignore_errors: true
   tasks:
-    
+
     - name: show facts
       routeros_command:
-        commands: /export
-
+          commands: /export
     - name: debug
-      debug: "{{ prompt }}"
+      debug:
+        var: prompt
