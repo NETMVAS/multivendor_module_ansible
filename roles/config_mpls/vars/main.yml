@@ -1,5 +1,5 @@
 ---
-mikrotik_config_ldp_interface_add: /mpls ldp interface add interface={{ interface }} transport-address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes') }} hello-interval={{ interval_time | default('5s') }} hold-time={{ hold_time | default('15s') }}
+mikrotik_config_ldp_interface_add: /mpls ldp interface add interface={{ interface }} transport-address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes') }} hello-interval={{ hello_interval | default('5s') }} hold-time={{ hold_time | default('15s') }}
 mikrotik_config_ldp_interface_remove: /mpls ldp interface remove {{ numbers_ldp_interface }}
 mikrotik_config_ldp_interface_enable: /mpls ldp interface enable {{ numbers_ldp_interface }}
 mikrotik_config_ldp_interface_disable: /mpls ldp interface disable {{ numbers_ldp_interface }}
