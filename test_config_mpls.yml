@@ -6,6 +6,8 @@
       - role: config_mpls
         interface: ether4
         transport_address: 1.1.1.1
+        hold_time: 10s
+        hello-interval: 20s
         submenu: ldp_interface
         action: add
 
