@@ -7,7 +7,7 @@
         interface: ether4
         transport_address: 1.1.1.1
         hold_time: 20s
-        hello-interval: 10s
+        hello_interval: 10s
         submenu: ldp_interface
         action: add
 
