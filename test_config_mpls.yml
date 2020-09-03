@@ -29,7 +29,7 @@
         submenu: ldp_interface
         action: set
 
-     - role: config_mpls
-       numbers_ldp_interface: 0
-       submenu: ldp_interface
-       action: remove
+      - role: config_mpls
+        numbers_ldp_interface: 0
+        submenu: ldp_interface
+        action: remove
