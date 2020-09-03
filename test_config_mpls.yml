@@ -6,8 +6,8 @@
       - role: config_mpls
         interface: ether4
         transport_address: 1.1.1.1
-        hold_time: 00:00:20
-        hello-interval: 00:00:10
+        hold_time: 20s
+        hello-interval: 10s
         submenu: ldp_interface
         action: add
 
@@ -28,3 +28,8 @@
         dynamic_neighbors: 'no'
         submenu: ldp_interface
         action: set
+
+     - role: config_mpls
+       numbers_ldp_interface: 0
+       submenu: ldp_interface
+       action: remove
