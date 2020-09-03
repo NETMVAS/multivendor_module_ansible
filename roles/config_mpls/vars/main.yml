@@ -3,7 +3,7 @@ mikrotik_config_ldp_interface_add: /mpls ldp interface add interface={{ interfac
 mikrotik_config_ldp_interface_remove: /mpls ldp interface remove {{ numbers_ldp_interface }}
 mikrotik_config_ldp_interface_enable: /mpls ldp interface enable {{ numbers_ldp_interface }}
 mikrotik_config_ldp_interface_disable: /mpls ldp interface disable {{ numbers_ldp_interface }}
-mikrotik_config_ldp_interface_set: /mpls ldp interface set interface={{ interface }} transport_address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes') }}
+mikrotik_config_ldp_interface_set: /mpls ldp interface set {{ numbers_ldp_interface }} interface={{ interface }} transport-address={{ transport_address }} accept-dynamic-neighbors={{ dynamic_neighbors | default('yes') }}
 
 mikrotik_config_ldp_neighbor_add: /mpls ldp neighbor add transport={{ transport_address }} send-targeted={{ send_targeted | default('yes') }}
 mikrotik_config_ldp_neighbor_remove: /mpls ldp neighbor remove numbers={{ numbers_ldp_neighbor }}
