@@ -6,5 +6,5 @@
   tasks:
 
     - name: show facts
-      routeros_command:
-        commands: /export
+      cli_command:
+        command: /export
