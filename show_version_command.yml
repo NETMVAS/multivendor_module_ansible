@@ -6,4 +6,5 @@
   tasks:
 
     - name: show facts
-      raw: /export
+      cli_command:
+        command: /export
