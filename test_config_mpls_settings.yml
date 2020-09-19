@@ -1,0 +1,11 @@
+- name: config mpls
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+
+      - role: config_mpls
+        range: 16-1048576
+        propagate_ttl: 'no'
+        submenu: mpls_settings
+        action: set
