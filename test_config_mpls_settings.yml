@@ -17,3 +17,5 @@
         loop_detect: 'yes'
         use_explicit_null: 'yes'
         distribute_for_default_route: 'yes'
+        submenu: ldp_settings
+        action: set
