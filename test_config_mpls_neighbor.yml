@@ -1,0 +1,33 @@
+- name: config mpls
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        transport_address: 1.1.1.1
+        send_targeted: no
+        submenu: ldp_neighbor
+        action: add
+
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        submenu: ldp_neighbor
+        action: disable
+
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        submenu: ldp_neighbor
+        action: enable
+
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        transport_address: 8.8.8.8
+        send_targeted: yes
+        submenu: ldp_neighbor
+        action: set
+
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        submenu: ldp_neighbor
+        action: remove
