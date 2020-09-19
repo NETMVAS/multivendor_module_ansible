@@ -12,4 +12,4 @@ mikrotik_config_ldp_neighbor_disable: /mpls ldp neighbor disable numbers={{ numb
 mikrotik_config_ldp_neighbor_set: /mpls ldp neighbor set numbers={{ numbers_ldp_neighbor }} transport={{ transport_address }} send-targeted={{ send_targeted | default('yes') }}
 
 mikrotik_config_mpls_settings: /mpls set dynamic-label-range={{ range }} propagate-ttl={{propagate_ttl | default('yes') }}
-mikrotik_config_ldp_settings: /mpls ldp set enabled={{ ldp }}  lsr-id={{ lsr_id }} transport-address={{ transport_address }}  loop-detect={{  loop_detect | default('no')}} use-explicit-null={{ use_explicit_null | default('no') }} distribute-for-default-route={{distribute_for_default_route | default('no')}}
+mikrotik_config_ldp_settings: /mpls ldp set enabled={{ ldp | default('no')  }}  lsr-id={{ lsr_id }} transport-address={{ transport_address }}  loop-detect={{  loop_detect | default('no')}} use-explicit-null={{ use_explicit_null | default('no') }} distribute-for-default-route={{distribute_for_default_route | default('no')}}
