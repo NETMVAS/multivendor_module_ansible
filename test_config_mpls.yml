@@ -35,9 +35,8 @@
         action: remove
 
       - role: config_mpls
-        numbers_ldp_neighbor: 0
         transport_address: 1.1.1.1
-        send_targeted: no
+        send_targeted: 'no'
         submenu: ldp_neighbor
         action: add
 
@@ -62,3 +61,9 @@
         numbers_ldp_neighbor: 0
         submenu: ldp_neighbor
         action: remove
+
+      - role: config_mpls
+        range: 16-1048576
+        propagate_ttl: 'no'
+        submenu: mpls_settings
+        action: set
