@@ -26,5 +26,7 @@
         submenu: ldp_neighbor
         action: set
 
-
- 
+      - role: config_mpls
+        numbers_ldp_neighbor: 0
+        submenu: ldp_neighbor
+        action: remove
