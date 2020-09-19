@@ -63,7 +63,7 @@
         action: remove
 
       - role: config_mpls
-        range: 16-1048576
+        range: 16-1048573
         propagate_ttl: 'no'
         submenu: mpls_settings
         action: set
