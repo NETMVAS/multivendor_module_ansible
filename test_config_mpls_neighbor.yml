@@ -5,6 +5,6 @@
   roles:
       - role: config_mpls
         transport_address: 1.1.1.1
-        send_targeted: no
+        send_targeted: 'no'
         submenu: ldp_neighbor
         action: add
