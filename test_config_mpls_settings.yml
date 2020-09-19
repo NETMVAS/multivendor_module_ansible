@@ -5,7 +5,7 @@
   roles:
 
       - role: config_mpls
-        range: 16-1048576
+        range: 16-1048574
         propagate_ttl: 'no'
         submenu: mpls_settings
         action: set
