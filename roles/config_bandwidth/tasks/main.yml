@@ -1,39 +1,83 @@
 ---
-  - name: add dhcp_client mikrotik
+  - name: add simple_queue mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_add }}"
+      commands: "{{ mikrotik_config_add_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'add'
+      - submenu == 'simple_queue'
 
-  - name: remove dhcp_client mikrotik
+  - name: remove simple_queue mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_remove }}"
+      commands: "{{ mikrotik_config_remove_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'remove'
+      - submenu == 'simple_queue'
 
-  - name: enable dhcp_client mikrotik
+  - name: enable simple_queue mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_enable }}"
+      commands: "{{ mikrotik_config_enable_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'enable'
+      - submenu == 'simple_queue'
 
-  - name: disable dhcp_client mikrotik
+  - name: disable simple_queue mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_disable }}"
+      commands: "{{ mikrotik_config_disable_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'disable'
+      - submenu == 'simple_queue'
 
-  - name: set dhcp_client mikrotik
+  - name: set simple_queue mikrotik
     routeros_command:
-      commands: "{{ mikrotik_config_set }}"
+      commands: "{{ mikrotik_config_set_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
+      - submenu == 'simple_queue'
 
+  - name: add tree_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_tree_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'tree_queue'
+
+  - name: remove simple_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_remove_tree_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+      - submenu == 'tree_queue'
+
+  - name: enable tree_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_enable_tree_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'enable'
+      - submenu == 'tree_queue'
+
+  - name: disable tree_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_disable_tree_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'disable'
+      - submenu == 'tree_queue'
+
+  - name: set tree_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_set_tree_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'set'
+      - submenu == 'tree_queue'
 
   - name: add dhcp_client cisco
     ios_l3_interfaces:
