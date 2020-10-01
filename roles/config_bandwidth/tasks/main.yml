@@ -79,6 +79,28 @@
       - action == 'set'
       - submenu == 'tree_queue'
 
+
+  - name: add type_queue mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_add_type_queue }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+      - submenu == 'type_queue'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   - name: add dhcp_client cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_add }}"
