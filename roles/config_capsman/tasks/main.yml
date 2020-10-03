@@ -1,0 +1,156 @@
+---
+  - name: add cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_cap_interface_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'cap_interface'
+      - action == 'add'
+
+  - name: remove cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_cap_interface_remove }}"
+    when:
+        - ansible_network_os == 'routeros'
+        - submenu == 'cap_interface'
+        - action == 'remove'
+
+  - name: enable cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_cap_interface_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'cap_interface'
+      - action == 'enable'
+
+  - name: disable cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_cap_interface_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'cap_interface'
+      - action == 'disable'
+
+  - name: set cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_cap_interface_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'cap_interface'
+      - action == 'set'
+
+
+  - name: add caps provisioning mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_provisioning_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_provisioning'
+      - action == 'add'
+
+  - name: remove caps provisioning mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_provisioning_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_provisioning'
+      - action == 'remove'
+
+  - name: enable caps provisioning mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_provisioning_enable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_provisioning'
+      - action == 'enable'
+
+  - name: disable caps provisioning mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_provisioning_disable }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_provisioning'
+      - action == 'disable'
+
+  - name: set caps provisioning mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_provisioning_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_provisioning'
+      - action == 'set'
+
+
+  - name: add caps interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_interface_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_interface'
+      - action == 'add'
+
+  - name: remove caps interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_interface_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_interface'
+      - action == 'remove'
+
+  - name: set caps interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_interface_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_interface'
+      - action == 'set'
+
+
+  - name: add caps channel mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_channel_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_channel'
+      - action == 'add'
+
+  - name: add cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_channel_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_channel'
+      - action == 'remove'
+
+  - name: add cap interface mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_channel_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_channel'
+      - action == 'set'
+
+
+  - name: add caps datapath mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_datapath_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_datapath'
+      - action == 'add'
+
+  - name: remove caps datapath mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_datapath_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_datapath'
+      - action == 'remove'
+
+  - name: set caps datapath mikrotik
+    routeros_command:
+      commands: "{{ mikrotik_config_caps_datapath_set }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - submenu == 'caps_datapath'
+      - action == 'set'
