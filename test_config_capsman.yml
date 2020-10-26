@@ -1,0 +1,42 @@
+- name: config capsman
+  hosts: router_local
+  gather_facts: false
+  ignore_errors: true
+  roles:
+      - role: config_capsman
+        name: corp
+        mtu: 1600
+        arp: disabled
+        submenu: cap_interface
+        action: add
+
+      - role: config_capsman
+        numbers_cap_interface: 0
+        submenu: cap_interface
+        action: disable
+
+      - role: config_capsman
+        numbers_cap_interface: 0
+        submenu: cap_interface
+        action: enable
+
+      - role: config_capsman
+        name: corp2
+        mtu: 1500
+        arp: enabled
+        submenu: cap_interface
+        action: set
+
+      - role: config_capsman
+        numbers_cap_interface: 0
+        submenu: cap_interface
+        action: set
+
+
+      - role: config_capsman
+        radio_mac: 21:00:7D:84:9D:2F
+        action: create disabled
+        name_format: identity
+        cfg_name: cfg_1
+        submenu: caps_provisioning
+        action: add
