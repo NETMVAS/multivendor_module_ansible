@@ -3,7 +3,7 @@ mikrotik_config_cap_interface_add: /cap interface add name={{ name }} mtu={{ mtu
 mikrotik_config_cap_interface_remove: /cap interface remove numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_enable: /cap interface enable numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_disable: /cap interface disable numbers={{ numbers_cap_interface }}
-mikrotik_config_cap_interface_set: /cap interface set numbers={{ numbers_cap_interface }} mtu={{ mtu }} arp={{ arp | default('enabled') }} 
+mikrotik_config_cap_interface_set: /cap interface set numbers={{ numbers_cap_interface }} mtu={{ mtu }} arp={{ arp | default('enabled') }}
 
 mikrotik_config_caps_provisioning_add: /caps provisioning add radio mac={{ radio_mac }} action={{ action | default('none') }} name format={{ name_format | default('cap') }} master configuration={{ cfg_name }}
 mikrotik_config_caps_provisioning_remove: /caps provisioning remove numbers={{ numbers_caps_provisioning }}
@@ -11,13 +11,13 @@ mikrotik_config_caps_provisioning_enable: /caps provisioning enable numbers={{ n
 mikrotik_config_caps_provisioning_disable: /caps provisioning disable numbers={{ numbers_caps_provisioning }}
 mikrotik_config_caps_provisioning_set: /caps provisioning set radio mac={{ radio_mac }} action={{ action | default('none') }} name format={{ name_format | default('cap') }} master configuration={{ cfg_name }}
 
-mikrotik_config_caps_configuration_add: /caps configuration add name={{ cfg_name }} mode={{ mode | default('ap') }} ssid={{ ssid }}
+mikrotik_config_caps_configuration_add: /caps configuration add name={{ cfg_name }} mode={{ mode | default('ap') }} ssid={{ ssid }} hide ssid={{ hide_ssid  | default('no') }} distance={{ distance | default('indoors') }}
 mikrotik_config_caps_configuration_remove: /caps configuration remove numbers={{ numbers_caps_configuration }}
-mikrotik_config_caps_configuration_set: /caps configuration set name={{ cfg_name }} mode={{ mode | default('ap') }} ssid={{ ssid }} distance={{ distance | default('indoors') }}
+mikrotik_config_caps_configuration_set: /caps configuration set name={{ cfg_name }} mode={{ mode | default('ap') }} ssid={{ ssid }} hide ssid={{ hide_ssid  | default('no') }} distance={{ distance | default('indoors') }}
 
-mikrotik_config_caps_channel_add: /caps channel add name={{ channel_name }} frequency={{ frequency }} secondary frequency={{ secondary_frequency }} band={{ band | default('2ghz_-b') }} tx power={{ tx_power | default('0') }}
+mikrotik_config_caps_channel_add: /caps channel add name={{ channel_name }} frequency={{ frequency }} secondary frequency={{ secondary_frequency }} band={{ band | default('2ghz-b') }} tx power={{ tx_power | default('0') }}
 mikrotik_config_caps_channel_remove: /caps channel remove numbers={{ numbers_caps_channel }}
-mikrotik_config_caps_channel_set: /caps channel set name={{ channel_name }} frequency={{ frequency }} secondary frequency={{ secondary_frequency }} band={{ band | default('2ghz_-b') }} tx power={{ tx_power | default('0') }}
+mikrotik_config_caps_channel_set: /caps channel set name={{ channel_name }} frequency={{ frequency }} secondary frequency={{ secondary_frequency }} band={{ band | default('2ghz-b') }} tx power={{ tx_power | default('0') }}
 
 mikrotik_config_caps_datapath_add: /caps datapath add name={{ datapath_name }} mtu={{ mtu }} arp={{ arp | default('disabled') }}  local forwarding={{ local_forwarding }}
 mikrotik_config_caps_datapath_remove: /caps datapath remove numbers={{ numbers_caps_configuration }}

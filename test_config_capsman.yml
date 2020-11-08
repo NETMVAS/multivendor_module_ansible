@@ -40,3 +40,74 @@
         cfg_name: cfg_1
         submenu: caps_provisioning
         action: add
+
+      - role: config_capsman
+        numbers_caps_provisioning: 0
+        submenu: caps_provisioning
+        action: disable
+
+      - role: config_capsman
+        numbers_caps_provisioning: 0
+        submenu: caps_provisioning
+        action: enable
+
+      - role: config_capsman
+        radio_mac: 21:34:7D:84:9D:2F
+        action: create enabled
+        name_format: cap
+        cfg_name: cfg_1
+        submenu: caps_provisioning
+        action: set
+
+      - role: config_capsman
+        numbers_caps_provisioning: 0
+        submenu: caps_provisioning
+        action: remove
+
+
+      - role: config_capsman
+        cfg_name: conf
+        mode: ap
+        ssid: ssid231107
+        hide_ssid: 'yes'
+        distance: dynamic
+        submenu: caps_configuration
+        action: add
+
+      - role: config_capsman
+        cfg_name: cfg_1
+        mode: ap
+        ssid: ssid228
+        hide_ssid: 'no'
+        distance: indoors
+        submenu: caps_configuration
+        action: set
+
+      - role: config_capsman
+        numbers_caps_configuration: 0
+        submenu: caps_configuration
+        action: remove
+
+
+      - role: config_capsman
+        channel_name: test
+        frequency: 200
+        secondary_frequency: 360
+        band: 5ghz-a
+        tx_power: 20
+        submenu: caps_channel
+        action: add
+
+      - role: config_capsman
+        channel_name: testing
+        frequency: 280
+        secondary_frequency: 400
+        band: 2ghz-b
+        tx_power: 40
+        submenu: caps_channel
+        action: set
+
+      - role: config_capsman
+        numbers_caps_channel: 0
+        submenu: caps_channel
+        action: remove
