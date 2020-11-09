@@ -6,7 +6,7 @@
 
     - name: show interface
       routeros_facts:
-        gather_subset: false
+        gather_subset: no
     #   register: substes_register
     #   setup:
     #
