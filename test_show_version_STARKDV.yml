@@ -6,7 +6,7 @@
 
     - name: show interface
       routeros_facts:
-        gather_subset: "{{ subset }}"
+        gather_subset: false
     #   register: substes_register
     #   setup:
     #
