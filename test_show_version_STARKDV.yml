@@ -1,12 +1,12 @@
 - name: "change_hostname"
   hosts: SW01.L3.01.LAB
-  gather_facts: false
+  gather_facts: no
   ignore_errors: true
   tasks:
 
     - name: show interface
       routeros_facts:
-        gather_subset: no
+        gather_subset: all
     #   register: substes_register
     #   setup:
     #
