@@ -1,5 +1,5 @@
 - name: "change_hostname"
-  hosts: "{{ SW01.L3.01.LAB }}"
+  hosts: SW01.L3.01.LAB
   gather_facts: false
   ignore_errors: true
   tasks:
