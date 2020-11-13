@@ -35,7 +35,7 @@
 
       - role: config_capsman
         radio_mac: 21:00:7D:84:9D:2F
-        action: create disabled
+        action: create_disabled
         name_format: identity
         cfg_name: cfg_1
         submenu: caps_provisioning
@@ -53,7 +53,7 @@
 
       - role: config_capsman
         radio_mac: 21:34:7D:84:9D:2F
-        action: create enabled
+        action: create_enabled
         name_format: cap
         cfg_name: cfg_1
         submenu: caps_provisioning
