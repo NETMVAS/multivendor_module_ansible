@@ -11,9 +11,9 @@
     routeros_command:
       commands: "{{ mikrotik_config_cap_interface_remove }}"
     when:
-        - ansible_network_os == 'routeros'
-        - submenu == 'cap_interface'
-        - action == 'remove'
+      - ansible_network_os == 'routeros'
+      - submenu == 'cap_interface'
+      - action == 'remove'
 
   - name: enable cap interface mikrotik
     routeros_command:
