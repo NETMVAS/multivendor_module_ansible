@@ -27,7 +27,4 @@
         submenu: cap_interface
         action: set
 
-      - role: config_capsman
-        numbers_cap_interface: 0
-        submenu: cap_interface
-        action: set
+      
