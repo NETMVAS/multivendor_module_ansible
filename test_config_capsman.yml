@@ -4,7 +4,7 @@
   ignore_errors: true
   roles:
       - role: config_capsman
-        name: corp
+        cap_interface: corp
         mtu: 1600
         arp: disabled
         submenu: cap_interface
@@ -26,5 +26,3 @@
         arp: enabled
         submenu: cap_interface
         action: set
-
-      

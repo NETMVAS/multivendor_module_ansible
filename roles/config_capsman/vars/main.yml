@@ -1,5 +1,5 @@
 ---
-mikrotik_config_cap_interface_add: /cap interface add name={{ name }} mtu={{ mtu }} arp={{ arp | default('enabled') }}
+mikrotik_config_cap_interface_add: /cap interface add name={{ cap_interface }} mtu={{ mtu }} arp={{ arp | default('enabled') }}
 mikrotik_config_cap_interface_remove: /cap interface remove numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_enable: /cap interface enable numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_disable: /cap interface disable numbers={{ numbers_cap_interface }}
