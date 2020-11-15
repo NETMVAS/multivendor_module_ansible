@@ -1,6 +1,6 @@
 - name: config mpls
-  hosts: router_local
-  gather_facts: false
+  hosts: SW01.L3.01.LAB
+  gather_facts: no
   ignore_errors: true
   roles:
       - role: config_mpls
