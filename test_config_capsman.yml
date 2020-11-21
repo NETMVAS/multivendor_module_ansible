@@ -21,8 +21,13 @@
         action: enable
 
       - role: config_capsman
-        name: corp2
+        cap_interface: corp2
         mtu: 1500
         arp: enabled
         submenu: cap_interface
         action: set
+
+      - role: config_capsman
+        numbers_cap_interface: 0
+        submenu: cap_interface
+        action: remove

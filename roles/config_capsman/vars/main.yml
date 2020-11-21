@@ -3,7 +3,7 @@ mikrotik_config_cap_interface_add: /cap interface add name={{ cap_interface }} m
 mikrotik_config_cap_interface_remove: /cap interface remove numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_enable: /cap interface enable numbers={{ numbers_cap_interface }}
 mikrotik_config_cap_interface_disable: /cap interface disable numbers={{ numbers_cap_interface }}
-mikrotik_config_cap_interface_set: /cap interface set numbers={{ numbers_cap_interface }} mtu={{ mtu }} arp={{ arp | default('enabled') }}
+mikrotik_config_cap_interface_set: /cap interface set numbers={{ numbers_cap_interface }} name={{ cap_interface }} mtu={{ mtu }} arp={{ arp | default('enabled') }}
 
 mikrotik_config_caps_provisioning_add: /caps provisioning add radio mac={{ radio_mac }} action={{ action | default('none') }} name format={{ name_format | default('cap') }} master configuration={{ cfg_name }}
 mikrotik_config_caps_provisioning_remove: /caps provisioning remove numbers={{ numbers_caps_provisioning }}
