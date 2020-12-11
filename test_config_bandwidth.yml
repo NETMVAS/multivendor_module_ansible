@@ -1,0 +1,18 @@
+- name: config capsman
+  hosts:
+  gather_facts: no
+  ignore_errors: true
+  roles:
+      - role: config_bandwidth
+        queue_name: stark
+        target:
+        dst:
+        limit_upload:
+        limit_download:
+        pmarks:
+        burst_upload:
+        burst_download:
+        threshold_upload:
+        threshold_download:
+        submenu: simple_queue
+        action: add

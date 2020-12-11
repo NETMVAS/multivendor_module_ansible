@@ -1,15 +1,15 @@
 ---
-mikrotik_config_add_simple_queue: /queue simple add name={{  }} target={{  }} dst={{  }} max-limit={{ }}/{{ }} packet-marks={{ | default('no-mark')}} burst-limit={{  }}/{{  }} burst-threshold={{  }}/{{  }}
-mikrotik_config_remove_simple_queue: /queue simple remove {{  }}
-mikrotik_config_enable_simple_queue: /queue simple enable {{  }}
-mikrotik_config_disable_simple_queue: /queue simple disable {{  }}
-mikrotik_config_set_simple_queue: /queue simple set {{  }}
+mikrotik_config_add_simple_queue: /queue simple add name={{ queue_name }} target={{ target }} dst adress={{ dst }} max-limit={{ limit_upload | default('unlimited') }}/{{ limit_download | default('unlimited') }} packet-marks={{ pmarks | default('no-mark') }} burst-limit={{ burst_upload | default('unlimited') }}/{{ burst_download | default('unlimited') }} burst-threshold={{ threshold_upload | default('unlimited') }}/{{ threshold_download | default('unlimited') }}
+mikrotik_config_remove_simple_queue: /queue simple remove numbers={{ numbers_queue }}
+mikrotik_config_enable_simple_queue: /queue simple enable numbers={{ numbers_queue }}
+mikrotik_config_disable_simple_queue: /queue simple disable numbers={{ numbers_queue }}
+mikrotik_config_set_simple_queue: /queue simple set numbers={{ numbers_queue }} name={{ queue_name }} target={{ target }} dst adress={{ dst }} max-limit={{ limit_upload | default('unlimited') }}/{{ limit_download | default('unlimited') }} packet-marks={{ pmarks | default('no-mark')}} burst-limit={{ burst_upload | default('unlimited') }}/{{ burst_download | default('unlimited') }} burst-threshold={{ threshold_upload | default('unlimited') }}/{{ threshold_download | default('unlimited') }}
 
-mikrotik_config_add_tree_queue: /queue tree add
-mikrotik_config_remove_tree_queue: /queue tree remove
-mikrotik_config_enable_tree_queue: /queue tree enable
-mikrotik_config_disable_tree_queue: /queue tree disable
-mikrotik_config_set_tree_queue: /queue tree set
+mikrotik_config_add_tree_queue: /queue tree add name={{ tree_name }} parent={{ parent| default('global') }} packet-marks={{ pmarks | default('no-mark') }} queue type={{ qtype }} priority={{ priority | default('8') }} bucket size={{ bucket }} max-limit={{ max_limit }} burst-limit={{ burst_limit }} burst-threshold={{ burst_threshold }}
+mikrotik_config_remove_tree_queue: /queue tree remove numbers={{ numbers_queue_tree }}
+mikrotik_config_enable_tree_queue: /queue tree enable numbers={{ numbers_queue_tree }}
+mikrotik_config_disable_tree_queue: /queue tree disable numbers={{ numbers_queue_tree }}
+mikrotik_config_set_tree_queue: /queue tree set numbers={{ numbers_queue_tree }} name={{ tree_name }} parent={{ parent| default('global') }} packet-marks={{ pmarks | default('no-mark') }} queue type={{ qtype }} priority={{ priority | default('8') }} bucket size={{ bucket }} max-limit={{ max_limit }} burst-limit={{ burst_limit }} burst-threshold={{ burst_threshold }}
 
 cisco_config_add:
   - name: "{{ interface }}"
