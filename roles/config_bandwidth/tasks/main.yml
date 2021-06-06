@@ -47,7 +47,7 @@
       - action == 'add'
       - submenu == 'tree_queue'
 
-  - name: remove simple_queue mikrotik
+  - name: remove tree_queue mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_remove_tree_queue }}"
     when:
