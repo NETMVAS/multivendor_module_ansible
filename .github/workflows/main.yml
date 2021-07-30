@@ -24,7 +24,7 @@ jobs:
         run: pwd
 
       - name: Check yamllint
-        working-directory: multivendor_module_ansible 
+        working-directory: /home/runner/work/multivendor_module_ansible/multivendor_module_ansible
         run: |
           yamllint . -f parsable
           
