@@ -21,11 +21,12 @@ jobs:
         run: sudo apt install yamllint -y
 
       - name: Check envvars
-        run: echo ${{ github.GITHUB_ACTION_PATH }}
+        run: pwd
 
       - name: Check yamllint
+        working-directory: multivendor_module_ansible 
         run: |
-          yamllint ${{ github.GITHUB_ACTION_PATH }} -f parsable
+          yamllint . -f parsable
           
       - name: First interaction
         uses: actions/first-interaction@v1.1.0
