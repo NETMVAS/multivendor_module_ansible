@@ -9,6 +9,7 @@ yaml-files:
   - '!.gitlab-ci.yml'
   - '!.yamllint.yml'
   - '!test*'
+  - '!actions.yml'
 
 rules:
   braces: enable
