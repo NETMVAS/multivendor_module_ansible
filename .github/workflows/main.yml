@@ -22,7 +22,7 @@ jobs:
 
       - name: Check yamllint
         run: |
-          yamllint .
+          yamllint . -f parsable
           
       - name: First interaction
         uses: actions/first-interaction@v1.1.0
