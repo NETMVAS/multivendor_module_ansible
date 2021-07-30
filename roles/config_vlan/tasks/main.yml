@@ -41,7 +41,7 @@
       - submenu == 'vlan'
       - action == 'set'
 
-  - name:  set tagged interface vlan mikrotik
+  - name: set tagged interface vlan mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_vlan_tagged_set }}"
     when:
@@ -49,7 +49,7 @@
       - submenu == 'tagged-interface'
       - action == 'set'
 
-  - name:  set untagged interface vlan mikrotik
+  - name: set untagged interface vlan mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_vlan_untagged_set }}"
     when:
@@ -102,7 +102,7 @@
       - submenu == 'vlan'
       - action == 'set'
 
-  - name:  set tagged interface vlan cisco
+  - name: set tagged interface vlan cisco
     ios_l2_interfaces:
         config: "{{ cisco_config_vlan_tagged_set }}"
         state: merged
@@ -111,7 +111,7 @@
       - submenu == 'tagged-interface'
       - action == 'set'
 
-  - name:  set untagged interface vlan cisco
+  - name: set untagged interface vlan cisco
     ios_l2_interfaces:
         config: "{{ cisco_config_vlan_untagged_set }}"
         state: merged

@@ -1,4 +1,5 @@
 ---
+
   - name: add mpls ldp interface mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_ldp_interface_add }}"
@@ -96,23 +97,7 @@
       - submenu == 'ldp_settings'
       - action == 'set'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# CISCO
 
   - name: add dhcp_client cisco
     ios_l3_interfaces:

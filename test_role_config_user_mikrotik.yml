@@ -24,7 +24,7 @@
         check_gateway: ping
         distance: 100
         action: set
-        
+
       - role: config_ip_route
         numbers_route: 1
         action: remove

@@ -40,7 +40,7 @@
       - submenu == 'instance'
       - action == 'set'
 
-
+# BGP VRF
 
   - name: add bgp instance vrf mikrotik
     routeros_command:
@@ -82,8 +82,7 @@
       - submenu == 'vrf'
       - action == 'set'
 
-
-
+# BGP PEER
 
   - name: add bgp peer mikrotik
     routeros_command:

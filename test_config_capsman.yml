@@ -1,3 +1,5 @@
+---
+
 - name: config capsman
   hosts: SW01.L3.01.LAB
   gather_facts: no

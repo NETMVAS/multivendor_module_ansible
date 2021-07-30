@@ -1,4 +1,5 @@
 ---
+
 mikrotik_config_add: /ip address add interface={{ interface }} address={{ address }}
 mikrotik_config_remove: /ip address remove {{ numbers_ip_address }}
 mikrotik_config_enable: /ip address enable {{ numbers_ip_address }}
@@ -12,9 +13,7 @@ mikrotik_config_set: /ip address set numbers={{ numbers_ip_address }} interface=
 # mikrotik_config_secondary_disable:
 # mikrotik_config_secondary_set:
 
-
-
-
+# CISCO
 
 cisco_config_add:
   - name: "{{ interface }}"

@@ -35,8 +35,6 @@
       - action == 'set'
 
 
-
-
   # - name: add  secondary ip_address interface mikrotik
   #   routeros_command:
   #     commands: "{{ mikrotik_config_secondary_add }}"
@@ -78,10 +76,6 @@
   #     - action == 'set'
 
 
-
-
-
-
   - name: add ip_address interface cisco
     ios_l3_interfaces:
       config: "{{ cisco_config_add }}"
@@ -105,11 +99,6 @@
     when:
       - ansible_network_os == 'ios'
       - action == 'set'
-
-
-
-
-
 
 
   # - name: add secondary ip_address interface cisco

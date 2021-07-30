@@ -1,3 +1,5 @@
+---
+
 - name: "change_hostname"
   hosts: router_local
   gather_facts: false
@@ -36,7 +38,6 @@
         action: remove
 
 
-
       - role: config_routing_bgp
         routing_mark: test
         bgp_instance: default
@@ -68,9 +69,6 @@
         action: remove
 
 
-
-      #
-      #
       # - role: config_routing_bgp
       #   bgp_peer: EBGP_TEST_PEER
       #   remote_address: 2.2.2.2

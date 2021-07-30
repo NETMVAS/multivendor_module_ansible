@@ -1,11 +1,12 @@
 ---
+
   - name: set ntp client mikrotik
     routeros_command:
       commands: "{{ mikrotik_config }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
-      
+
   - name: set ntp client cisco
     ios_config:
       lines: "{{ cisco_config }}"

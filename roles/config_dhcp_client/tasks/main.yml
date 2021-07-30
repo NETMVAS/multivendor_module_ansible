@@ -1,53 +1,54 @@
 ---
-  - name: add dhcp_client mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_add }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'add'
 
-  - name: remove dhcp_client mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_remove }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'remove'
+- name: add dhcp_client mikrotik
+  routeros_command:
+    commands: "{{ mikrotik_config_add }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'add'
 
-  - name: enable dhcp_client mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_enable }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'enable'
+- name: remove dhcp_client mikrotik
+  routeros_command:
+    commands: "{{ mikrotik_config_remove }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'remove'
 
-  - name: disable dhcp_client mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_disable }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'disable'
+- name: enable dhcp_client mikrotik
+  routeros_command:
+    commands: "{{ mikrotik_config_enable }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'enable'
 
-  - name: set dhcp_client mikrotik
-    routeros_command:
-      commands: "{{ mikrotik_config_set }}"
-    when:
-      - ansible_network_os == 'routeros'
-      - action == 'set'
+- name: disable dhcp_client mikrotik
+  routeros_command:
+    commands: "{{ mikrotik_config_disable }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'disable'
 
-
-  - name: add dhcp_client cisco
-    ios_l3_interfaces:
-      config: "{{ cisco_config_add }}"
-      state: merged
-    when:
-      - ansible_network_os == 'ios'
-      - action == 'add'
+- name: set dhcp_client mikrotik
+  routeros_command:
+    commands: "{{ mikrotik_config_set }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'set'
 
 
-  - name: remove dhcp_client cisco
-    ios_l3_interfaces:
-      config: "{{ cisco_config_remove }}"
-      state: deleted
-    when:
-      - ansible_network_os == 'ios'
-      - action == 'remove'
+- name: add dhcp_client cisco
+  ios_l3_interfaces:
+    config: "{{ cisco_config_add }}"
+    state: merged
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'add'
+
+
+- name: remove dhcp_client cisco
+  ios_l3_interfaces:
+    config: "{{ cisco_config_remove }}"
+    state: deleted
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'remove'

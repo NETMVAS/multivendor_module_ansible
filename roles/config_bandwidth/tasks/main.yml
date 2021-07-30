@@ -1,4 +1,5 @@
 ---
+
   - name: add simple_queue mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_add_simple_queue }}"
@@ -88,18 +89,7 @@
       - action == 'add'
       - submenu == 'type_queue'
 
-
-
-
-
-
-
-
-
-
-
-
-
+# CISCO
 
   - name: add dhcp_client cisco
     ios_l3_interfaces:
