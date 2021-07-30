@@ -1,0 +1,32 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Install deps
+        run: sudo apt install yamllint -y
+
+      - name: Check yamllint
+        run: |
+          yamllint .
+          
+      - name: First interaction
+        uses: actions/first-interaction@v1.1.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "# Welcome to MVAS' Ansible modules"
+          pr-message: "Welcome to MVAS' Ansible modules. Before PR, check your yaml files w/ our yamllint configuration and test playbooks"
