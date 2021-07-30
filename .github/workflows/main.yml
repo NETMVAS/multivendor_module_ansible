@@ -21,9 +21,7 @@ jobs:
         run: sudo apt install yamllint -y
 
       - name: Check envvars
-        run: |
-          echo ${{ github.GITHUB_ACTION_PATH }}
-          echo ${{ GITHUB_ACTION_PATH }}
+        run: echo ${{ github.GITHUB_ACTION_PATH }}
 
       - name: Check yamllint
         run: |
