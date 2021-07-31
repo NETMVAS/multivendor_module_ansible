@@ -35,6 +35,7 @@
     - ansible_network_os == 'routeros'
     - action == 'set'
 
+# CISCO
 
 - name: add dhcp_client cisco
   cisco.ios.ios_l3_interfaces:
@@ -44,7 +45,6 @@
     - ansible_network_os == 'ios'
     - action == 'add'
 
-
 - name: remove dhcp_client cisco
   cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_remove }}"
@@ -52,3 +52,11 @@
   when:
     - ansible_network_os == 'ios'
     - action == 'remove'
+
+- name: set dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_set }}"
+    state: replaced
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'set'

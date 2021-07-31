@@ -12,3 +12,8 @@ cisco_config_add:
 
 cisco_config_remove:
   - name: "{{ interface }}"
+
+cisco_config_set:
+  - name: "{{ interface }}"
+    ipv4:
+      - address: dhcp
