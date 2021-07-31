@@ -4,4 +4,17 @@ mikrotik_config_remove: /interface bridge remove {{ bridge }}
 mikrotik_config_enable: /interface bridge enable {{ bridge }}
 mikrotik_config_disable: /interface bridge disable {{ bridge }}
 mikrotik_config_set: /interface bridge set {{ bridge }} igmp-snooping={{ igmp_snooping | default('no', true ) }} vlan-filtering={{ vlan_filtering | default('no', true ) }} name={{ rename_bridge }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+cisco_config_add:
+  - name: "{{ bridge }}"
+
+cisco_config_enable:
+  - name: "{{ bridge }}"
+    enabled: True
+
+cisco_config_disable:
+  - name: "{{ bridge }}"
+    enabled: False
+
+cisco_config_remove:
+  - name: "{{ bridge }}"

@@ -34,6 +34,36 @@
       - ansible_network_os == 'routeros'
       - action == 'set'
 
-  - name: config ipaddres interface cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+# CISCO
+
+  - name: add bridge cisco
+    cisco.ios.ios_interfaces:
+      config: "{{ cisco_config_add }}"
+      state: merged
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'add'
+
+  - name: enable bridge cisco
+    cisco.ios.ios_interfaces:
+      config: "{{ cisco_config_enable }}"
+      state: replaced
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'enable'
+
+  - name: disable bridge cisco
+    cisco.ios.ios_interfaces:
+      config: "{{ cisco_config_disable }}"
+      state: replaced
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'disable'
+
+  - name: remove bridge cisco
+    cisco.ios.ios_interfaces:
+      config: "{{ cisco_config_remove }}"
+      state: deleted
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'remove'
