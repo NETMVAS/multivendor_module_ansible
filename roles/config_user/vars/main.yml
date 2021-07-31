@@ -14,3 +14,19 @@ cisco_config_add:
 cisco_config_remove:
   - name: "{{ username }}"
     state: absent
+
+#TODO: ???
+
+cisco_config_enable:
+  - name: "{{ username }}"
+    state: present
+
+cisco_config_disable:
+  - name: "{{ username }}"
+    state: absent
+
+cisco_config_set:
+  - name: "{{ username }}"
+    configured_password: "{{ password }}"
+    privilege: "{{ privilege }}"
+    state: present

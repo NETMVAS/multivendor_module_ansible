@@ -34,6 +34,8 @@
       - ansible_network_os == 'routeros'
       - action == 'set'
 
+# CISCO
+
   - name: add user cisco
     cisco.ios.ios_user: "{{ cisco_config_add }}"
     when:
@@ -45,3 +47,15 @@
     when:
       - ansible_network_os == 'ios'
       - action == 'remove'
+
+  - name: enable user cisco
+    cisco.ios.ios_user: "{{ cisco_config_enable }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'enable'
+
+  - name: disable user cisco
+    cisco.ios.ios_user: "{{ cisco_config_disable }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'disable'
