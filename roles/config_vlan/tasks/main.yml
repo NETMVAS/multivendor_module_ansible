@@ -2,7 +2,7 @@
 # This roles support config vlan cisco ios and mikrotik CRS3XX series
 
   - name: add vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -10,7 +10,7 @@
       - action == 'add'
 
   - name: remove vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -18,7 +18,7 @@
       - action == 'remove'
 
   - name: enable vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -26,7 +26,7 @@
       - action == 'enable'
 
   - name: disable vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -34,7 +34,7 @@
       - action == 'disable'
 
   - name: set vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -42,7 +42,7 @@
       - action == 'set'
 
   - name: set tagged interface vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_tagged_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -50,7 +50,7 @@
       - action == 'set'
 
   - name: set untagged interface vlan mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_vlan_untagged_set }}"
     when:
       - ansible_network_os == 'routeros'

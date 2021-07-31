@@ -1,7 +1,7 @@
 ---
 
   - name: add simple_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -9,7 +9,7 @@
       - submenu == 'simple_queue'
 
   - name: remove simple_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_remove_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -17,7 +17,7 @@
       - submenu == 'simple_queue'
 
   - name: enable simple_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_enable_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -25,7 +25,7 @@
       - submenu == 'simple_queue'
 
   - name: disable simple_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_disable_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -33,7 +33,7 @@
       - submenu == 'simple_queue'
 
   - name: set simple_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set_simple_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -41,7 +41,7 @@
       - submenu == 'simple_queue'
 
   - name: add tree_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add_tree_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -49,7 +49,7 @@
       - submenu == 'tree_queue'
 
   - name: remove tree_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_remove_tree_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -57,7 +57,7 @@
       - submenu == 'tree_queue'
 
   - name: enable tree_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_enable_tree_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -65,7 +65,7 @@
       - submenu == 'tree_queue'
 
   - name: disable tree_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_disable_tree_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -73,7 +73,7 @@
       - submenu == 'tree_queue'
 
   - name: set tree_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set_tree_queue }}"
     when:
       - ansible_network_os == 'routeros'
@@ -82,7 +82,7 @@
 
 
   - name: add type_queue mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add_type_queue }}"
     when:
       - ansible_network_os == 'routeros'

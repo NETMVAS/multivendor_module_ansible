@@ -1,34 +1,34 @@
 ---
   - name: add bridge mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'add'
 
   - name: remove bridge mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_remove }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'remove'
 
   - name: enable bridge mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_enable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'enable'
 
   - name: disable bridge mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_disable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'disable'
 
   - name: set bridge mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set }}"
     when:
       - ansible_network_os == 'routeros'

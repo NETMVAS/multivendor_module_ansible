@@ -1,13 +1,13 @@
 ---
   - name: enable wireless interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_enable_interface }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'enable'
       - submenu == 'interface'
   - name: disable wireless interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_disable_interface }}"
     when:
       - ansible_network_os == 'routeros'
@@ -15,7 +15,7 @@
       - submenu == 'interface'
 
   - name: set wireless interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set_interface }}"
     when:
       - ansible_network_os == 'routeros'
@@ -23,7 +23,7 @@
       - submenu == 'interface'
 
   - name: add wireless security profile mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add_security_profile }}"
     when:
       - ansible_network_os == 'routeros'
@@ -31,7 +31,7 @@
       - submenu == 'profile'
 
   - name: remove wireless security profile mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_remove_security_profile }}"
     when:
       - ansible_network_os == 'routeros'
@@ -39,7 +39,7 @@
       - submenu == 'profile'
 
   - name: set wireless security profile mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set_security_profile }}"
     when:
       - ansible_network_os == 'routeros'

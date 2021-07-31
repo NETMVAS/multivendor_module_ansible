@@ -1,34 +1,34 @@
 ---
   - name: add ip_address interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_add }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'add'
 
   - name: remove ip_address interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_remove }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'remove'
 
   - name: enable ip_address interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_enable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'enable'
 
   - name: disable ip_address interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_disable }}"
     when:
       - ansible_network_os == 'routeros'
       - action == 'disable'
 
   - name: set ip_address interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -36,7 +36,7 @@
 
 
   # - name: add  secondary ip_address interface mikrotik
-  #   routeros_command:
+  #   community.routeros.command:
   #     commands: "{{ mikrotik_config_secondary_add }}"
   #   when:
   #     - ansible_network_os == 'routeros'
@@ -44,7 +44,7 @@
   #     - action == 'add'
   #
   # - name: remove secondary ip_address interface mikrotik
-  #   routeros_command:
+  #   community.routeros.command:
   #     commands: "{{ mikrotik_config_secondary_remove }}"
   #   when:
   #     - ansible_network_os == 'routeros'
@@ -52,7 +52,7 @@
   #     - action == 'remove'
   #
   # - name: enable secondary ip_address interface mikrotik
-  #   routeros_command:
+  #   community.routeros.command:
   #     commands: "{{ mikrotik_config_secondary_enable }}"
   #   when:
   #     - ansible_network_os == 'routeros'
@@ -60,7 +60,7 @@
   #     - action == 'enable'
   #
   # - name: disable secondary ip_address interface mikrotik
-  #   routeros_command:
+  #   community.routeros.command:
   #     commands: "{{ mikrotik_config_secondary_disable }}"
   #   when:
   #     - ansible_network_os == 'routeros'
@@ -68,7 +68,7 @@
   #     - action == 'disable'
   #
   # - name: set secondary ip_address interface mikrotik
-  #   routeros_command:
+  #   community.routeros.command:
   #     commands: "{{ mikrotik_config_secondary_set }}"
   #   when:
   #     - ansible_network_os == 'routeros'

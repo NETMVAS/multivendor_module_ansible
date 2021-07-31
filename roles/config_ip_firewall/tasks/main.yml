@@ -1,6 +1,6 @@
 ---
   - name: add firewall filter mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_filter_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -8,7 +8,7 @@
       - action == 'add'
 
   - name: remove firewall filter mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_filter_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -16,7 +16,7 @@
       - action == 'remove'
 
   - name: enable firewall filter mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_filter_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -24,7 +24,7 @@
       - action == 'enable'
 
   - name: disable firewall filter mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_filter_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -32,7 +32,7 @@
       - action == 'disable'
 
   - name: set firewall filter mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_filter_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -40,7 +40,7 @@
       - action == 'set'
 
   - name: add firewall nat mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_nat_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -48,7 +48,7 @@
       - action == 'add'
 
   - name: remove firewall nat mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_nat_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -56,7 +56,7 @@
       - action == 'remove'
 
   - name: enable firewall nat mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_nat_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -64,7 +64,7 @@
       - action == 'enable'
 
   - name: disable firewall nat mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_nat_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -72,7 +72,7 @@
       - action == 'disable'
 
   - name: set firewall nat mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_nat_set }}"
     when:
       - ansible_network_os == 'routeros'

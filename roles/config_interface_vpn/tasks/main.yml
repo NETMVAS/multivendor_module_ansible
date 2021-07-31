@@ -1,7 +1,7 @@
 ---
 
 - name: add eoip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_eoip_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -9,7 +9,7 @@
     - action == 'add'
 
 - name: remove eoip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_eoip_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -17,7 +17,7 @@
     - action == 'remove'
 
 - name: enable eoip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_eoip_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -25,7 +25,7 @@
     - action == 'enable'
 
 - name: disable eoip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_eoip_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -33,7 +33,7 @@
     - action == 'disable'
 
 - name: set eoip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_eoip_set }}"
   when:
     - ansible_network_os == 'routeros'
@@ -41,7 +41,7 @@
     - action == 'set'
 
 - name: add ipip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ipip_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -49,7 +49,7 @@
     - action == 'add'
 
 - name: remove ipip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ipip_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -57,7 +57,7 @@
     - action == 'remove'
 
 - name: enable ipip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ipip_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -65,7 +65,7 @@
     - action == 'enable'
 
 - name: disable ipip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ipip_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -73,7 +73,7 @@
     - action == 'disable'
 
 - name: set ipip interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ipip_set }}"
   when:
     - ansible_network_os == 'routeros'
@@ -81,7 +81,7 @@
     - action == 'set'
 
 - name: add gre interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_gre_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -89,7 +89,7 @@
     - action == 'add'
 
 - name: remove gre interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_gre_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -97,7 +97,7 @@
     - action == 'remove'
 
 - name: enable gre interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_gre_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -105,7 +105,7 @@
     - action == 'enable'
 
 - name: disable gre interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_gre_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -113,7 +113,7 @@
     - action == 'disable'
 
 - name: set gre interface mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_gre_set }}"
   when:
     - ansible_network_os == 'routeros'

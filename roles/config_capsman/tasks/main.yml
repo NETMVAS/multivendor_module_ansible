@@ -1,6 +1,6 @@
 ---
   - name: add cap interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_cap_interface_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -8,7 +8,7 @@
       - action == 'add'
 
   - name: remove cap interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_cap_interface_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -16,7 +16,7 @@
       - action == 'remove'
 
   - name: enable cap interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_cap_interface_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -24,7 +24,7 @@
       - action == 'enable'
 
   - name: disable cap interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_cap_interface_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -32,7 +32,7 @@
       - action == 'disable'
 
   - name: set cap interface mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_cap_interface_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -41,7 +41,7 @@
 
 
   - name: add caps provisioning mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_provisioning_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -49,7 +49,7 @@
       - action == 'add'
 
   - name: remove caps provisioning mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_provisioning_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -57,7 +57,7 @@
       - action == 'remove'
 
   - name: enable caps provisioning mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_provisioning_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -65,7 +65,7 @@
       - action == 'enable'
 
   - name: disable caps provisioning mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_provisioning_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -73,7 +73,7 @@
       - action == 'disable'
 
   - name: set caps provisioning mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_provisioning_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -82,7 +82,7 @@
 
 
   - name: add caps configuration mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_configuration_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -90,7 +90,7 @@
       - action == 'add'
 
   - name: remove caps configuration mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_configuration_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -98,7 +98,7 @@
       - action == 'remove'
 
   - name: set caps configuration mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_configuration_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -107,7 +107,7 @@
 
 
   - name: add caps channel mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_channel_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -115,7 +115,7 @@
       - action == 'add'
 
   - name: remove caps channel mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_channel_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -123,7 +123,7 @@
       - action == 'remove'
 
   - name: set caps channel mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_channel_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -132,7 +132,7 @@
 
 
   - name: add caps datapath mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_datapath_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -140,7 +140,7 @@
       - action == 'add'
 
   - name: remove caps datapath mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_datapath_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -148,7 +148,7 @@
       - action == 'remove'
 
   - name: set caps datapath mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_datapath_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -157,7 +157,7 @@
 
 
   - name: add caps security cfg mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_security_cfg_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -165,7 +165,7 @@
       - action == 'add'
 
   - name: remove caps security cfg mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_security_cfg_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -173,7 +173,7 @@
       - action == 'remove'
 
   - name: set caps security cfg mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_security_cfg_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -182,7 +182,7 @@
 
 
   - name: add caps access rule mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_access_rule_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -190,7 +190,7 @@
       - action == 'add'
 
   - name: remove caps access rule mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_access_rule_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -198,7 +198,7 @@
       - action == 'remove'
 
   - name: enable caps access rule mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_access_rule_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -206,7 +206,7 @@
       - action == 'enable'
 
   - name: disable caps access rule mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_access_rule_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -214,7 +214,7 @@
       - action == 'disable'
 
   - name: set caps access rule mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_access_rule_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -223,7 +223,7 @@
 
 
   - name: add caps rate mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_rate_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -231,7 +231,7 @@
       - action == 'add'
 
   - name: remove caps rate mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_rate_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -239,7 +239,7 @@
       - action == 'remove'
 
   - name: set caps rate mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_caps_rate_set }}"
     when:
       - ansible_network_os == 'routeros'

@@ -1,7 +1,7 @@
 ---
 
   - name: add bgp instance mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -9,7 +9,7 @@
       - action == 'add'
 
   - name: remove bgp instance mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -17,7 +17,7 @@
       - action == 'remove'
 
   - name: enable bgp instance mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -25,7 +25,7 @@
       - action == 'enable'
 
   - name: disable bgp instance mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -33,7 +33,7 @@
       - action == 'disable'
 
   - name: set bgp instance mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -43,7 +43,7 @@
 # BGP VRF
 
   - name: add bgp instance vrf mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_vrf_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -51,7 +51,7 @@
       - action == 'add'
 
   - name: remove bgp instance vrf mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_vrf_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -59,7 +59,7 @@
       - action == 'remove'
 
   - name: enable bgp instance vrf mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_vrf_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -67,7 +67,7 @@
       - action == 'enable'
 
   - name: disable bgp instance vrf mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_vrf_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -75,7 +75,7 @@
       - action == 'disable'
 
   - name: set bgp instance vrf mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_instance_vrf_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -85,7 +85,7 @@
 # BGP PEER
 
   - name: add bgp peer mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_peer_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -93,7 +93,7 @@
       - action == 'add'
 
   - name: remove bgp peer mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_peer_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -101,7 +101,7 @@
       - action == 'remove'
 
   - name: enable bgp peer mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_peer_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -109,7 +109,7 @@
       - action == 'enable'
 
   - name: disable bgp peer mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_peer_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -117,7 +117,7 @@
       - action == 'disable'
 
   - name: set bgp peer mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_peer_set }}"
     when:
       - ansible_network_os == 'routeros'
@@ -125,7 +125,7 @@
       - action == 'set'
 
   - name: add bgp network mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_network_add }}"
     when:
       - ansible_network_os == 'routeros'
@@ -133,7 +133,7 @@
       - action == 'add'
 
   - name: remove bgp network mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_network_remove }}"
     when:
       - ansible_network_os == 'routeros'
@@ -141,7 +141,7 @@
       - action == 'remove'
 
   - name: enable bgp network mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_network_enable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -149,7 +149,7 @@
       - action == 'enable'
 
   - name: disable bgp network mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_network_disable }}"
     when:
       - ansible_network_os == 'routeros'
@@ -157,7 +157,7 @@
       - action == 'disable'
 
   - name: set bgp network mikrotik
-    routeros_command:
+    community.routeros.command:
       commands: "{{ mikrotik_config_network_set }}"
     when:
       - ansible_network_os == 'routeros'

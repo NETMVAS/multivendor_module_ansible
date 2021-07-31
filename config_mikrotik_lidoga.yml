@@ -5,7 +5,7 @@
   tasks:
 
     - name: test
-      routeros_command:
+      community.routeros.command:
         commands:
           - /interface bridge
               add fast-forward=no name=MTS_L2

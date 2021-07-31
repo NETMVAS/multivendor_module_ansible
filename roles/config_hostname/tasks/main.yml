@@ -1,7 +1,7 @@
 ---
 
 - name: change hostname mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config }}"
   when:
     - ansible_network_os == 'routeros'

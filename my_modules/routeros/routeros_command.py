@@ -12,7 +12,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = """
 ---
-module: routeros_command
+module: community.routeros.command
 version_added: "2.7"
 author: "Egor Zaitsev (@heuels)"
 short_description: Run commands on remote devices running MikroTik RouterOS
@@ -66,22 +66,22 @@ options:
 EXAMPLES = """
 tasks:
   - name: run command on remote devices
-    routeros_command:
+    community.routeros.command:
       commands: /system routerboard print
 
   - name: run command and check to see if output contains routeros
-    routeros_command:
+    community.routeros.command:
       commands: /system resource print
       wait_for: result[0] contains MikroTik
 
   - name: run multiple commands on remote nodes
-    routeros_command:
+    community.routeros.command:
       commands:
         - /system routerboard print
         - /system identity print
 
   - name: run multiple commands and evaluate the output
-    routeros_command:
+    community.routeros.command:
       commands:
         - /system routerboard print
         - /interface ethernet print

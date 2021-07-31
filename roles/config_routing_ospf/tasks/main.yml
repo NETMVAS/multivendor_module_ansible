@@ -1,7 +1,7 @@
 ---
 
 - name: add ospf instance mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_instance_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -9,7 +9,7 @@
     - action == 'add'
 
 - name: remove ospf instance mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_instance_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -17,7 +17,7 @@
     - action == 'remove'
 
 - name: enable ospf instance mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_instance_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -25,7 +25,7 @@
     - action == 'enable'
 
 - name: disable ospf instance mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_instance_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -33,7 +33,7 @@
     - action == 'disable'
 
 - name: set ospf instance mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_instance_set }}"
   when:
     - ansible_network_os == 'routeros'
@@ -41,7 +41,7 @@
     - action == 'set'
 
 - name: add ospf network mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_network_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -49,7 +49,7 @@
     - action == 'add'
 
 - name: remove ospf network mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_network_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -57,7 +57,7 @@
     - action == 'remove'
 
 - name: enable ospf network mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_network_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -65,7 +65,7 @@
     - action == 'enable'
 
 - name: disable ospf network mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_network_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -73,7 +73,7 @@
     - action == 'disable'
 
 - name: set ospf network mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_network_set }}"
   when:
     - ansible_network_os == 'routeros'
@@ -81,7 +81,7 @@
     - action == 'set'
 
 - name: add ospf area mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_area_add }}"
   when:
     - ansible_network_os == 'routeros'
@@ -89,7 +89,7 @@
     - action == 'add'
 
 - name: remove ospf area mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_area_remove }}"
   when:
     - ansible_network_os == 'routeros'
@@ -97,7 +97,7 @@
     - action == 'remove'
 
 - name: enable ospf area mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_area_enable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -105,7 +105,7 @@
     - action == 'enable'
 
 - name: disable ospf area mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_area_disable }}"
   when:
     - ansible_network_os == 'routeros'
@@ -113,7 +113,7 @@
     - action == 'disable'
 
 - name: set ospf area mikrotik
-  routeros_command:
+  community.routeros.command:
     commands: "{{ mikrotik_config_ospf_area_set }}"
   when:
     - ansible_network_os == 'routeros'
