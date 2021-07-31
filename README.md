@@ -7,6 +7,8 @@
 <p align="center">
     <img alt="Docs" src="https://img.shields.io/badge/docs-latest-blue" href="https://NETMVAS.github.io">
     <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2021">
-    <img alt="Maintenance" src="https:/img.shields.io/maintenance/yes/2021">
 </p>
 
+## Installation
+
+`ansible-galaxy collection install -r requirements.yml`
