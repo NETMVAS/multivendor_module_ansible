@@ -35,13 +35,13 @@
       - action == 'set'
 
   - name: add user cisco
-    ios_user: "{{ cisco_config_add }}"
+    cisco.ios.ios_user: "{{ cisco_config_add }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'add'
 
   - name: remove user cisco
-    ios_user: "{{ cisco_config_remove }}"
+    cisco.ios.ios_user: "{{ cisco_config_remove }}"
     when:
       - ansible_network_os == 'ios'
       - action == 'remove'

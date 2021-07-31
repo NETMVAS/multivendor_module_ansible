@@ -58,7 +58,7 @@
       - action == 'set'
 
   - name: add vlan cisco
-    ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config_vlan_add }}"
       state: merged
     when:
@@ -67,7 +67,7 @@
      - action == 'add'
 
   - name: remove vlan cisco
-    ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config_vlan_remove }}"
       state: deleted
     when:
@@ -76,7 +76,7 @@
       - action == 'remove'
 
   - name: enable vlan cisco
-    ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config_vlan_enable }}"
       state: merged
     when:
@@ -85,7 +85,7 @@
       - action == 'enable'
 
   - name: disable vlan cisco
-    ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config_vlan_disable }}"
       state: merged
     when:
@@ -94,7 +94,7 @@
       - action == 'disable'
 
   - name: set vlan cisco
-    ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config_vlan_set }}"
       state: replaced
     when:
@@ -103,7 +103,7 @@
       - action == 'set'
 
   - name: set tagged interface vlan cisco
-    ios_l2_interfaces:
+    cisco.ios.ios_l2_interfaces:
         config: "{{ cisco_config_vlan_tagged_set }}"
         state: merged
     when:
@@ -112,7 +112,7 @@
       - action == 'set'
 
   - name: set untagged interface vlan cisco
-    ios_l2_interfaces:
+    cisco.ios.ios_l2_interfaces:
         config: "{{ cisco_config_vlan_untagged_set }}"
         state: merged
     when:

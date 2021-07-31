@@ -1,6 +1,6 @@
 ---
 
 - name: show ip_address interface mikrotik
-  routeros_facts:
+  community.routeros.facts:
     gather_subset: interface
   when: ansible_network_os == 'routeros'

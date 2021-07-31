@@ -92,7 +92,7 @@
 # CISCO
 
   - name: add dhcp_client cisco
-    ios_l3_interfaces:
+    cisco.ios.ios_l3_interfaces:
       config: "{{ cisco_config_add }}"
       state: merged
     when:
@@ -101,7 +101,7 @@
 
 
   - name: remove dhcp_client cisco
-    ios_l3_interfaces:
+    cisco.ios.ios_l3_interfaces:
       config: "{{ cisco_config_remove }}"
       state: deleted
     when:

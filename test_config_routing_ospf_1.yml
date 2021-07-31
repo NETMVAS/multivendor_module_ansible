@@ -6,7 +6,7 @@
   # tasks:
   #
   #   - name: test ospf config
-  #     ios_config:
+  #     cisco.ios.ios_config:
   #         lines:
   #         - network 10.55.24.0 0.0.0.255 area 0
   #         parents: router ospf 1

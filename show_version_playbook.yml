@@ -6,5 +6,5 @@
   tasks:
 
     - name: show facts
-      routeros_facts:
+      community.routeros.facts:
         gather_subset: "{{ gather_facts }}"
