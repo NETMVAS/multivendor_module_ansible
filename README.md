@@ -12,3 +12,7 @@
 ## Installation
 
 `ansible-galaxy collection install -r requirements.yml`
+
+## Documentation
+
+https://netmvas.github.io/
