@@ -63,7 +63,7 @@
 
 - name: enable dhcp_client cisco
   cisco.ios.ios_l3_interfaces:
-    config: "{{ cisco_config_enablle }}"
+    config: "{{ cisco_config_enable }}"
     state: replaced
   when:
     - ansible_network_os == 'ios'
