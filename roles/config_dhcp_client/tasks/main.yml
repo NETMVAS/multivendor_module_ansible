@@ -37,7 +37,7 @@
 
 
 - name: add dhcp_client cisco
-  ios_l3_interfaces:
+  cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_add }}"
     state: merged
   when:
@@ -45,7 +45,7 @@
     - action == 'add'
 
 - name: remove dhcp_client cisco
-  ios_l3_interfaces:
+  cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_remove }}"
     state: deleted
   when:
@@ -54,7 +54,7 @@
 
 # TODO: Check states
 - name: disable dhcp_client cisco
-  ios_l3_interfaces:
+  cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_disable }}"
     state: replaced
   when:
@@ -62,7 +62,7 @@
     - action == 'disable'
 
 - name: enable dhcp_client cisco
-  ios_l3_interfaces:
+  cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_enablle }}"
     state: replaced
   when:
@@ -70,7 +70,7 @@
     - action == 'enable'
 
 - name: set dhcp_client cisco
-  ios_l3_interfaces:
+  cisco.ios.ios_l3_interfaces:
     config: "{{ cisco_config_set }}"
     state: replaced 
   when:
