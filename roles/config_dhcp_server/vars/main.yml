@@ -5,3 +5,10 @@ mikrotik_config_enable: /ip dhcp-server enable {{ dhcp_server }}
 mikrotik_config_disable: /ip dhcp-server disable {{ dhcp_server }}
 mikrotik_config_set: /ip dhcp-server set {{ dhcp_server }} interface={{ interface }} address-pool={{ address_pool }} name={{ rename_dhcp_server }}
 cisco_config: /system identity set name={{ local_hostname }}
+
+# TODO: Add ios commands which are absent in community modulues
+cisco_dhcp_server_add: null
+cisco_dhcp_server_remove: null
+cisco_dhcp_server_enable: null
+cisco_dhcp_server_disable: null
+cisco_dhcp_server_set: null

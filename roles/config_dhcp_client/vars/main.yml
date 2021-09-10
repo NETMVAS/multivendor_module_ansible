@@ -8,12 +8,27 @@ mikrotik_config_set: /ip dhcp-client set numbers={{ numbers_dhcp_client }} inter
 cisco_config_add:
   - name: "{{ interface }}"
     ipv4:
-      - address: dhcp
+      - address: "{{ default_route }}"
 
 cisco_config_remove:
   - name: "{{ interface }}"
 
+# TODO: Test on stand
+cisco_config_disable:
+  - name: "{{ interface }}"
+  - ipv4:
+    - dhcp:
+      - enable: false
+
+cisco_config_enable:
+  - name: "{{ interface }}"
+  - ipv4:
+    - dhcp:
+      - enable: true
+
 cisco_config_set:
   - name: "{{ interface }}"
-    ipv4:
-      - address: dhcp
+  - ipv4:
+    - dhcp:
+      - enable: true
+      - address: "{{ state_default_route }}"

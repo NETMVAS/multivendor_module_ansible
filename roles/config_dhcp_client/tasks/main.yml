@@ -60,3 +60,45 @@
   when:
     - ansible_network_os == 'ios'
     - action == 'set'
+
+- name: add dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_add }}"
+    state: merged
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'add'
+
+- name: remove dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_remove }}"
+    state: deleted
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'remove'
+
+
+# TODO: Check states
+- name: disable dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_disable }}"
+    state: replaced
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'disable'
+
+- name: enable dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_enable }}"
+    state: replaced
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'enable'
+
+- name: set dhcp_client cisco
+  cisco.ios.ios_l3_interfaces:
+    config: "{{ cisco_config_set }}"
+    state: replaced
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'set'
