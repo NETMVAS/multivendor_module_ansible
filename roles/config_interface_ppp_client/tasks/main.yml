@@ -1,44 +1,45 @@
 ---
 
-# - name: add ppp client interface mikrotik
-#   community.routeros.command:
-#     commands: "{{ mikrotik_config_add_ppp_client }}"
-#   when:
-#     - ansible_network_os == 'routeros'
-#     - action == 'add'
-#     - submenu == 'ppp_client'
-#
-# - name: remove ppp client  interface mikrotik
-#   community.routeros.command:
-#     commands: "{{ mikrotik_config_remove_ppp_client }}"
-#   when:
-#     - ansible_network_os == 'routeros'
-#     - action == 'remove'
-#     - submenu == 'ppp_client'
-#
-# - name: enable ppp client interface mikrotik
-#   community.routeros.command:
-#     commands: "{{ mikrotik_config_enable_ppp_client }}"
-#   when:
-#     - ansible_network_os == 'routeros'
-#     - action == 'enable'
-#     - submenu == 'ppp_client'
-#
-# - name: disable ppp client interface mikrotik
-#   community.routeros.command:
-#     commands: "{{ mikrotik_config_disable_ppp_client }}"
-#   when:
-#     - ansible_network_os == 'routeros'
-#     - action == 'disable'
-#     - submenu == 'ppp_client'
-#
-# - name: set ppp client interface mikrotik
-#   community.routeros.command:
-#     commands: "{{ mikrotik_config_set_ppp_client }}"
-#   when:
-#     - ansible_network_os == 'routeros'
-#     - action == 'set'
-#     - submenu == 'ppp_client'
+# TODO: test PPP client interface on mt
+- name: add ppp client interface mikrotik
+  community.routeros.command:
+    commands: "{{ mikrotik_config_add_ppp_client }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'add'
+    - submenu == 'ppp_client'
+
+- name: remove ppp client  interface mikrotik
+  community.routeros.command:
+    commands: "{{ mikrotik_config_remove_ppp_client }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'remove'
+    - submenu == 'ppp_client'
+
+- name: enable ppp client interface mikrotik
+  community.routeros.command:
+    commands: "{{ mikrotik_config_enable_ppp_client }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'enable'
+    - submenu == 'ppp_client'
+
+- name: disable ppp client interface mikrotik
+  community.routeros.command:
+    commands: "{{ mikrotik_config_disable_ppp_client }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'disable'
+    - submenu == 'ppp_client'
+
+- name: set ppp client interface mikrotik
+  community.routeros.command:
+    commands: "{{ mikrotik_config_set_ppp_client }}"
+  when:
+    - ansible_network_os == 'routeros'
+    - action == 'set'
+    - submenu == 'ppp_client'
 
 
 - name: add pptp client interface mikrotik
@@ -49,7 +50,7 @@
     - action == 'add'
     - submenu == 'pptp_client'
 
-- name: remove pptp client  interface mikrotik
+- name: remove pptp client interface mikrotik
   community.routeros.command:
     commands: "{{ mikrotik_config_remove_pptp_client }}"
   when:
@@ -175,7 +176,7 @@
     - action == 'add'
     - submenu == 'pppoe_client'
 
-- name: remove pppoe client  interface mikrotik
+- name: remove pppoe client interface mikrotik
   community.routeros.command:
     commands: "{{ mikrotik_config_remove_pppoe_client }}"
   when:

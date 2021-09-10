@@ -1,27 +1,57 @@
 ---
-# mikrotik_config_add_ppp_client: /interface ppp-client add user={{ }} password={{ }} name={{ }}
-# mikrotik_config_remove_ppp_client:
-# mikrotik_config_enable_ppp_client:
-# mikrotik_config_disable_ppp_client:
-# mikrotik_config_set_ppp_client:
+# TODO: Test PPP
+mikrotik_config_add_ppp_client: /interface ppp-client add user={{ ppp_user }} password={{ ppp_password }} name={{ ppp_client }}
+mikrotik_config_remove_ppp_client: /interface ppp-client remove {{ ppp_client }}
+mikrotik_config_enable_ppp_client: /interface ppp-client enable {{ ppp_client }}
+mikrotik_config_disable_ppp_client: /interface ppp-client disable {{ ppp_client }}
+mikrotik_config_set_ppp_client: /interface ppp-client set {{ ppp_client }} user={{ ppp_user }} password={{ ppp_password }} name={{ ppp_client }}
+# PPTP
 mikrotik_config_add_pptp_client: /interface pptp-client add user={{ pptp_user }} password={{ pptp_password }} name={{ pptp_client }} connect-to={{ remote_address }}
 mikrotik_config_remove_pptp_client: /interface pptp-client remove {{ pptp_client }}
 mikrotik_config_enable_pptp_client: /interface pptp-client enable {{ pptp_client }}
 mikrotik_config_disable_pptp_client: /interface pptp-client disable {{ pptp_client }}
 mikrotik_config_set_pptp_client: /interface pptp-client set {{ pptp_client }} user={{ pptp_user }} password={{ pptp_password }} name={{ rename_pptp_client }} connect-to={{ remote_address }}
+# SSTP
 mikrotik_config_add_sstp_client: /interface sstp-client add user={{ sstp_user }} password={{ sstp_password }} name={{ sstp_client }} connect-to={{ remote_address }} profile={{ ppp_profile }} port={{ remote_port }}
 mikrotik_config_remove_sstp_client: /interface sstp-client remove {{ sstp_client }}
 mikrotik_config_enable_sstp_client: /interface sstp-client enable {{ sstp_client }}
 mikrotik_config_disable_sstp_client: /interface sstp-client disable {{ sstp_client }}
 mikrotik_config_set_sstp_client: /interface sstp-client set {{ sstp_client }} user={{ sstp_user }} password={{ sstp_password }} name={{ rename_sstp_client }} connect-to={{ remote_address }} profile={{ ppp_profile }} port={{ remote_port }}
+# L2TP
 mikrotik_config_add_l2tp_client: /interface l2tp-client add user={{ l2tp_user }} password={{ l2tp_password }} name={{ l2tp_client }} connect-to={{ remote_address }} profile={{ ppp_profile }}
 mikrotik_config_remove_l2tp_client: /interface l2tp-client remove {{ l2tp_client }}
 mikrotik_config_enable_l2tp_client: /interface l2tp-client enable {{ l2tp_client }}
 mikrotik_config_disable_l2tp_client: /interface l2tp-client disable {{ l2tp_client }}
 mikrotik_config_set_l2tp_client: /interface l2tp-client set {{ l2tp_client }} user={{ l2tp_user }} password={{ l2tp_password }} name={{ rename_l2tp_client }} connect-to={{ remote_address }} profile={{ ppp_profile }}
+# PPPoE
 mikrotik_config_add_pppoe_client: /interface pppoe-client add user={{ pppoe_user }} password={{ pppoe_password }} name={{ pppoe_client }} interface={{ interface }}
 mikrotik_config_remove_pppoe_client: /interface pppoe-client remove {{ pppoe_client }}
 mikrotik_config_enable_pppoe_client: /interface pppoe-client enable {{ pppoe_client }}
 mikrotik_config_disable_pppoe_client: /interface pppoe-client disable {{ pppoe_client }}
 mikrotik_config_set_pppoe_client: /interface pppoe-client set {{ pppoe_client }} user={{ pppoe_user }} password={{ pppoe_password }} name={{ rename_pppoe_client }} interface={{ interface }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+# TODO: same for ios
+# PPP
+cisco_config_add_ppp_client: null
+cisco_config_remove_ppp_client: null
+cisco_config_enable_ppp_client: null
+cisco_config_disable_ppp_client: null
+cisco_config_set_ppp_client: null
+# PPTP
+cisco_config_add_pptp_client: null
+cisco_config_remove_pptp_client: null
+cisco_config_enable_pptp_client: null
+cisco_config_disable_pptp_client: null
+cisco_config_set_pptp_client: null
+# SSTP
+cisco_config_add_sstp_client: null
+cisco_config_remove_sstp_client: null
+cisco_config_enable_sstp_client: null
+cisco_config_disable_sstp_client: null
+cisco_config_set_sstp_client: null
+# L2TP
+cisco_config_add_l2tp_client: null
+cisco_config_remove_l2tp_client: null
+cisco_config_enable_l2tp_client: null
+cisco_config_disable_l2tp_client: null
+cisco_config_set_l2tp_client: null
