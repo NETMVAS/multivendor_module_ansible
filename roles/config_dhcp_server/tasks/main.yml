@@ -1,4 +1,5 @@
 ---
+
   - name: add dhcp_server mikrotik
     routeros_command:
       commands: "{{ mikrotik_config_add }}"
@@ -35,6 +36,37 @@
       - action == 'set'
 
 
-  - name: config ipaddres interface cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+  - name: add dhcp_server cisco
+    routeros_command:
+      commands: "{{ cisco_dhcp_server_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'add'
+
+  - name: remove dhcp_server cisco
+    routeros_command:
+      commands: "{{ cisco_dhcp_server_remove }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'remove'
+
+  - name: enable dhcp_server cisco
+    routeros_command:
+      commands: "{{ cisco_dhcp_server_enable }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'enable'
+
+  - name: disable dhcp_server cisco
+    routeros_command:
+      commands: "{{ cisco_dhcp_server_disable }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'disable'
+
+  - name: set dhcp_server cisco
+    routeros_command:
+      commands: "{{ cisco_dhcp_server_set }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'set'
