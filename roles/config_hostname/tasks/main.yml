@@ -2,7 +2,7 @@
 
 - name: change hostname mikrotik
   community.routeros.command:
-    commands: "{{ mikrotik_config }}"
+    commands: "{{ mikrotik_hostname_set }}"
   when:
     - ansible_network_os == 'routeros'
     - action == 'set'
@@ -10,7 +10,7 @@
 - name: change hostname cisco
   cisco.ios.ios_config:
     lines:
-      - "{{ cisco_config }}"
+      - "{{ cisco_hostname_set }}"
   when:
     - ansible_network_os == 'ios'
     - action == 'set'

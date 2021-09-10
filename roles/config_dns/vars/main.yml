@@ -1,4 +1,4 @@
 ---
-mikrotik_config: /ip dns set servers={{ dns_servers }}
+mikrotik_dns_set: /ip dns set servers={{ dns_servers }}
 
-cisco_config: ip name-server {{ dns_servers }}
+cisco_dns_set: ip name-server {{ dns_servers }}

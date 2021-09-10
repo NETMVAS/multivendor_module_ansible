@@ -10,11 +10,11 @@ cisco_config_add:
 
 cisco_config_enable:
   - name: "{{ bridge }}"
-    enabled: True
+    enabled: true
 
 cisco_config_disable:
   - name: "{{ bridge }}"
-    enabled: False
+    enabled: false
 
 cisco_config_remove:
   - name: "{{ bridge }}"

@@ -1,4 +1,4 @@
 ---
-mikrotik_config: /system identity set name={{ hostname }}
+mikrotik_hostname_set: /system identity set name={{ hostname }}
 
-cisco_config: hostname {{ hostname }}
+cisco_hostname_set: hostname {{ hostname }}

@@ -13,7 +13,7 @@
       - ansible_network_os == 'routeros'
       - action == 'disable'
 
-  - name: config auto-negotiation interface ethernet mikrotik
+  - name: set auto-negotiation interface ethernet mikrotik
     community.routeros.command:
       commands: "{{ mikrotik_config_set }}"
     when:
@@ -21,7 +21,7 @@
       - action == 'set'
 
 
-  - name: enable interface  ethernet cisco
+  - name: enable interface ethernet cisco
     cisco.ios.ios_interfaces:
       config: "{{ cisco_config_enable }}"
     when:
