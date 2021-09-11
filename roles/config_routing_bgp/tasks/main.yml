@@ -163,3 +163,12 @@
       - ansible_network_os == 'routeros'
       - submenu == 'network'
       - action == 'set'
+
+
+  - name: add bgp instance cisco
+    cisco.ios.ios_bgp_global:
+      config: "{{ cisco_config_instance_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - submenu == 'instance'
+      - action == 'add'

@@ -22,3 +22,39 @@ mikrotik_config_network_remove: /routing bgp network remove numbers={{ numbers_b
 mikrotik_config_network_enable: /routing bgp network enable numbers={{ numbers_bgp_network }}
 mikrotik_config_network_disable: /routing bgp network disable numbers={{ numbers_bgp_network }}
 mikrotik_config_network_set: /routing bgp network set numbers={{ numbers_bgp_network }} network={{ network }} synchronize={{ sync | default('yes', true) }}
+
+# TODO: Я не понимаю что это
+cisco_config_instance_add:
+  config:
+    as_number: 65000
+    bgp:
+      advertise_best_external: true
+      bestpath:
+        - compare_routerid: true
+      nopeerup_delay:
+        - post_boot: 10
+      dampening:
+        penalty_half_time: 1
+        reuse_route_val: 1
+        suppress_route_val: 1
+        max_suppress: 1
+      graceful_shutdown:
+        neighbors:
+          time: 50
+        community: 100
+        local_preference: 100
+    neighbor:
+      - address: 198.51.100.1
+        description: merge neighbor
+        remote_as: 100
+        aigp:
+          send:
+            cost_community:
+              id: 100
+              poi:
+                igp_cost: true
+                transitive: true
+        route_map:
+          name: test-route
+          out: true
+  state: merged
