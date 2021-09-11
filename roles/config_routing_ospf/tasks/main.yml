@@ -120,6 +120,7 @@
     - submenu == 'area'
     - action == 'set'
 
+
 - name: add ospf instance cisco
   cisco.ios.ios_config: "{{ cisco_config_ospf_instance_add }}"
   when:

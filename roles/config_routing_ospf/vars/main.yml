@@ -15,7 +15,7 @@ mikrotik_config_ospf_area_enable: /routing ospf area enable {{ area_ospf }}
 mikrotik_config_ospf_area_disable: /routing ospf area disable {{ area_ospf }}
 mikrotik_config_ospf_area_set: /routing ospf area set {{ area_ospf }} area-id={{ area_id }} name={{ rename_area }} type={{ area_type }} instance={{ instance }}
 
-
+# TODO: refactor using cisco.ios.ios_ospf_interfaces
 cisco_config_ospf_instance_add:
     lines:
     -
