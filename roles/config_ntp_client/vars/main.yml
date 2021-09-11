@@ -5,5 +5,5 @@ mikrotik_config:
 
 
 # cisco_config: ntp server {{ ntp_servers }}
-cisco_config: 
+cisco_config:
   server: "{{ ntp_servers }}"

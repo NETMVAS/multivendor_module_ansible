@@ -6,7 +6,7 @@
     when:
       - ansible_network_os == 'routeros'
       - action == 'set'
-  
+
   # FIXME: В документации не просят делать config: {{...}}
   - name: set ntp client cisco
     cisco.ios.ios_ntp: "{{ cisco_config }}"
