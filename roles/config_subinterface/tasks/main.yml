@@ -35,6 +35,38 @@
     - ansible_network_os == 'routeros'
     - action == 'set'
 
-- name: config ipaddres interface cisco
-  raw: "{{ cisco_config }}"
-  when: ansible_network_os == 'ios'
+# TODO: ios.ios_vlans ?
+- name: add interface vlan cisco
+  cisco.ios.ios_vlans:
+    commands: "{{ cisco_config_add }}"
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'add'
+
+- name: remove interface vlan cisco
+  cisco.ios.ios_vlans:
+    commands: "{{ mikrotik_config_remove }}"
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'remove'
+
+- name: enable interface vlan cisco
+  cisco.ios.ios_vlans:
+    commands: "{{ mikrotik_config_enable }}"
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'enable'
+
+- name: disable interface vlan cisco
+  cisco.ios.ios_vlans:
+    commands: "{{ mikrotik_config_disable }}"
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'disable'
+
+- name: set interface vlan cisco
+  cisco.ios.ios_vlans:
+    commands: "{{ mikrotik_config_set }}"
+  when:
+    - ansible_network_os == 'ios'
+    - action == 'set'

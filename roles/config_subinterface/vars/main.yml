@@ -4,4 +4,10 @@ mikrotik_config_remove: /interface vlan remove numbers={{ numbers_inteface_vlan 
 mikrotik_config_enable: /interface vlan enable numbers={{ numbers_inteface_vlan }}
 mikrotik_config_disable: /interface vlan disable numbers={{ numbers_inteface_vlan }}
 mikrotik_config_set: /interface vlan set numbers={{ numbers_inteface_vlan }} interface={{ interface }} vlan-id={{ vlan_id }} name={{ interface_vlan }} }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+# TODO: Fixme
+cisco_config_add: null
+cisco_config_remove: null
+cisco_config_enable: null
+cisco_config_disable: null
+cisco_config_set: null
