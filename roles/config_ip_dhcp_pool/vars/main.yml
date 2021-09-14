@@ -8,11 +8,10 @@ cisco_config_add:
   - conf t
   - ip dhcp pool {{ pool_name }}
   - network {{ pool_range }}
-  - exit
+  - default-router {{ default_router }}
 
 cisco_config_remove:
   - en
   - conf t
   - ip dhcp pool {{ pool_name }}
-  - no network {{ pool_range }}
-  - exit
+  - no network 0.0.0.0 0.0.0.0
