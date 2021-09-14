@@ -10,11 +10,3 @@ mikrotik_config_remove_tree_queue: /queue tree remove numbers={{ numbers_queue_t
 mikrotik_config_enable_tree_queue: /queue tree enable numbers={{ numbers_queue_tree }}
 mikrotik_config_disable_tree_queue: /queue tree disable numbers={{ numbers_queue_tree }}
 mikrotik_config_set_tree_queue: /queue tree set numbers={{ numbers_queue_tree }} name={{ tree_name }} parent={{ parent| default('global') }} packet-marks={{ pmarks | default('no-mark') }} queue type={{ qtype }} priority={{ priority | default('8') }} bucket size={{ bucket }} max-limit={{ max_limit }} burst-limit={{ burst_limit }} burst-threshold={{ burst_threshold }}
-
-cisco_config_add:
-  - name: "{{ interface }}"
-    ipv4:
-      - address: dhcp
-
-cisco_config_remove:
-  - name: "{{ interface }}"
