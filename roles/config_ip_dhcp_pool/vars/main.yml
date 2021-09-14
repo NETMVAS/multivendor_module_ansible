@@ -1,0 +1,18 @@
+---
+mikrotik_config_add: /ip pool add name={{ pool_name }} ranges={{ pool_range }}
+mikrotik_config_remove: /ip pool remove numbers={{ pool_numbers }}
+
+
+cisco_config_add:
+  - en
+  - conf t
+  - ip dhcp pool {{ pool_name }}
+  - network {{ pool_range }}
+  - exit
+
+cisco_config_remove:
+  - en
+  - conf t
+  - ip dhcp pool {{ pool_name }}
+  - no network {{ pool_range }}
+  - exit

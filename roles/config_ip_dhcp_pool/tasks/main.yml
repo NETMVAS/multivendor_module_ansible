@@ -1,0 +1,30 @@
+---
+
+  - name: add dhcp pool mikrotik
+    community.routeros.command:
+      commands: "{{ mikrotik_config_add }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'add'
+
+  - name: remove dhcp pool mikrotik
+    community.routeros.command:
+      commands: "{{ mikrotik_config_remove }}"
+    when:
+      - ansible_network_os == 'routeros'
+      - action == 'remove'
+
+
+  - name: add dhcp pool cisco
+    community.routeros.command:
+      commands: "{{ cisco_config_add }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'add'
+
+  - name: remove dhcp pool cisco
+    community.routeros.command:
+      commands: "{{ cisco_config_remove }}"
+    when:
+      - ansible_network_os == 'ios'
+      - action == 'remove'
