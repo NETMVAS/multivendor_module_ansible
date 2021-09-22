@@ -14,4 +14,15 @@ mikrotik_config_gre_remove: /interface gre remove {{ gre }}
 mikrotik_config_gre_enable: /interface gre enable {{ gre }}
 mikrotik_config_gre_disable: /interface gre disable {{ gre }}
 mikrotik_config_gre_set: /interface gre set {{ gre }} name={{ rename_gre }} remote-address={{ remote_address }} local-address={{ local_address }}
-cisco_config: /system identity set name={{ local_hostname }}
+
+# XXX: https://clck.ru/XiJmK
+cisco_config_gre_add: 
+  - interface {{ interface }}
+  - ip address {{ local_address }}
+  - tunnel source {{ remote_address }} # FIXME: ???
+  - tunnel destination {{ remote_address }}
+
+cisco_config_gre_remove:
+  - interface {{ interface }}
+  - no tunnel source
+  - no tunnel destination

@@ -121,6 +121,18 @@
     - action == 'set'
 
 
-- name: config ipaddres interface cisco
-  raw: "{{ cisco_config }}"
-  when: ansible_network_os == 'ios'
+- name: add gre interface cisco
+  community.routeros.command:
+    commands: "{{ cisco_config_gre_add }}"
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'gre'
+    - action == 'add'
+
+- name: remove gre interface cisco
+  community.routeros.command:
+    commands: "{{ cisco_config_gre_remove }}"
+  when:
+    - ansible_network_os == 'ios'
+    - submenu == 'gre'
+    - action == 'remove'
