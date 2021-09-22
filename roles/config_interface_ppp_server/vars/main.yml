@@ -33,4 +33,20 @@ mikrotik_config_enable_ppp_secret: /ppp secret enable {{ username }}
 mikrotik_config_disable_ppp_secret: /ppp secret disable {{ username }}
 mikrotik_config_set_ppp_secret: /ppp secret set {{ username }} name={{ rename_username }} password={{ password }} local-address={{ local_address }} remote-address={{ remote_address }} profile={{ ppp_profile }}
 
-cisco_config: /system identity set name={{ local_hostname }}
+
+cisco_config_add_ppp_secret:
+  - username {{ username }} password {{ password }}
+
+# XXX: http://ciscotips.ru/ppp
+cisco_config_enable_ppp_server: 
+  - interface {{ interface }}
+  - encapsulation ppp
+  - ppp authentication chap
+  - ip address {{ local_address }}
+  - no shutdown
+
+cisco_config_disable_ppp_server: 
+  - interface {{ interface }}
+  - no encapsulation ppp
+  - no ppp authentication chap
+  - no shutdown

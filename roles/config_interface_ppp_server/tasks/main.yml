@@ -215,6 +215,27 @@
       - action == 'set'
       - submenu == 'ppp_secret'
 
-  - name: config pppoe server  cisco
-    raw: "{{ cisco_config }}"
-    when: ansible_network_os == 'ios'
+
+  - name: add ppp secret cisco
+    cisco.ios.ios_command:
+      raw: "{{ cisco_config_add_ppp_secret }}"
+    when: 
+      - ansible_network_os == 'ios'
+      - action == 'add'
+      - submenu == 'ppp_secret'
+
+  - name: enable ppp server cisco
+    cisco.ios.ios_command:
+      raw: "{{ cisco_config_add_ppp_server }}"
+    when: 
+      - ansible_network_os == 'ios'
+      - action == 'enable'
+      - submenu == 'ppp_server'
+
+  - name: disable ppp server cisco
+    cisco.ios.ios_command:
+      raw: "{{ cisco_config_remove_ppp_server }}"
+    when: 
+      - ansible_network_os == 'ios'
+      - action == 'disable'
+      - submenu == 'ppp_server'
